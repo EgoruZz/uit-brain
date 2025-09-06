@@ -146,7 +146,7 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%">Программирование (Лабораторная работа)</td>
-        <td align="center" valign="middle" style="width: 50%; color: #00ff00; text-decoration: none;"> <a href="https://www.jetbrains.com/idea/" target="_blank">Java</a>
+        <td align="center" valign="middle" style="width: 50%;"> <a href="https://www.jetbrains.com/idea/" target="_blank" style="color: #00ff00;">Java</a>
 </td>
     </tr>
     <tr>
