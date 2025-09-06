@@ -44,7 +44,7 @@ I неделя, группа УИТ-111
         <td align="center" valign="middle" style="width: 50%;"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Конспекты/Семестр%201/Единая%20транспортная%20система/Практические/02-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     <tr>
-        <td align="center" valign="middle" style="width: 50%"> IФизика (Практическое занятие) </td>
+        <td align="center" valign="middle" style="width: 50%"> Физика (Практическое занятие) </td>
         <td align="center" valign="middle" style="width: 50%"> не было </td>
     </tr>
     <tr>
@@ -52,7 +52,7 @@ I неделя, группа УИТ-111
         <td align="center" valign="middle" style="width: 50%"> был тест </td>
     </tr>
     <tr>
-        <td align="center" valign="middle" style="width: 50%"> IМатематика (Практическое занятие) </td>
+        <td align="center" valign="middle" style="width: 50%"> Математика (Практическое занятие) </td>
         <td align="center" valign="middle" style="width: 50%"> не было </td>
     </tr>
     </table>
