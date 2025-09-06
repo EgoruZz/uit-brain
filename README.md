@@ -1,6 +1,6 @@
-<h3 align="center">
+<h2 align="center">
 I неделя, группа УИТ-111
-</h3>
+</h2>
 
 <h3 align="center">
 Понедельник
@@ -41,7 +41,7 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> II неделя: Физика (Лабораторная работа)<br><b>I неделя: Единая транспортная система (Практическое занятие)</b> </td>
-        <td align="center" valign="middle" style="width: 50%"> <a href="https://sourcecraft.dev/egoruzz/uit-brain/browse/Семестр%201/Единая%20транспортная%20система/Практические/02-09-2025.md?rev=main" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Семестр%201/Единая%20транспортная%20система/Практические/02-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> II неделя: Физика (Практическое занятие) </td>
@@ -76,11 +76,11 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Программирование на языке Python (Лекция) </td>
-        <td align="center" valign="middle" style="width: 50%"> <a href="https://sourcecraft.dev/egoruzz/uit-brain/browse/Семестр%201/Программирование%20на%20языке%20Python/Лекции/03-09-2025.md?rev=main" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Семестр%201/Программирование%20на%20языке%20Python/Лекции/03-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> <b>I неделя: Программирование на языке Python (Практическое занятие)</b><br>II неделя: Программирование на языке Python (Лабораторная работа) </td>
-        <td align="center" valign="middle" style="width: 50%"> <a href="https://sourcecraft.dev/egoruzz/uit-brain/browse/Семестр%201/Программирование%20на%20языке%20Python/Лабораторные/Лабораторная%20работа%201.pdf?rev=main" target="_blank">Лабораторная</a> </td>
+        <td align="center" valign="middle" style="width: 50%"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Семестр%201/Программирование%20на%20языке%20Python/Лабораторные/Лабораторная%20работа%201.pdf" target="_blank">Лабораторная</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Единая транспортная система (Лекция) </td>
@@ -107,7 +107,7 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Линейная алгебра (Практическое занятие) </td>
-        <td align="center" valign="middle" style="width: 50%"> <a href="ваша_ссылка" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Семестр%201/Линейная%20алгебра/Практические/04-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> <b>I неделя: Основы российской государственности (Практическое занятие)</b><br>II неделя: Основы российской государственности (Лекция) </td>
@@ -115,7 +115,7 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Физика (Лекция) </td>
-        <td align="center" valign="middle" style="width: 50%"> <a href="https://sourcecraft.dev/egoruzz/uit-brain/browse/Семестр%201/Физика/Лекции/04-09-2025.md?rev=main" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Семестр%201/Физика/Лекции/04-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Физическая культура и спорт (Практическое занятие) </td>
@@ -138,11 +138,11 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Математика (Лекция) </td>
-        <td align="center" valign="middle" style="width: 50%"> <a href="https://sourcecraft.dev/egoruzz/uit-brain/browse/Семестр%201/Математика/Лекции/05-09-2025.md?rev=main" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Семестр%201/Математика/Лекции/05-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Линейная алгебра (Лекция) </td>
-        <td align="center" valign="middle" style="width: 50%"> <a href="https://sourcecraft.dev/egoruzz/uit-brain/browse/Семестр%201/Линейная%20алгебра/Лекции/05-09-2025.md?rev=main" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Семестр%201/Линейная%20алгебра/Лекции/05-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Программирование (Лабораторная работа) </td>
