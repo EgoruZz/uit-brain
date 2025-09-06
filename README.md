@@ -84,11 +84,11 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Единая транспортная система (Лекция) </td>
-        <td align="center" valign="middle" style="width: 50%;"> <a href="ваша_ссылка" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%;"> <a href="ваша_ссылка" target="_blank">Конспект пишется</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Жизненный цикл IT-проекта (Лекция) </td>
-        <td align="center" valign="middle" style="width: 50%;"> <a href="ваша_ссылка" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%;"> <a href="ваша_ссылка" target="_blank">Конспект пишется</a> </td>
     </tr>
     </table>
 </div>
@@ -111,7 +111,7 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> <b>I неделя: Основы российской государственности (Практическое занятие)</b><br>II неделя: Основы российской государственности (Лекция) </td>
-        <td align="center" valign="middle" style="width: 50%;"> <a href="ваша_ссылка" target="_blank">Конспект и ДЗ</a> </td>
+        <td align="center" valign="middle" style="width: 50%;"> <a href="ваша_ссылка" target="_blank">Конспект пишется</a> </td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Физика (Лекция) </td>
