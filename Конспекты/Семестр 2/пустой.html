@@ -1,4 +1,5 @@
-```html
+# Линейные уравнения
+
 <h1 align="center">Линейные уравнения</h1>
 
 <p align="center">
@@ -23,7 +24,6 @@
 
 <h3 align="center">Первое свойство линейности (однородность): f(k × x) = k × f(x)</h3>
 
-<div align="center">
 $$
 \begin{cases}
 ax + b = 0 \iff x = -\frac{b}{a} \\
@@ -31,11 +31,9 @@ cx + d = 0 \\
 -\frac{cb}{a} + d = 0 \iff cb = da
 \end{cases}
 $$
-</div>
 
 <p align="center"><strong>Однородность:</strong> k × (a, b) = (c, d) ❓</p>
 
-<div align="center">
 $$
 \begin{cases}
 2x + 3 = 0 \\
@@ -43,11 +41,9 @@ $$
 x = -\frac{3}{2}
 \end{cases}
 $$
-</div>
 
 <p align="center"><strong>Однородность:</strong> 2 × (2; 3) = (4; 6) ✅</p>
 
-<div align="center">
 $$
 \begin{cases}
 2x + 3 = 0 \\
@@ -55,7 +51,6 @@ $$
 x \in \varnothing
 \end{cases}
 $$
-</div>
 
 <p align="center"><strong>Однородность:</strong> k × (2; 3) ≠ (4; 7) ❌</p>
 
@@ -77,7 +72,6 @@ $$
 Такая система уравнений имеет решение.
 </p>
 
-<div align="center">
 $$
 \begin{cases}
 2x + 3y = 6 \\
@@ -102,7 +96,6 @@ $$
 8
 \end{pmatrix}
 $$
-</div>
 
 <h3 align="center">Пример 2</h3>
 
@@ -111,7 +104,6 @@ $$
 что и данные векторы. Такая система уравнений не имеет решения.
 </p>
 
-<div align="center">
 $$
 \begin{cases}
 2x + 3y = 6 \\
@@ -138,13 +130,11 @@ $$
 8
 \end{pmatrix}
 $$
-</div>
 
 ---
 
 <h2 align="center" id="3-запишем-общий-вид">3. Запишем общий вид</h2>
 
-<div align="center">
 $$
 \begin{cases}
 a_{11}x + a_{12}y = b_1 \\
@@ -166,11 +156,9 @@ a_{21}a_{11}x + a_{21}a_{12}y = a_{21}b_1 \quad (1) \\
 a_{11}a_{21}x + a_{11}a_{22}y = a_{11}b_2 \quad (2)
 \end{cases}
 $$
-</div>
 
 <p align="center">Делаем $(2) - (1)$:</p>
 
-<div align="center">
 $$
 a_{21}a_{11}x - a_{11}a_{21}x + a_{11}a_{22}y - a_{21}a_{12}y = a_{11}b_2 - a_{21}b_1
 $$
@@ -182,11 +170,9 @@ $$
 $$
 y = \frac{a_{11}b_2 - a_{21}b_1}{a_{11}a_{22} - a_{21}a_{12}}
 $$
-</div>
 
 <p align="center">Выражаем из (1) $x$ и подставляем туда полученный $y$:</p>
 
-<div align="center">
 $$
 x = \frac{b_1 - a_{12}y}{a_{11}}
 $$
@@ -202,13 +188,11 @@ $$
 $$
 x = \frac{a_{22}b_1 - a_{12}b_2}{a_{11}a_{22} - a_{21}a_{12}}
 $$
-</div>
 
 <h3 align="center">🧮 Правило Крамера</h3>
 
 <p align="center"><strong>Определитель 2×2 (второго порядка):</strong></p>
 
-<div align="center">
 $$
 \begin{vmatrix}
 a_{11} & a_{12} \\
@@ -216,11 +200,9 @@ a_{21} & a_{22}
 \end{vmatrix}
 = a_{11} \times a_{22} - a_{12} \times a_{21}
 $$
-</div>
 
 <p align="center"><strong>Формулы для решения по общему виду:</strong></p>
 
-<div align="center">
 $$
 x = \frac{
 \begin{vmatrix}
@@ -246,7 +228,6 @@ a_{21} & a_{22}
 \end{vmatrix}
 }
 $$
-</div>
 
 ---
 
@@ -254,16 +235,28 @@ $$
 
 <h3 align="center">Решить по правилу Крамера:</h3>
 
-<div align="center">
-<p><strong>Система 1:</strong></p>
-<p>$$\begin{cases}5x - 3y = 1\\-6x + 7y = 9\end{cases}$$</p>
+<p align="center"><strong>Система 1:</strong></p>
+$$
+\begin{cases}
+5x - 3y = 1 \\
+-6x + 7y = 9
+\end{cases}
+$$
 
-<p><strong>Система 2:</strong></p>
-<p>$$\begin{cases}3x - 4y = 5\\6x + 8y = 3\end{cases}$$</p>
+<p align="center"><strong>Система 2:</strong></p>
+$$
+\begin{cases}
+3x - 4y = 5 \\
+6x + 8y = 3
+\end{cases}
+$$
 
-<p><strong>Система 3:</strong></p>
-<p>$$\begin{cases}2x + 3y = 6\\4x - y = 8\end{cases}$$</p>
-</div>
+<p align="center"><strong>Система 3:</strong></p>
+$$
+\begin{cases}
+2x + 3y = 6 \\
+4x - y = 8
+\end{cases}
+$$
 
 ---
-```
