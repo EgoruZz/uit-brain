@@ -145,8 +145,9 @@ I неделя, группа УИТ-111
         <td align="center" valign="middle" style="width: 50%; color: green;"> <a href="https://github.com/EgoruZz/uit-brain/blob/main/Семестр%201/Линейная%20алгебра/Лекции/05-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     <tr>
-        <td align="center" valign="middle" style="width: 50%"> Программирование (Лабораторная работа) </td>
-        <td align="center" valign="middle" style="width: 50%; color: green;"> <a href="https://www.jetbrains.com/idea/" target="_blank"> Java </td>
+        <td align="center" valign="middle" style="width: 50%">Программирование (Лабораторная работа)</td>
+        <td align="center" valign="middle" style="width: 50%; color: green;"> <a href="https://www.jetbrains.com/idea/" target="_blank">Java</a>
+</td>
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> <b>I неделя: Программирование (Практическое занятие)</b> </td>
