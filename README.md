@@ -7,7 +7,7 @@ I неделя, группа УИТ-111
 </h3>
 
 <div align="center">
-    <table style="margin: 0 auto; border: 1px solid #ddd;">
+    <table style="margin: 0 auto; border: 1px solid #110101ff;">
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Дисциплина </td>
         <td align="center" valign="middle" style="width: 50%"> Материалы </td>
@@ -34,7 +34,7 @@ I неделя, группа УИТ-111
 </h3>
 
 <div align="center">
-    <table style="margin: 0 auto; border: 1px solid #ddd;">
+    <table style="margin: 0 auto; border: 1px solid #110101ff;">
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Дисциплина </td>
         <td align="center" valign="middle" style="width: 50%"> Материалы </td>
@@ -65,7 +65,7 @@ I неделя, группа УИТ-111
 </h3>
 
 <div align="center">
-    <table style="margin: 0 auto; border: 1px solid #ddd;">
+    <table style="margin: 0 auto; border: 1px solid #110101ff;">
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Дисциплина </td>
         <td align="center" valign="middle" style="width: 50%"> Материалы </td>
@@ -100,7 +100,7 @@ I неделя, группа УИТ-111
 </h3>
 
 <div align="center">
-    <table style="margin: 0 auto; border: 1px solid #ddd;">
+    <table style="margin: 0 auto; border: 1px solid #110101ff;">
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Дисциплина </td>
         <td align="center" valign="middle" style="width: 50%"> Материалы </td>
@@ -131,7 +131,7 @@ I неделя, группа УИТ-111
 </h3>
 
 <div align="center">
-    <table style="margin: 0 auto; border: 1px solid #ddd;">
+    <table style="margin: 0 auto; border: 1px solid #110101ff;">
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Дисциплина </td>
         <td align="center" valign="middle" style="width: 50%"> Материалы </td>
