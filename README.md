@@ -88,7 +88,7 @@ I неделя, группа УИТ-111
     </tr>
     <tr>
         <td align="center" valign="middle" style="width: 50%"> Жизненный цикл IT-проекта (Лекция) </td>
-        <td align="center" valign="middle" style="width: 50%;">Учить лекцию</td>
+        <td align="center" valign="middle" style="width: 50%;"><a href="https://github.com/EgoruZz/uit-brain/blob/main/Конспекты/Семестр%201/Жизненный%20цикл%20ИТ-проекта/Лекции/03-09-2025.md" target="_blank">Конспект и ДЗ</a> </td>
     </tr>
     </table>
 </div>
