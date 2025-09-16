@@ -14,32 +14,32 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: #fff;
+            background: #2c3e50;
+            color: #ecf0f1;
             min-height: 100vh;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
         }
         
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(44, 62, 80, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgba(230, 126, 34, 0.5);
         }
         
         .logo {
@@ -52,13 +52,13 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #fdbb2d;
+            color: #ffcc5f;
         }
         
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #ffcc5f;
         }
         
         .subtitle {
@@ -67,6 +67,7 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
+            color: #ffffff;
         }
         
         .section {
@@ -77,114 +78,176 @@
             font-size: 1.8rem;
             margin-bottom: 25px;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            color: #ffcc5f;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 204, 95, 0.5);
         }
         
-        .section-title i {
-            color: #fdbb2d;
+        .contacts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
         }
         
-        .contacts-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background: rgba(255, 255, 255, 0.1);
+        .contact-card {
+            background: rgba(52, 73, 94, 0.8);
             border-radius: 15px;
-            overflow: hidden;
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #e74c3c;
         }
         
-        .contacts-table th, .contacts-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(52, 73, 94, 0.9);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
-        .contacts-table th {
-            background-color: rgba(255, 255, 255, 0.2);
+        .contact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(230, 126, 34, 0.3);
+        }
+        
+        .contact-title {
+            font-size: 1.2rem;
             font-weight: 600;
-        }
-        
-        .contacts-table tr:last-child td {
-            border-bottom: none;
-        }
-        
-        .contacts-table tr:hover {
-            background-color: rgba(255, 255, 255, 0.05);
+            color: #ffcc5f;
         }
         
         .contact-link {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 8px;
+            background: rgba(231, 76, 60, 0.2);
+            color: #ecf0f1;
+            padding: 5px 12px;
+            border-radius: 20px;
             text-decoration: none;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
         }
         
         .contact-link:hover {
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(231, 76, 60, 0.4);
             transform: translateY(-2px);
         }
         
-        .contact-card {
+        .contact-details {
+            margin-bottom: 10px;
+            color: #bdc3c7;
+        }
+        
+        .contact-info {
+            list-style: none;
+        }
+        
+        .info-item {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-icon {
+            margin-right: 10px;
+            color: #ffcc5f;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .info-content {
+            flex: 1;
+        }
+        
+        .email-btn, .phone-btn {
+            display: inline-block;
             background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .email-btn:hover, .phone-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .service-card {
+            background: rgba(52, 73, 94, 0.8);
             border-radius: 15px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #e74c3c;
         }
         
-        .contact-card h3 {
+        .service-header {
             display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 15px;
-            color: #fdbb2d;
+            color: #ffcc5f;
         }
         
-        .contact-info {
+        .service-icon {
+            font-size: 1.5rem;
+        }
+        
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .service-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
         }
         
-        .info-item {
+        .service-item {
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
-        .info-item i {
-            color: #fdbb2d;
+        .service-item i {
+            color: #ffcc5f;
             width: 20px;
         }
         
         .note {
-            background: rgba(253, 187, 45, 0.2);
-            border-left: 4px solid #fdbb2d;
+            background: rgba(255, 204, 95, 0.1);
+            border-left: 4px solid #ffcc5f;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
+            color: #ecf0f1;
         }
         
         footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid rgba(230, 126, 34, 0.3);
             width: 100%;
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #bdc3c7;
         }
         
         /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .subtitle {
@@ -195,17 +258,16 @@
                 font-size: 1.5rem;
             }
             
-            .contacts-table {
-                display: block;
-                overflow-x: auto;
-            }
-            
-            .contact-info {
+            .contacts-container {
                 grid-template-columns: 1fr;
             }
             
             .container {
                 padding: 20px;
+            }
+            
+            .service-info {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -218,10 +280,12 @@
                 font-size: 2rem;
             }
             
-            .contacts-table th, 
-            .contacts-table td {
-                padding: 10px;
-                font-size: 0.9rem;
+            .container {
+                padding: 15px;
+            }
+            
+            .contact-card, .service-card {
+                padding: 15px;
             }
         }
     </style>
@@ -230,144 +294,221 @@
     <div class="container">
         <header>
             <div class="logo">
-                <i class="fas fa-address-book logo-icon"></i>
                 <h1>Контакты РУТ (МИИТ)</h1>
             </div>
             <p class="subtitle">Важные контакты университета, института и кафедр для студентов группы УИТ-111</p>
         </header>
         
         <div class="section">
-            <h2 class="section-title"><i class="fas fa-university"></i> Основные контакты</h2>
+            <h2 class="section-title">Основные контакты</h2>
             
-            <table class="contacts-table">
-                <thead>
-                    <tr>
-                        <th>Объект</th>
-                        <th>Ссылка</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>ВУЗ</strong><br>РУТ (МИИТ) - Российский Университет Транспорта</td>
-                        <td align="center"><a href="https://www.miit.ru" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Руководство</strong><br>Руководители образовательной организации</td>
-                        <td align="center"><a href="https://www.miit.ru/sveden/managers" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Навигатор</strong><br>Информация о структурных подразделениях</td>
-                        <td align="center"><a href="https://navigator-rut.ru" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Направление</strong><br>ИСТ - 09.03.02 "Информационные Системы и Технологии"</td>
-                        <td align="center"><a href="https://rut-miit.ru/page/173407" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Программа</strong><br>Технологии искусственного интеллекта в транспортных системах</td>
-                        <td align="center"><a href="https://imiit.ru/bachelor/ii-transport" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Институт</strong><br>ИУЦТ - Институт Управления и Цифровых Технологий</td>
-                        <td align="center"><a href="https://imiit.ru" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Учебный отдел</strong><br>Специалисты учебного отдела</td>
-                        <td align="center"><a href="https://www.miit.ru/depts/261/people" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Зам. декана</strong><br>Огородникова Анна Владимировна<br>1404-1</td>
-                        <td align="center"><a href="https://rut-miit.ru/people/1196378" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Старший инспектор</strong><br>Сидина Елена Игоревна<br>1404-1</td>
-                        <td align="center"><a href="https://www.miit.ru/people/39838" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Директор ИУЦТ</strong><br>Максимова Евгения Сергеевна<br>аудитория 1403-4</td>
-                        <td align="center"><a href="https://rut-miit.ru/people/42575" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Первый зам. директора</strong><br>Егоров Павел Александрович<br>аудитория 1115-3</td>
-                        <td align="center"><a href="https://www.miit.ru/people/30832" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ответственный за безопасность</strong><br>Наталевич Александр Георгиевич<br>??? аудитория</td>
-                        <td align="center"><a href="https://www.miit.ru/people/1591" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Зам. по молодежной политике</strong><br>Полякова Вера Константиновна<br>аудитория 1115-1</td>
-                        <td align="center"><a href="https://www.miit.ru/people/129245" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Зам. по методической работе</strong><br>Андрианова Наталья Александровна<br>аудитория 1419</td>
-                        <td align="center"><a href="https://www.miit.ru/people/35002" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Зам. по экономике</strong><br>Коровкина Ольга Игоревна<br>аудитория 1405-1</td>
-                        <td align="center"><a href="https://www.miit.ru/people/36801" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Зам. по науке</strong><br>Копылова Екатерина Витальевна<br>аудитория 1210</td>
-                        <td align="center"><a href="https://www.miit.ru/people/20622" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Выпускающая кафедра</strong><br>ЦТУТП - Цифровые технологии управления транспортными процессами</td>
-                        <td align="center"><a href="https://imiit.ru/kafedra/ctutp" class="contact-link">Перейти</a></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Руководитель кафедры</strong><br>Нутович Вероника Евгеньевна<br>1501</td>
-                        <td align="center"><a href="https://www.miit.ru/people/5665" class="contact-link">Перейти</a></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="contacts-container">
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">ВУЗ</div>
+                        <a href="https://www.miit.ru" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">РУТ (МИИТ) - Российский Университет Транспорта</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Руководство</div>
+                        <a href="https://www.miit.ru/sveden/managers" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Руководители образовательной организации</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Навигатор</div>
+                        <a href="https://navigator-rut.ru" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Информация о структурных подразделениях</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Направление</div>
+                        <a href="https://rut-miit.ru/page/173407" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">ИСТ - 09.03.02 "Информационные Системы и Технологии"</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Программа</div>
+                        <a href="https://imiit.ru/bachelor/ii-transport" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Технологии искусственного интеллекта в транспортных системах</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Институт</div>
+                        <a href="https://imiit.ru" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">ИУЦТ - Институт Управления и Цифровых Технологий</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Учебный отдел</div>
+                        <a href="https://www.miit.ru/depts/261/people" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Специалисты учебного отдела</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Зам. декана</div>
+                        <a href="https://rut-miit.ru/people/1196378" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Огородникова Анна Владимировна<br>1404-1</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Старший инспектор</div>
+                        <a href="https://www.miit.ru/people/39838" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Сидина Елена Игоревна<br>1404-1</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Директор ИУЦТ</div>
+                        <a href="https://rut-miit.ru/people/42575" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Максимова Евгения Сергеевна<br>аудитория 1403-4</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Первый зам. директора</div>
+                        <a href="https://www.miit.ru/people/30832" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Егоров Павел Александрович<br>аудитория 1115-3</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Ответственный за безопасность</div>
+                        <a href="https://www.miit.ru/people/1591" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Наталевич Александр Георгиевич<br>??? аудитория</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Зам. по молодежной политике</div>
+                        <a href="https://www.miit.ru/people/129245" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Полякова Вера Константиновна<br>аудитория 1115-1</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Зам. по методической работе</div>
+                        <a href="https://www.miit.ru/people/35002" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Андрианова Наталья Александровна<br>аудитория 1419</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Зам. по экономике</div>
+                        <a href="https://www.miit.ru/people/36801" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Коровкина Ольга Игоревна<br>аудитория 1405-1</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Зам. по науке</div>
+                        <a href="https://www.miit.ru/people/20622" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Копылова Екатерина Витальевна<br>аудитория 1210</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Выпускающая кафедра</div>
+                        <a href="https://imiit.ru/kafedra/ctutp" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">ЦТУТП - Цифровые технологии управления транспортными процессами</div>
+                </div>
+                
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <div class="contact-title">Руководитель кафедры</div>
+                        <a href="https://www.miit.ru/people/5665" class="contact-link">Перейти</a>
+                    </div>
+                    <div class="contact-details">Нутович Вероника Евгеньевна<br>1501</div>
+                </div>
+            </div>
         </div>
         
         <div class="section">
-            <h2 class="section-title"><i class="fas fa-info-circle"></i> Дополнительные службы</h2>
+            <h2 class="section-title">Дополнительные службы</h2>
             
-            <div class="contact-card">
-                <h3><i class="fas fa-shield-alt"></i> Военно-учетный стол</h3>
-                <div class="contact-info">
-                    <div class="info-item">
+            <div class="service-card">
+                <div class="service-header">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <div class="service-title">Военно-учетный стол</div>
+                </div>
+                <div class="service-info">
+                    <div class="service-item">
                         <i class="fas fa-globe"></i>
                         <span><strong>Сайт:</strong> <a href="https://hr-rut.ru/vusuk" class="contact-link">hr-rut.ru/vusuk</a></span>
                     </div>
-                    <div class="info-item">
+                    <div class="service-item">
                         <i class="fas fa-phone"></i>
-                        <span><strong>Телефон:</strong> +7 (495) 274-02-74 доб. 4015</span>
+                        <span><strong>Телефон:</strong> 
+                            <a href="tel:+74952740274" class="phone-btn">+7 (495) 274-02-74 доб. 4015</a>
+                        </span>
                     </div>
-                    <div class="info-item">
+                    <div class="service-item">
                         <i class="fas fa-envelope"></i>
-                        <span><strong>E-mail:</strong> vusuk@miit.ru</span>
+                        <span><strong>E-mail:</strong> 
+                            <a href="mailto:vusuk@miit.ru" class="email-btn">vusuk@miit.ru</a>
+                        </span>
                     </div>
-                    <div class="info-item">
+                    <div class="service-item">
                         <i class="fas fa-door-open"></i>
                         <span><strong>Кабинет:</strong> 1217</span>
                     </div>
-                    <div class="info-item">
+                    <div class="service-item">
                         <i class="fas fa-clock"></i>
                         <span><strong>Часы работы:</strong> с 8:00 до 20:00, с понедельника по пятницу</span>
                     </div>
                 </div>
             </div>
             
-            <div class="contact-card">
-                <h3><i class="fas fa-concierge-bell"></i> МФЦ РУТ (МИИТ)</h3>
-                <div class="contact-info">
-                    <div class="info-item">
+            <div class="service-card">
+                <div class="service-header">
+                    <i class="fas fa-concierge-bell service-icon"></i>
+                    <div class="service-title">МФЦ РУТ (МИИТ)</div>
+                </div>
+                <div class="service-info">
+                    <div class="service-item">
                         <i class="fas fa-phone"></i>
-                        <span><strong>Телефон:</strong> +7 915 242-20-47 доб. 45-79, +7 (495) 274-02-74 доб. 11-11</span>
+                        <span><strong>Телефон:</strong> 
+                            <a href="tel:+79152422047" class="phone-btn">+7 915 242-20-47 доб. 45-79</a>,
+                            <a href="tel:+74952740274" class="phone-btn">+7 (495) 274-02-74 доб. 11-11</a>
+                        </span>
                     </div>
-                    <div class="info-item">
+                    <div class="service-item">
                         <i class="fas fa-envelope"></i>
-                        <span><strong>E-mail:</strong> spravka@miit.ru</span>
+                        <span><strong>E-mail:</strong> 
+                            <a href="mailto:spravka@miit.ru" class="email-btn">spravka@miit.ru</a>
+                        </span>
                     </div>
-                    <div class="info-item">
+                    <div class="service-item">
                         <i class="fas fa-door-open"></i>
                         <span><strong>Кабинет:</strong> 1224 или 1226</span>
                     </div>
-                    <div class="info-item">
+                    <div class="service-item">
                         <i class="fas fa-clock"></i>
                         <span><strong>Часы работы:</strong> с 8:00 до 20:00, с понедельника по пятницу</span>
                     </div>
