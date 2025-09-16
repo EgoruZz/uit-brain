@@ -97,7 +97,7 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(230, 126, 34, 0.3);
+            border-bottom: 2px solid #e74c3c;
         }
         
         .group-title {
@@ -122,19 +122,22 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            background: rgba(44, 62, 80, 0.6);
             align-items: center;
         }
         
         .team:last-child {
-            border-bottom: none;
+            margin-bottom: 0;
         }
         
         .team-member {
             display: flex;
             align-items: center;
-            padding: 8px;
+            padding: 10px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             min-height: 44px;
@@ -208,6 +211,10 @@
             
             .group-title {
                 font-size: 1.1rem;
+            }
+            
+            .team {
+                padding: 10px;
             }
         }
     </style>
@@ -294,7 +301,7 @@
                         </div>
                     </li>
                     <li class="team">
-                        <div class="team-member absent">
+                        <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Макаров Михаил Алексеевич
                         </div>
                         <div class="team-member absent">
@@ -325,7 +332,7 @@
                             <i class="fas fa-user member-icon"></i> Титова Анастасия Олеговна
                         </div>
                         <div class="team-member">
-                            <i class="fas fa-user member-icon"></i> Хакимова Анна Юрьевна
+                            <i class="fas fa-user member-icon"></i> Хакимова Анна Юрьевna
                         </div>
                     </li>
                     <li class="team">
@@ -338,7 +345,7 @@
                     </li>
                     <li class="team">
                         <div class="team-member">
-                            <i class="fas fa-user member-icon"></i> Быков Артём Алексеевич
+                            <i class="fas fa-user member-icon"></i> Быков Артём Aлексеевич
                         </div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Кузнецов Егор Сергеевич
