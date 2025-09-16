@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Группы по Жизненному циклу ИТ-проекта</title>
+    <title>Жизненный цикл ИТ-проекта - Группы</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -14,8 +14,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
+            background: #2c3e50;
+            color: #ecf0f1;
             min-height: 100vh;
             padding: 20px;
             display: flex;
@@ -26,20 +26,20 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(44, 62, 80, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgba(230, 126, 34, 0.5);
         }
         
         .logo {
@@ -52,14 +52,13 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #4ecdc4;
+            color: #ffcc5f;
         }
         
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            color: #4ecdc4;
+            color: #ffcc5f;
         }
         
         .subtitle {
@@ -68,30 +67,7 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .stat-card {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 15px 20px;
-            text-align: center;
-            min-width: 150px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #4ecdc4;
-            margin-bottom: 5px;
+            color: #ffffff;
         }
         
         .groups-container {
@@ -101,17 +77,17 @@
         }
         
         .group-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(52, 73, 94, 0.8);
             border-radius: 15px;
             padding: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid #e74c3c;
         }
         
         .group-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(52, 73, 94, 0.9);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
@@ -121,21 +97,21 @@
             align-items: center;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid rgba(230, 126, 34, 0.3);
         }
         
         .group-title {
             font-size: 1.2rem;
             font-weight: 600;
-            color: #4ecdc4;
+            color: #ffcc5f;
         }
         
         .group-size {
-            background: rgba(78, 205, 196, 0.2);
-            color: #4ecdc4;
+            color: #ecf0f1;
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 0.9rem;
+            background: rgba(231, 76, 60, 0.2);
         }
         
         .member-list {
@@ -147,64 +123,36 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
+            justify-content: space-between;
         }
         
         .member:last-child {
             border-bottom: none;
         }
         
+        .member-info {
+            display: flex;
+            align-items: center;
+        }
+        
         .member-icon {
             margin-right: 10px;
-            color: #4ecdc4;
+            color: #ffcc5f;
         }
         
-        .absent {
-            color: #ff6b6b;
-            position: relative;
-        }
-        
-        .absent::after {
-            content: "❌";
+        .absent-mark {
+            color: #e74c3c;
             margin-left: 8px;
-        }
-        
-        .controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: rgba(78, 205, 196, 0.2);
-            border: none;
-            border-radius: 50px;
-            padding: 12px 25px;
-            color: #4ecdc4;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn:hover {
-            background: rgba(78, 205, 196, 0.3);
-            transform: translateY(-2px);
         }
         
         footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid rgba(230, 126, 34, 0.3);
             width: 100%;
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #bdc3c7;
         }
         
         /* Адаптивность для мобильных устройств */
@@ -221,14 +169,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .stats {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .stat-card {
-                width: 100%;
-                max-width: 250px;
+            .container {
+                padding: 20px;
             }
         }
         
@@ -248,11 +190,6 @@
             .group-card {
                 padding: 15px;
             }
-            
-            .btn {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
         }
     </style>
 </head>
@@ -260,26 +197,10 @@
     <div class="container">
         <header>
             <div class="logo">
-                <i class="fas fa-code-branch logo-icon"></i>
                 <h1>Жизненный цикл ИТ-проекта</h1>
             </div>
-            <p class="subtitle">Распределение студентов по группам для проектной работы по дисциплине "Жизненный цикл ИТ-проекта"</p>
+            <p class="subtitle">Распределение студентов по группам для проектных работы по дисциплине "Жизненный цикл ИТ-проекта"</p>
         </header>
-        
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">17</div>
-                <div class="stat-label">Всего групп</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">39</div>
-                <div class="stat-label">Всего студентов</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Отсутствуют</div>
-            </div>
-        </div>
         
         <div class="groups-container">
             <!-- Группа 1 -->
@@ -289,8 +210,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Кутейникова Надежда Михайловна</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Тихонова Анна Максимовна</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Кутейникова Надежда Михайловна
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Тихонова Анна Максимовна
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -301,9 +230,21 @@
                     <div class="group-size">3 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Суховерков Максим Вячеславович</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Дулькин Максим Иванович</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Чистов Евгений Евгеньевич</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Суховерков Максим Вячеславович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Дулькин Максим Иванович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Чистов Евгений Евгеньевич
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -314,8 +255,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Смирнов Илья Дмитриевич</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Клюев Александр Сергеевич</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Смирнов Илья Дмитриевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Клюев Александр Сергеевич
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -326,9 +275,21 @@
                     <div class="group-size">3 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Малиновкин Егор Алексеевич</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Шмельков Владимир Артемович</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Салехи Магди Хушанович</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Малиновкин Егор Алексеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Шмельков Владимир Артемович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Салехи Магди Хушанович
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -339,9 +300,21 @@
                     <div class="group-size">3 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Берсенев Дмитрий Алексеевич</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Быков Артём Алексеевич</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Блинов Данила Эдуардович</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Берсенев Дмитрий Алексеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Быков Артём Алексеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Блинов Данила Эдуардович
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -352,8 +325,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Мвэва Букатами</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Диах Алли Салехе</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Мвэва Букатами
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Диах Алли Салехе
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -364,8 +345,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Круз Эштевао Мавинга Лоуренсу</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Сергеев Егор Сергеевич</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Круз Эштевао Мавинга Лоуренсу
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Сергеев Егор Сергеевич
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -376,8 +365,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Исаков Эмир Бесланович</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Меркулов Александр Павлович</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Исаков Эмир Бесланович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Меркулов Александр Павлович
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -388,8 +385,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Притыченко Артём Михайлович</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Шарипов Владислав Рустамович</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Притыченко Артём Михайлович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Шарипов Владислав Рустамович
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -400,8 +405,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Половинкин Данила Владимирович</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Гаврилин Александр Сергеевич</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Половинкин Данила Владимирович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Гаврилин Александр Сергеевич
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -412,8 +425,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Титова Анастасия Олеговна</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Хакимова Анна Юрьевна</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Титова Анастасия Олеговна
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Хакимова Анна Юрьевна
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -424,8 +445,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Головин Егор Денисович</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Павлов Иван Александрович</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Головин Егор Денисович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Павлов Иван Александрович
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -436,8 +465,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Караман Антон Вадимович</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Кузнецов Егор Сергеевич</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Караман Антон Вадимович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Кузнецов Егор Сергеевич
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -448,8 +485,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Макаров Михаил Алексеевич</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Ленкова Таисия Михайловна</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Макаров Михаил Aлексеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Ленкова Таисия Михайловна
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -460,8 +505,16 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member"><i class="fas fa-user member-icon"></i> Реберг Герман Сергеевич</li>
-                    <li class="member"><i class="fas fa-user member-icon"></i> Григорьев Владислав Евгеньевич</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Реберг Герман Сергеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Григорьев Владислав Евгеньевич
+                        </div>
+                    </li>
                 </ul>
             </div>
             
@@ -472,9 +525,24 @@
                     <div class="group-size">3 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member absent"><i class="fas fa-user-slash member-icon"></i> Ерохин Роман Олегович</li>
-                    <li class="member absent"><i class="fas fa-user-slash member-icon"></i> Симонов Владислав Кириллович</li>
-                    <li class="member absent"><i class="fas fa-user-slash member-icon"></i> Корсакова Анастасия Кирилловна</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Ерохин Роман Олегович
+                        </div>
+                        <span class="absent-mark">❌</span>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Симонов Владислав Кириллович
+                        </div>
+                        <span class="absent-mark">❌</span>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Корсакова Анастасия Кирилловna
+                        </div>
+                        <span class="absent-mark">❌</span>
+                    </li>
                 </ul>
             </div>
             
@@ -485,41 +553,25 @@
                     <div class="group-size">2 человека</div>
                 </div>
                 <ul class="member-list">
-                    <li class="member absent"><i class="fas fa-user-slash member-icon"></i> Капитоненко Иван Игоревич</li>
-                    <li class="member absent"><i class="fas fa-user-slash member-icon"></i> Маоми Се Паярь</li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Капитоненко Иван Игоревич
+                        </div>
+                        <span class="absent-mark">❌</span>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Маоми Се Паярь
+                        </div>
+                        <span class="absent-mark">❌</span>
+                    </li>
                 </ul>
             </div>
         </div>
         
-        <div class="controls">
-            <a href="#" class="btn"><i class="fas fa-print"></i> Распечатать</a>
-            <a href="#" class="btn"><i class="fas fa-download"></i> Скачать список</a>
-            <a href="#" class="btn"><i class="fas fa-home"></i> На главную</a>
-        </div>
+        <footer>
+            <p>УИТ-111 © 2025</p>
+        </footer>
     </div>
-    
-    <footer>
-        <p>Российский университет транспорта (РУТ МИИТ) © 2023</p>
-        <p>Жизненный цикл ИТ-проекта - распределение по группам</p>
-    </footer>
-
-    <script>
-        // Добавляем интерактивность карточкам групп
-        document.querySelectorAll('.group-card').forEach(card => {
-            card.addEventListener('click', function() {
-                this.classList.toggle('active');
-            });
-        });
-        
-        // Имитация функционала кнопок
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const buttonText = this.textContent.trim();
-                alert(`Функция "${buttonText}" будет реализована в будущем.`);
-            });
-        });
-    </script>
 </body>
 </html>

@@ -14,32 +14,32 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: #fff;
+            background: #2c3e50;
+            color: #ecf0f1;
             min-height: 100vh;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
         }
         
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(44, 62, 80, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgba(230, 126, 34, 0.5);
         }
         
         .logo {
@@ -52,82 +52,31 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #fdbb2d;
+            color: #ffcc5f;
         }
         
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #ffcc5f;
         }
         
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
+            color: #ffffff;
         }
         
         .info-box {
-            background: rgba(253, 187, 45, 0.2);
-            border-left: 4px solid #fdbb2d;
+            background: rgba(255, 204, 95, 0.1);
+            border-left: 4px solid #ffcc5f;
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
-            font-size: 0.95rem;
-        }
-        
-        .controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 25px 0;
-            justify-content: center;
-        }
-        
-        .search-box {
-            position: relative;
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 12px 15px 12px 45px;
-            border-radius: 30px;
-            border: none;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            font-size: 1rem;
-        }
-        
-        .search-box i {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #fdbb2d;
-        }
-        
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .filter-btn {
-            padding: 10px 20px;
-            border-radius: 30px;
-            border: none;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .filter-btn:hover, .filter-btn.active {
-            background: rgba(253, 187, 45, 0.3);
+            color: #ecf0f1;
         }
         
         .materials-container {
@@ -138,25 +87,27 @@
         }
         
         .subject-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(52, 73, 94, 0.8);
             border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            padding: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #e74c3c;
         }
         
         .subject-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(52, 73, 94, 0.9);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .subject-title {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-bottom: 20px;
-            color: #fdbb2d;
+            color: #ffcc5f;
             text-align: center;
             padding-bottom: 10px;
-            border-bottom: 2px solid rgba(253, 187, 45, 0.3);
+            border-bottom: 2px solid rgba(255, 204, 95, 0.5);
         }
         
         .material-type {
@@ -165,89 +116,87 @@
         
         .type-title {
             font-size: 1.1rem;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-        
-        .type-title i {
-            color: #fdbb2d;
+            color: #ffcc5f;
         }
         
         .material-links {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
         
         .material-link {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 15px;
-            background: rgba(255, 255, 255, 0.08);
+            padding: 10px 12px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             text-decoration: none;
-            color: white;
+            color: #ecf0f1;
             transition: all 0.3s ease;
+            border-left: 3px solid #ffcc5f;
         }
         
         .material-link:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
         }
         
-        .material-link i {
-            color: #4d94ff;
+        .link-icon {
+            margin-right: 10px;
+            color: #ffcc5f;
+            min-width: 20px;
+        }
+        
+        .link-text {
+            flex: 1;
+        }
+        
+        .link-badge {
+            margin-left: 8px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        
+        .badge-lan {
+            background: rgba(74, 107, 173, 0.3);
+            color: #a5c9ff;
+        }
+        
+        .badge-pdf {
+            background: rgba(234, 67, 53, 0.3);
+            color: #ff8e85;
         }
         
         .no-materials {
             text-align: center;
-            padding: 15px;
+            padding: 12px;
             font-style: italic;
-            opacity: 0.7;
-        }
-        
-        .external-icon {
-            margin-left: auto;
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
-        
-        .lanbook-badge {
-            display: inline-block;
-            background: rgba(74, 107, 173, 0.3);
-            color: #a5c9ff;
-            font-size: 0.7rem;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-left: 5px;
-        }
-        
-        .pdf-badge {
-            display: inline-block;
-            background: rgba(234, 67, 53, 0.3);
-            color: #ff8e85;
-            font-size: 0.7rem;
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-left: 5px;
+            color: #bdc3c7;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
         }
         
         footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid rgba(230, 126, 34, 0.3);
             width: 100%;
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #bdc3c7;
         }
         
         /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .subtitle {
@@ -256,14 +205,6 @@
             
             .materials-container {
                 grid-template-columns: 1fr;
-            }
-            
-            .controls {
-                flex-direction: column;
-            }
-            
-            .search-box {
-                min-width: unset;
             }
             
             .container {
@@ -280,12 +221,16 @@
                 font-size: 2rem;
             }
             
+            .container {
+                padding: 15px;
+            }
+            
             .subject-card {
                 padding: 15px;
             }
             
             .subject-title {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -294,58 +239,19 @@
     <div class="container">
         <header>
             <div class="logo">
-                <i class="fas fa-book-open logo-icon"></i>
                 <h1>Электронные учебные материалы</h1>
             </div>
-            <p class="subtitle">Доступ к учебным ресурсам для студентов группы УИТ-111 по всем дисциплинам</p>
+            <p class="subtitle">Доступ к электронным учебным ресурсам (их называют нам преподаватели)</p>
         </header>
         
         <div class="info-box">
-            <p><i class="fas fa-info-circle"></i> <strong>Важная информация:</strong> Некоторые ссылки ведут на <a href="https://e.lanbook.com" style="color: #a5c9ff;">ЭБС Лань</a> - для доступа требуется регистрация как обучающегося РУТ (МИИТ). Ссылки на PDF-документы могут загружаться до 10-15 секунд.</p>
-        </div>
-        
-        <div class="controls">
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="searchInput" placeholder="Поиск по дисциплинам и материалам...">
-            </div>
-            
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">Все</button>
-                <button class="filter-btn" data-filter="lecture">Лекции</button>
-                <button class="filter-btn" data-filter="practice">Практика</button>
-                <button class="filter-btn" data-filter="lab">Лабораторные</button>
-            </div>
+            <p><i class="fas fa-info-circle"></i> <strong>Важная информация:</strong></p>
+            <br>
+            <p>• Некоторые ссылки ведут на <a href="https://e.lanbook.com" style="color: #a5c9ff;">ЭБС Лань</a> - для доступа требуется регистрация как обучающегося РУТ (МИИТ)</p>
+            <p>• Ссылки на PDF-документы могут загружаться до 10-15 секунд.</p>
         </div>
         
         <div class="materials-container">
-            <!-- Единая транспортная система -->
-            <div class="subject-card">
-                <h3 class="subject-title">Единая транспортная система</h3>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
-                    <div class="no-materials">Материалы отсутствуют</div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
-                    <div class="material-links">
-                        <a href="https://e.lanbook.com/book/193890" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>А.В. Буянкин "Автотранспортные средства"</span>
-                            <span class="lanbook-badge">Лань</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-flask"></i> Лабораторные</h4>
-                    <div class="no-materials">Материалы отсутствуют</div>
-                </div>
-            </div>
-            
             <!-- Физика -->
             <div class="subject-card">
                 <h3 class="subject-title">Физика</h3>
@@ -353,16 +259,14 @@
                 <div class="material-type">
                     <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
                     <div class="material-links">
-                        <a href="https://fita.sfedu.ru/pluginfile.php/9772/mod_folder/content/0/Лекции/Физика%2C%20учебники/Трофимова%20Т.И.%20Курс%20физики%20%282006%29." class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Трофимова Т.И. Курс физики</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                        <a href="https://fita.sfedu.ru/pluginfile.php/9772/mod_folder/content/0/Лекции/Физика%2C%20учебники/Трофимova%20Т.И.%20Курс%20физики%20%282006%29." class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Трофимова Т.И. Курс физики</span>
                         </a>
                         <a href="https://e.lanbook.com/book/142380" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Савельев И.В. Курс общей физики</span>
-                            <span class="lanbook-badge">Лань</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Савельев И.В. Курс общей физики</span>
+                            <span class="link-badge badge-lan">Лань</span>
                         </a>
                     </div>
                 </div>
@@ -371,22 +275,19 @@
                     <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
                     <div class="material-links">
                         <a href="https://miem.hse.ru/data/2012/04/10/1251363572/Trofimova_Zad_reschenia.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Трофимова Т.И. Сборник задач</span>
-                            <span class="pdf-badge">PDF</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Трофимова Т.И. Сборник задач</span>
+                            <span class="link-badge badge-pdf">PDF</span>
                         </a>
                         <a href="https://library.miit.ru/bookscatalog/upos/03-19701.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Кокин С.М. Алгоритм и рекомендации</span>
-                            <span class="pdf-badge">PDF</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Кокин С.М. Алгоритм и рекомендации</span>
+                            <span class="link-badge badge-pdf">PDF</span>
                         </a>
                         <a href="https://phti.tj/phti_tj/ozmun_ifm/Physics_books/volkenshtein_sbornik.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Волькинштейн В.С. Сборник задач</span>
-                            <span class="pdf-badge">PDF</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Волькинштейн В.С. Сборник задач</span>
+                            <span class="link-badge badge-pdf">PDF</span>
                         </a>
                     </div>
                 </div>
@@ -394,10 +295,9 @@
                 <div class="material-type">
                     <h4 class="type-title"><i class="fas fa-flask"></i> Лабораторные</h4>
                     <div class="material-links">
-                        <a href="https://github.com/EgoruZz/uit-brain/tree/main/Облако-Физики" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Облако материалов</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                        <a href="https://cloud.mail.ru/public/rMuy/3KX89Fkbv" class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Облако материалов</span>
                         </a>
                         <div class="no-materials">Конспекты, НТБ, Лаборатория</div>
                     </div>
@@ -412,16 +312,14 @@
                     <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
                     <div class="material-links">
                         <a href="https://mathprofi.com/uploads/files/1351_f_41_uchebnik-po-lineinoi-algebre-v.a.ilin-e.g.poznyak.pdf?key=d0124372d503affaaa7e4740b337e814" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Ильин Линейная алгебра</span>
-                            <span class="pdf-badge">PDF</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Ильин Линейная алгебра</span>
+                            <span class="link-badge badge-pdf">PDF</span>
                         </a>
                         <a href="https://e.lanbook.com/book/52" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Воеводин линейная алгебра</span>
-                            <span class="lanbook-badge">Лань</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Воеводин линейная алгебра</span>
+                            <span class="link-badge badge-lan">Лань</span>
                         </a>
                     </div>
                 </div>
@@ -430,9 +328,29 @@
                     <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
                     <div class="material-links">
                         <a href="https://studfile.net/preview/3604146/" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Проскуряков Задачник</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Проскуряков Задачник</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Единая транспортная система -->
+            <div class="subject-card">
+                <h3 class="subject-title">Единая транспортная система</h3>
+                
+                <div class="material-type">
+                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
+                    <div class="no-materials">Материалы отсутствуют</div>
+                </div>
+                
+                <div class="material-type">
+                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
+                    <div class="material-links">
+                        <a href="https://e.lanbook.com/book/193890" class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">А.В. Буянкин "Автотранспортные средства"</span>
+                            <span class="link-badge badge-lan">Лань</span>
                         </a>
                     </div>
                 </div>
@@ -456,17 +374,11 @@
                     <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
                     <div class="material-links">
                         <a href="https://chembaby.ru/wp-content/uploads/2013/11/Vysshaya_matematika_Minorskiy.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Минорский В.П. - Сборник задач</span>
-                            <span class="pdf-badge">PDF</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Минорский В.П. - Сборник задач</span>
+                            <span class="link-badge badge-pdf">PDF</span>
                         </a>
                     </div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-flask"></i> Лабораторные</h4>
-                    <div class="no-materials">Материалы отсутствуют</div>
                 </div>
             </div>
             
@@ -478,10 +390,9 @@
                     <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
                     <div class="material-links">
                         <a href="http://www.cosmic-rays.ru/books51/02/1968Fixtengolz1.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt"></i>
-                            <span>Фехтенгольц основы мат. анализа</span>
-                            <span class="pdf-badge">PDF</span>
-                            <i class="external-icon fas fa-external-link-alt"></i>
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Фехтенгольц основы мат. анализа</span>
+                            <span class="link-badge badge-pdf">PDF</span>
                         </a>
                     </div>
                 </div>
@@ -530,60 +441,8 @@
         </div>
         
         <footer>
-            <p>УИТ-111 © 2025 | Электронные учебные материалы</p>
-            <p>Для доступа к ресурсам ЭБС Лань требуется регистрация через РУТ (МИИТ)</p>
+            <p>УИТ-111 © 2025</p>
         </footer>
     </div>
-
-    <script>
-        // Функционал поиска и фильтрации
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('searchInput');
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const subjectCards = document.querySelectorAll('.subject-card');
-            
-            // Поиск
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                
-                subjectCards.forEach(card => {
-                    const title = card.querySelector('.subject-title').textContent.toLowerCase();
-                    const materials = card.textContent.toLowerCase();
-                    
-                    if (title.includes(searchTerm) || materials.includes(searchTerm)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-            
-            // Фильтрация
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const filter = this.getAttribute('data-filter');
-                    
-                    // Активный класс
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    subjectCards.forEach(card => {
-                        if (filter === 'all') {
-                            card.style.display = 'block';
-                        } else {
-                            const hasMaterials = card.querySelector(`.material-links a, .material-links .no-materials`);
-                            const materialType = card.querySelector(`.material-type:nth-child(${filter === 'lecture' ? 2 : filter === 'practice' ? 3 : 4})`);
-                            
-                            if (materialType && materialType.querySelector('.material-links a')) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

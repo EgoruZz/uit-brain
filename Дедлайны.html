@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проектная деятельность - Дедлайны</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #2c3e50;
+            color: #ecf0f1;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(44, 62, 80, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            margin: 20px 0;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(230, 126, 34, 0.5);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #ffcc5f;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffcc5f;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #ffffff;
+        }
+        
+        .deadline-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(230, 126, 34, 0.3);
+            color: #ffcc5f;
+        }
+        
+        .deadline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background: rgba(52, 73, 94, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .deadline-table th {
+            background: rgba(231, 76, 60, 0.3);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .deadline-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .deadline-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .deadline-table tr:hover {
+            background: rgba(52, 73, 94, 1);
+        }
+        
+        .subject {
+            font-weight: 600;
+            color: #ffcc5f;
+        }
+        
+        .countdown {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        
+        .urgent {
+            color: #e74c3c;
+            animation: pulse 1s infinite;
+        }
+        
+        .warning {
+            color: #f39c12;
+        }
+        
+        .normal {
+            color: #2ecc71;
+        }
+        
+        .completed {
+            opacity: 0.6;
+        }
+        
+        .completed .countdown {
+            color: #95a5a6;
+            text-decoration: line-through;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(230, 126, 34, 0.3);
+            width: 100%;
+            font-size: 0.9rem;
+            color: #bdc3c7;
+        }
+        
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+            
+            .deadline-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-icon {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .deadline-table th, 
+            .deadline-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-hourglass-half logo-icon"></i>
+                <h1>Проектная деятельность</h1>
+            </div>
+            <p class="subtitle">Дедлайны и обратные отсчеты по проектной деятельности</p>
+        </header>
+        
+        <div class="deadline-section">
+            <h2 class="section-title">Предстоящие дедлайны</h2>
+            <table class="deadline-table" id="active-deadlines">
+                <thead>
+                    <tr>
+                        <th width="50%">Дисциплина</th>
+                        <th width="50%">Осталось времени</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Данные будут заполнены JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="deadline-section">
+            <h2 class="section-title">Завершенные дедлайны</h2>
+            <table class="deadline-table" id="completed-deadlines">
+                <thead>
+                    <tr>
+                        <th width="50%">Дисциплина</th>
+                        <th width="50%">Истекшее время</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Данные будут заполнены JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <footer>
+        <p>УИТ-111 © 2025</p>
+    </footer>
+
+    <script>
+        // Данные о дедлайнах
+        const deadlines = [
+            { subject: "ОРГ, Презентация 1", date: "2025-09-18" },
+            { subject: "Программирование", date: "2025-09-19" },
+            { subject: "Жизненный цикл ИТ-проекта", date: "2025-09-22" },
+            { subject: "Программирование на Python, ЛР 1", date: "2025-09-24" },
+            { subject: "Программирование на Python, ЛР 2", date: "2025-10-01" }
+        ];
+        
+        // Функция для расчета оставшегося времени
+        function getTimeRemaining(endtime) {
+            const total = Date.parse(endtime) - Date.parse(new Date());
+            const seconds = Math.floor((total / 1000) % 60);
+            const minutes = Math.floor((total / 1000 / 60) % 60);
+            const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(total / (1000 * 60 * 60 * 24));
+            
+            return {
+                total,
+                days,
+                hours,
+                minutes,
+                seconds
+            };
+        }
+        
+        // Функция для обновления счетчиков
+        function updateCountdowns() {
+            const activeTable = document.getElementById('active-deadlines').getElementsByTagName('tbody')[0];
+            const completedTable = document.getElementById('completed-deadlines').getElementsByTagName('tbody')[0];
+            
+            // Очищаем таблицы
+            activeTable.innerHTML = '';
+            completedTable.innerHTML = '';
+            
+            // Сортируем дедлайны по дате (от ближайших к самым дальним)
+            deadlines.sort((a, b) => new Date(a.date) - new Date(b.date));
+            
+            // Заполняем таблицы
+            deadlines.forEach(deadline => {
+                const time = getTimeRemaining(deadline.date);
+                
+                // Форматируем время
+                const timeString = time.total <= 0 
+                    ? `0 д. 00:00:00` 
+                    : `${time.days} д. ${String(time.hours).padStart(2, '0')}:${String(time.minutes).padStart(2, '0')}:${String(time.seconds).padStart(2, '0')}`;
+                
+                // Определяем класс для цвета в зависимости от оставшегося времени
+                let timeClass = 'normal';
+                if (time.total <= 0) {
+                    timeClass = 'completed';
+                } else if (time.days < 1) {
+                    timeClass = 'urgent';
+                } else if (time.days < 3) {
+                    timeClass = 'warning';
+                }
+                
+                // Создаем строку таблицы
+                const row = document.createElement('tr');
+                if (timeClass === 'completed') {
+                    row.classList.add('completed');
+                }
+                
+                row.innerHTML = `
+                    <td class="subject">${deadline.subject}</td>
+                    <td class="countdown ${timeClass}">${timeString}</td>
+                `;
+                
+                // Добавляем в соответствующую таблицу
+                if (time.total <= 0) {
+                    completedTable.appendChild(row);
+                } else {
+                    activeTable.appendChild(row);
+                }
+            });
+            
+            // Если нет активных дедлайнов
+            if (activeTable.children.length === 0) {
+                activeTable.innerHTML = '<tr><td colspan="2" style="text-align: center;">Нет активных дедлайнов</td></tr>';
+            }
+            
+            // Если нет завершенных дедлайнов
+            if (completedTable.children.length === 0) {
+                completedTable.innerHTML = '<tr><td colspan="2" style="text-align: center;">Нет завершенных дедлайнов</td></tr>';
+            }
+        }
+        
+        // Обновляем счетчики каждую секунду
+        setInterval(updateCountdowns, 1000);
+        
+        // Инициализируем при загрузке
+        document.addEventListener('DOMContentLoaded', updateCountdowns);
+    </script>
+</body>
+</html>
