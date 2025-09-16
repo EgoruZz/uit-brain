@@ -72,8 +72,8 @@
         
         .groups-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
         }
         
         .group-card {
@@ -95,54 +95,64 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 1px solid rgba(230, 126, 34, 0.3);
         }
         
         .group-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: #ffcc5f;
         }
         
         .group-size {
             color: #ecf0f1;
-            padding: 5px 10px;
+            padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
             background: rgba(231, 76, 60, 0.2);
         }
         
-        .member-list {
+        .team-list {
             list-style: none;
         }
         
-        .member {
-            padding: 10px 0;
+        .team {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
             align-items: center;
-            justify-content: space-between;
         }
         
-        .member:last-child {
+        .team:last-child {
             border-bottom: none;
         }
         
-        .member-info {
+        .team-member {
             display: flex;
             align-items: center;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            min-height: 44px;
+        }
+        
+        .team-member.absent {
+            color: #e74c3c;
         }
         
         .member-icon {
             margin-right: 10px;
             color: #ffcc5f;
+            min-width: 20px;
         }
         
         .absent-mark {
-            color: #e74c3c;
             margin-left: 8px;
+            color: #e74c3c;
         }
         
         footer {
@@ -172,9 +182,14 @@
             .container {
                 padding: 20px;
             }
+            
+            .team {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 550px) {
             h1 {
                 font-size: 1.8rem;
             }
@@ -190,6 +205,10 @@
             .group-card {
                 padding: 15px;
             }
+            
+            .group-title {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -199,7 +218,7 @@
             <div class="logo">
                 <h1>Бригады по Физике</h1>
             </div>
-            <p class="subtitle">Бригады на лабораторные по Физике</p>
+            <p class="subtitle">Распределение студентов группы УИТ-111 на бригады для практических занятий по физике</p>
         </header>
         
         <div class="groups-container">
@@ -209,52 +228,79 @@
                     <div class="group-title">ПОДГРУППА 1</div>
                     <div class="group-size">9 бригад</div>
                 </div>
-                <ul class="member-list">
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Кутейникова Н.М. + Тихонова А.М.
+                <ul class="team-list">
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Кутейникова Надежда Михайловна
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Тихонова Анна Максимовна
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Суховерков М.В. + Дулькин М.И.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Суховерков Максим Вячеславович
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Дулькин Максим Иванович
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Смирнов И.Д. + Клюев А.С.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Смирнов Илья Дмитриевич
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Клюев Александр Сергеевич
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Малиновкин Е.А. + Салехи М.Х.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Малиновкин Егор Алексеевич
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Салехи Магди Хушанович
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Берсенев Д.А. + Ленкова Т.М.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Берсенев Дмитрий Алексеевич
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Ленкова Таисия Михайловна
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Мвэва Б. + Диах А.С.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Мвэва Букатами
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Диах Алли Салехе
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Круз Э.М.Л. + Сергеев Е.С.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Круз Эштевао Мавинга Лоуренсу
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Сергеев Егор Сергеевич
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Исаков Э.Б. + Меркулов А.П.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Исаков Эмир Бесланович
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Меркулов Александр Павлович
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Макаров М.А. + Корсакова А.К.
+                    <li class="team">
+                        <div class="team-member absent">
+                            <i class="fas fa-user member-icon"></i> Макаров Михаил Алексеевич
                         </div>
-                        <span class="absent-mark">❌</span>
+                        <div class="team-member absent">
+                            <i class="fas fa-user member-icon"></i> Корсакова Анастасия Кирилловна
+                            <span class="absent-mark">❌</span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -265,58 +311,90 @@
                     <div class="group-title">ПОДГРУППА 2</div>
                     <div class="group-size">10 бригад</div>
                 </div>
-                <ul class="member-list">
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Половинкин Д.В. + Гаврилин А.С.
+                <ul class="team-list">
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Половинкин Данила Владимирович
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Гаврилин Александр Сергеевич
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Титова А.О. + Хакимова А.Ю.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Титова Анастасия Олеговна
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Хакимова Анна Юрьевна
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Притыченко А.М. + Шарипов В.Р.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Притыченко Артём Михайлович
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Шарипов Владислав Рустамович
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Быков А.А. + Кузнецов Е.С.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Быков Артём Алексеевич
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Кузнецов Егор Сергеевич
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Головин Е.Д. + Павлов И.А.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Головин Егор Денисович
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Павлов Иван Александрович
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Реберг Г.С. + Григорьев В.Е.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Реберг Герман Сергеевич
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Григорьев Владислав Евгеньевич
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Шмельков В.А. + Блинов Д.Э.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Шмельков Владимир Артемович
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Блинов Данила Эдуардович
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Караман А.В. + Чистов Е.Е.
+                    <li class="team">
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Караман Антон Вадимович
+                        </div>
+                        <div class="team-member">
+                            <i class="fas fa-user member-icon"></i> Чистов Евгений Евгеньевич
                         </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Ерохин Р.О. + Симонов В.К.
+                    <li class="team">
+                        <div class="team-member absent">
+                            <i class="fas fa-user member-icon"></i> Ерохин Роман Олегович
+                            <span class="absent-mark">❌</span>
                         </div>
-                        <span class="absent-mark">❌</span>
+                        <div class="team-member absent">
+                            <i class="fas fa-user member-icon"></i> Симонов Владислав Кириллович
+                            <span class="absent-mark">❌</span>
+                        </div>
                     </li>
-                    <li class="member">
-                        <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Капитоненко И.И. + Маоми С.П.
+                    <li class="team">
+                        <div class="team-member absent">
+                            <i class="fas fa-user member-icon"></i> Капитоненко Иван Игоревич
+                            <span class="absent-mark">❌</span>
                         </div>
-                        <span class="absent-mark">❌</span>
+                        <div class="team-member absent">
+                            <i class="fas fa-user member-icon"></i> Маоми Се Паярь
+                            <span class="absent-mark">❌</span>
+                        </div>
                     </li>
                 </ul>
             </div>
