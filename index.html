@@ -263,25 +263,19 @@
     </footer>
 
     <script>
-        // Добавляем интерактивность кнопкам
+        // Убираем старый обработчик, так как ссылки теперь рабочие
         document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Анимация нажатия
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 200);
-                
-                // Здесь можно добавить переход по ссылкам
-                const buttonText = this.querySelector('i').parentElement.textContent.trim();
-                alert(`Переход к разделу: ${buttonText}`);
-                
-                // В реальном коде здесь будет переход по ссылке
-                // window.location.href = 'соответствующая-страница.html';
+            // Оставляем только анимацию при наведении, без alert
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = '';
             });
         });
     </script>
+</body>
+</html>
 </body>
 </html>
