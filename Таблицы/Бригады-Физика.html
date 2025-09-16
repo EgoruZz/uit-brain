@@ -14,8 +14,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: #fff;
+            background: linear-gradient(to bottom, #2c3e50, #34495e);
+            color: #ecf0f1;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -26,10 +26,9 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(44, 62, 80, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
@@ -39,7 +38,7 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgba(236, 240, 241, 0.2);
         }
         
         .logo {
@@ -52,13 +51,13 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #fdbb2d;
+            color: #3498db;
         }
         
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            color: #ecf0f1;
         }
         
         .subtitle {
@@ -67,6 +66,7 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
+            color: #bdc3c7;
         }
         
         .section {
@@ -81,10 +81,11 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            color: #ecf0f1;
         }
         
         .section-title i {
-            color: #fdbb2d;
+            color: #3498db;
         }
         
         .tables-container {
@@ -98,19 +99,20 @@
         .table-wrapper {
             flex: 1;
             min-width: 500px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            background: rgba(52, 73, 94, 0.7);
+            border-radius: 12px;
             padding: 20px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(127, 140, 141, 0.2);
         }
         
         .table-title {
             text-align: center;
             margin-bottom: 20px;
-            color: #fdbb2d;
+            color: #3498db;
             font-size: 1.5rem;
             padding-bottom: 10px;
-            border-bottom: 2px solid rgba(253, 187, 45, 0.5);
+            border-bottom: 2px solid rgba(52, 152, 219, 0.5);
         }
         
         .physics-table {
@@ -122,24 +124,25 @@
         .physics-table th, .physics-table td {
             padding: 12px 15px;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(127, 140, 141, 0.3);
         }
         
         .physics-table th {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(52, 152, 219, 0.2);
             font-weight: 600;
+            color: #ecf0f1;
         }
         
         .physics-table tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(44, 62, 80, 0.3);
         }
         
         .physics-table tr:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(52, 152, 219, 0.1);
         }
         
         .absent {
-            color: #ff6b6b;
+            color: #e74c3c;
             font-weight: 500;
         }
         
@@ -152,19 +155,30 @@
         }
         
         .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            background: rgba(52, 73, 94, 0.7);
+            border-radius: 12px;
             padding: 20px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             min-width: 200px;
+            border: 1px solid rgba(127, 140, 141, 0.2);
+        }
+        
+        .stat-card i {
+            color: #3498db;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
         }
         
         .stat-value {
             font-size: 2.5rem;
             font-weight: bold;
             margin: 10px 0;
-            color: #fdbb2d;
+            color: #3498db;
+        }
+        
+        .stat-card div:last-child {
+            color: #bdc3c7;
         }
         
         .legend {
@@ -179,23 +193,24 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(52, 73, 94, 0.7);
             padding: 10px 15px;
-            border-radius: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(127, 140, 141, 0.2);
         }
         
         .legend-icon {
-            color: #ff6b6b;
+            color: #e74c3c;
         }
         
         footer {
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid rgba(127, 140, 141, 0.3);
             width: 100%;
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #bdc3c7;
         }
         
         /* Адаптивность для мобильных устройств */
