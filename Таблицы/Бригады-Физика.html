@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бригады по Физике</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2d3436;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: 20px 0;
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        h1 {
+            color: #2d3436;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #636e72;
+            font-size: 1.2rem;
+        }
+        
+        .tables-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .table-wrapper {
+            flex: 1;
+            min-width: 500px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .table-title {
+            text-align: center;
+            margin-bottom: 15px;
+            color: #2d3436;
+            font-size: 1.4rem;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #74b9ff;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #74b9ff;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+        
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        
+        .absent {
+            color: #d63031;
+            font-weight: 500;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #636e72;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 1100px) {
+            .tables-container {
+                flex-direction: column;
+            }
+            
+            .table-wrapper {
+                min-width: unset;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            th, td {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .table-title {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            th, td {
+                padding: 6px 8px;
+                font-size: 0.85rem;
+            }
+            
+            .table-wrapper {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Бригады по Физике</h1>
+            <div class="subtitle">2023/2024 учебный год</div>
+        </header>
+        
+        <div class="tables-container">
+            <div class="table-wrapper">
+                <h2 class="table-title">ПОДГРУППА 1</h2>
+                <table>
+                    <tr>
+                        <th>№</th>
+                        <th>Студент 1</th>
+                        <th>Студент 2</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Кутейникова Надежда Михайловна</td>
+                        <td>Тихонова Анна Максимовна</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Суховерков Максим Вячеславович</td>
+                        <td>Дулькин Максим Иванович</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Смирнов Илья Дмитриевич</td>
+                        <td>Клюев Александр Сергеевич</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Малиновкин Егор Алексеевич</td>
+                        <td>Салехи Магди Хушанович</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Берсенев Дмитрий Алексеевич</td>
+                        <td>Ленкова Таисия Михайловна</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Мвэва Букатами</td>
+                        <td>Диах Алли Салехе</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Круз Эштевао Мавинга Лоуренсу</td>
+                        <td>Сергеев Егор Сергеевич</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Исаков Эмир Бесланович</td>
+                        <td>Меркулов Александр Павлович</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Макаров Михаил Алексеевич</td>
+                        <td>Корсакова Анастасия Кирилловна <span class="absent">❌</span></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="table-wrapper">
+                <h2 class="table-title">ПОДГРУППА 2</h2>
+                <table>
+                    <tr>
+                        <th>№</th>
+                        <th>Студент 1</th>
+                        <th>Студент 2</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Половинкин Данила Владимирович</td>
+                        <td>Гаврилин Александр Сергеевич</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Титова Анастасия Олеговна</td>
+                        <td>Хакимова Анна Юрьевна</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Притыченко Артём Михайлович</td>
+                        <td>Шарипов Владислав Рустамович</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Быков Артём Алексеевич</td>
+                        <td>Кузнецов Егор Сергеевич</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Головин Егор Денисович</td>
+                        <td>Павлов Иван Александрович</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Реберг Герман Сергеевич</td>
+                        <td>Григорьев Владислав Евгеньевич</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Шмельков Владимир Артемович</td>
+                        <td>Блинов Данила Эдуардович</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Караман Антон Вадимович</td>
+                        <td>Чистов Евгений Евгеньевич</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Ерохин Роман Олегович <span class="absent">❌</span></td>
+                        <td>Симонов Владислав Кириллович <span class="absent">❌</span></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Капитоненко Иван Игоревич <span class="absent">❌</span></td>
+                        <td>Маоми Се Паярь <span class="absent">❌</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Последнее обновление: декабрь 2023 г.</p>
+            <p>❌ - отсутствующие студенты</p>
+        </div>
+    </div>
+</body>
+</html>

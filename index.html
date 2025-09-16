@@ -1,38 +1,287 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>Наш проект</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши группы - РУТ МИИТ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .project-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-        .project-card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            margin: 20px 0;
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: #fdbb2d;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: #fdbb2d;
+        }
+        
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 15px;
+            padding: 25px 20px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn i {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #fdbb2d;
+        }
+        
+        .btn span {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .buttons-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                padding: 20px 15px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .logo-icon {
+                font-size: 2rem;
+            }
+            
+            .btn i {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Наши проекты</h1>
-    
-    <div class="project-list">
-        <div class="project-card">
-            <h3>Проект 1</h3>
-            <p>Описание проекта 1</p>
-            <a href="project1/README.md">Открыть →</a>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-graduation-cap logo-icon"></i>
+                <h1>Наши группы</h1>
+            </div>
+            <p class="subtitle">Информационный портал для студентов РУТ МИИТ. Все важные материалы и ресурсы в одном месте.</p>
+        </header>
+        
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-users"></i> Наши группы</h2>
+            <div class="buttons-grid">
+                <a href="#" class="btn">
+                    <i class="fas fa-landmark"></i>
+                    Основы Российской Государственности
+                    <span>Учебные материалы и ресурсы</span>
+                </a>
+                
+                <a href="#" class="btn">
+                    <i class="fas fa-project-diagram"></i>
+                    Проектная деятельность
+                    <span>Проекты и задания</span>
+                </a>
+                
+                <a href="#" class="btn">
+                    <i class="fas fa-atom"></i>
+                    Бригады по Физике
+                    <span>Распределение по группам</span>
+                </a>
+                
+                <a href="#" class="btn">
+                    <i class="fas fa-code-branch"></i>
+                    Жизненный цикл ИТ-проекта
+                    <span>Методологии и практики</span>
+                </a>
+            </div>
         </div>
-        <div class="project-card">
-            <h3>Проект 2</h3>
-            <p>Описание проекта 2</p>
-            <a href="project2/README.md">Открыть →</a>
+        
+        <div class="section">
+            <h2 class="section-title"><i class="fas fa-star"></i> Полезные данные</h2>
+            <div class="buttons-grid">
+                <a href="#" class="btn">
+                    <i class="fas fa-hourglass-half"></i>
+                    Дедлайны
+                    <span>Важные сроки сдачи</span>
+                </a>
+                
+                <a href="#" class="btn">
+                    <i class="fas fa-book"></i>
+                    Учебники
+                    <span>Электронные материалы</span>
+                </a>
+                
+                <a href="#" class="btn">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Стипендии
+                    <span>Передача реквизитов в деканат</span>
+                </a>
+                
+                <a href="#" class="btn">
+                    <i class="fas fa-address-card"></i>
+                    Контакты РУТ МИИТ
+                    <span>Важные контакты</span>
+                </a>
+            </div>
         </div>
     </div>
     
-    <div style="margin-top: 30px;">
-        <a href="deadlines.html">📅 Посмотреть дедлайны</a>
-    </div>
+    <footer>
+        <p>УИТ-111 © 2025</p>
+        <p>Сайт для студентов и преподавателей</p>
+    </footer>
 
-    <div style="margin-top: 30px;">
-        <a href="Группы-ОРГ.md">📅 Посмотреть дедлайны</a>
-    </div>
-    <div style="margin-top: 30px;">
-        <a href="README.md">📅 Посмотреть дедлайны</a>
-    </div>
+    <script>
+        // Добавляем интерактивность кнопкам
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Анимация нажатия
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+                
+                // Здесь можно добавить переход по ссылкам
+                const buttonText = this.querySelector('i').parentElement.textContent.trim();
+                alert(`Переход к разделу: ${buttonText}`);
+                
+                // В реальном коде здесь будет переход по ссылке
+                // window.location.href = 'соответствующая-страница.html';
+            });
+        });
+    </script>
 </body>
 </html>
