@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Генератор иконки УИТ-111</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 2px solid #333;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .size-buttons {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Генератор иконки УИТ-111</h2>
+    
+    <div class="size-buttons">
+        <button onclick="generateIcon(192)">192×192</button>
+        <button onclick="generateIcon(512)">512×512</button>
+        <button onclick="generateIcon(180)">180×180 (iOS)</button>
+    </div>
+    
+    <canvas id="iconCanvas" width="512" height="512"></canvas>
+    
+    <button onclick="downloadIcon()">Скачать иконку</button>
+
+    <script>
+        const canvas = document.getElementById('iconCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        function generateIcon(size) {
+            canvas.width = size;
+            canvas.height = size;
+            
+            // Фон
+            ctx.fillStyle = '#2c3e50';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Круг
+            ctx.fillStyle = '#3498db';
+            ctx.beginPath();
+            ctx.arc(size/2, size/2, size/2 - size/10, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Текст
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size/6}px Arial`;
+            ctx.textAlign = 'center';
+            
+            if (size >= 300) {
+                ctx.fillText('УИТ', size/2, size/2 - size/10);
+                ctx.fillText('111', size/2, size/2 + size/10);
+            } else {
+                ctx.fillText('УИТ-111', size/2, size/2);
+            }
+            
+            // Логотип
+            ctx.font = `${size/4}px Arial`;
+            if (size >= 200) {
+                ctx.fillText('🚀', size/2, size/2 + size/15);
+            }
+        }
+        
+        function downloadIcon() {
+            const link = document.createElement('a');
+            link.download = `icon-${canvas.width}x${canvas.height}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+        
+        // Генерируем иконку по умолчанию при загрузке
+        generateIcon(512);
+    </script>
+</body>
+</html>
