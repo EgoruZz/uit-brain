@@ -125,11 +125,11 @@
         .countdown {
             font-family: 'Courier New', monospace;
             font-weight: bold;
-            font-size: 1.3rem;
-            padding: 10px 15px;
+            font-size: 1.1rem;
+            padding: 8px 12px;
             border-radius: 8px;
             display: inline-block;
-            min-width: 200px;
+            min-width: 180px;
             text-align: center;
             background: rgba(0, 0, 0, 0.2);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -194,9 +194,9 @@
             }
             
             .countdown {
-                font-size: 1.1rem;
-                min-width: 160px;
-                padding: 8px 12px;
+                font-size: 1rem;
+                min-width: 150px;
+                padding: 6px 10px;
             }
         }
         
@@ -219,9 +219,9 @@
             }
             
             .countdown {
-                font-size: 1rem;
-                min-width: 140px;
-                padding: 6px 10px;
+                font-size: 0.9rem;
+                min-width: 130px;
+                padding: 5px 8px;
             }
         }
     </style>
@@ -280,48 +280,98 @@
             return date;
         }
         
-        // Функция для генерации повторяющихся дедлайнов
-        function generateRecurringDeadlines() {
+        // Функция для генерации дедлайнов
+        function generateDeadlines() {
             const deadlines = [];
             
-            // ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-18)
-            for (let i = 1; i <= 10; i++) {
-                const date = new Date(2025, 8, 18 + (i-1)*14); // 8 = сентябрь (0-indexed)
-                deadlines.push({
-                    subject: `ОРГ, Презентация ${i}`,
-                    date: addTimeToDate(date.toISOString().split('T')[0], '11:25')
-                });
-            }
+            // ОРГ, Презентация 1 - 2025-09-18 в 10:05
+            deadlines.push({
+                subject: "ОРГ, Презентация 1",
+                date: addTimeToDate("2025-09-18", "10:05")
+            });
             
-            // Программирование на Python, ЛР (каждую неделю в 13:00, начиная с 2025-09-17)
-            for (let i = 1; i <= 15; i++) {
-                const date = new Date(2025, 8, 17 + (i-1)*7); // 8 = сентябрь (0-indexed)
-                deadlines.push({
-                    subject: `Программирование на Python, ЛР ${i}`,
-                    date: addTimeToDate(date.toISOString().split('T')[0], '13:00')
-                });
-            }
+            // Программирование, ЛР 1 - 2025-09-19 в 11:40
+            deadlines.push({
+                subject: "Программирование, ЛР 1",
+                date: addTimeToDate("2025-09-19", "11:40")
+            });
             
-            // Программирование, ЛР (каждую неделю в 13:00, начиная с 2025-09-19)
-            for (let i = 1; i <= 15; i++) {
-                const date = new Date(2025, 8, 19 + (i-1)*7); // 8 = сентябрь (0-indexed)
-                deadlines.push({
-                    subject: `Программирование, ЛР ${i}`,
-                    date: addTimeToDate(date.toISOString().split('T')[0], '13:00')
-                });
-            }
+            // Программирование на Python, ЛР 1 и ЛР 2 - 2025-09-24 в 11:40
+            deadlines.push({
+                subject: "Программирование на Python, ЛР 1",
+                date: addTimeToDate("2025-09-24", "11:40")
+            });
             
-            // Добавляем специальные дедлайны с указанным временем
+            deadlines.push({
+                subject: "Программирование на Python, ЛР 2",
+                date: addTimeToDate("2025-09-24", "11:40")
+            });
+            
+            // Программирование на Python, ЛР 3 - 2025-10-01 в 11:40
+            deadlines.push({
+                subject: "Программирование на Python, ЛР 3",
+                date: addTimeToDate("2025-10-01", "11:40")
+            });
+            
+            // Жизненный цикл ИТ-проекта - 2025-09-22 в 15:20
             deadlines.push({
                 subject: "Жизненный цикл ИТ-проекта",
                 date: addTimeToDate("2025-09-22", "15:20")
             });
             
+            // Генерация будущих дедлайнов
+            const today = new Date();
+            
+            // ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-18)
+            const orgStartDate = new Date(2025, 8, 18); // 8 = сентябрь (0-indexed)
+            for (let i = 2; i <= 10; i++) {
+                const date = new Date(orgStartDate);
+                date.setDate(orgStartDate.getDate() + (i-1)*14);
+                
+                // Добавляем только будущие дедлайны
+                if (date > today) {
+                    deadlines.push({
+                        subject: `ОРГ, Презентация ${i}`,
+                        date: addTimeToDate(date.toISOString().split('T')[0], '11:25')
+                    });
+                }
+            }
+            
+            // Программирование на Python, ЛР (каждую неделю в 13:00, начиная с 2025-09-17)
+            const pythonStartDate = new Date(2025, 8, 17); // 8 = сентябрь (0-indexed)
+            for (let i = 4; i <= 15; i++) {
+                const date = new Date(pythonStartDate);
+                date.setDate(pythonStartDate.getDate() + (i-1)*7);
+                
+                // Добавляем только будущие дедлайны
+                if (date > today) {
+                    deadlines.push({
+                        subject: `Программирование на Python, ЛР ${i}`,
+                        date: addTimeToDate(date.toISOString().split('T')[0], '13:00')
+                    });
+                }
+            }
+            
+            // Программирование, ЛР (каждую неделю в 13:00, начиная с 2025-09-19)
+            const programmingStartDate = new Date(2025, 8, 19); // 8 = сентябрь (0-indexed)
+            for (let i = 2; i <= 15; i++) {
+                const date = new Date(programmingStartDate);
+                date.setDate(programmingStartDate.getDate() + (i-1)*7);
+                
+                // Добавляем только будущие дедлайны
+                if (date > today) {
+                    deadlines.push({
+                        subject: `Программирование, ЛР ${i}`,
+                        date: addTimeToDate(date.toISOString().split('T')[0], '13:00')
+                    });
+                }
+            }
+            
             return deadlines;
         }
         
         // Получаем все дедлайны
-        const allDeadlines = generateRecurringDeadlines();
+        const allDeadlines = generateDeadlines();
         
         // Функция для расчета оставшегося времени
         function getTimeRemaining(endtime) {
