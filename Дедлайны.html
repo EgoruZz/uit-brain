@@ -281,7 +281,7 @@
     </div>
     
     <footer>
-        <p>УИТ-111 © 2026</p>
+        <p>УИТ-111 © 2025</p>
     </footer>
 
     <script>
@@ -299,54 +299,39 @@
             const now = new Date();
             
             // ОРГ, Презентация 1 - 2025-09-18 в 10:05
-            const org1Date = addTimeToDate("2025-09-18", "10:05");
-            if (org1Date <= now) {
-                deadlines.push({
-                    subject: "ОРГ, Презентация 1",
-                    date: org1Date
-                });
-            }
+            deadlines.push({
+                subject: "ОРГ, Презентация 1",
+                date: addTimeToDate("2025-09-18", "10:05")
+            });
             
             // Программирование, ЛР 1 - 2025-09-19 в 11:40
-            const programming1Date = addTimeToDate("2025-09-19", "11:40");
-            if (programming1Date <= now) {
-                deadlines.push({
-                    subject: "Программирование, ЛР 1",
-                    date: programming1Date
-                });
-            }
+            deadlines.push({
+                subject: "Программирование, ЛР 1",
+                date: addTimeToDate("2025-09-19", "11:40")
+            });
             
             // Программирование на Python, ЛР 1 и ЛР 2 - 2025-09-24 в 11:40
-            const python1Date = addTimeToDate("2025-09-24", "11:40");
-            if (python1Date <= now) {
-                deadlines.push({
-                    subject: "Программирование на Python, ЛР 1",
-                    date: python1Date
-                });
-                
-                deadlines.push({
-                    subject: "Программирование на Python, ЛР 2",
-                    date: python1Date
-                });
-            }
+            deadlines.push({
+                subject: "Программирование на Python, ЛР 1",
+                date: addTimeToDate("2025-09-24", "11:40")
+            });
+            
+            deadlines.push({
+                subject: "Программирование на Python, ЛР 2",
+                date: addTimeToDate("2025-09-24", "11:40")
+            });
             
             // Программирование на Python, ЛР 3 - 2025-10-01 в 11:40
-            const python3Date = addTimeToDate("2025-10-01", "11:40");
-            if (python3Date <= now) {
-                deadlines.push({
-                    subject: "Программирование на Python, ЛР 3",
-                    date: python3Date
-                });
-            }
+            deadlines.push({
+                subject: "Программирование на Python, ЛР 3",
+                date: addTimeToDate("2025-10-01", "11:40")
+            });
             
             // Жизненный цикл ИТ-проекта - 2025-09-22 в 15:20
-            const projectDate = addTimeToDate("2025-09-22", "15:20");
-            if (projectDate <= now) {
-                deadlines.push({
-                    subject: "Жизненный цикл ИТ-проекта",
-                    date: projectDate
-                });
-            }
+            deadlines.push({
+                subject: "Жизненный цикл ИТ-проекта",
+                date: addTimeToDate("2025-09-22", "15:20")
+            });
             
             // Генерация будущих дедлайнов (появляются только после наступления времени предыдущего)
             
@@ -362,7 +347,7 @@
                 prevDate.setDate(orgStartDate.getDate() + (i-2)*14);
                 prevDate.setHours(11, 25, 0, 0);
                 
-                if (prevDate <= now && date > now) {
+                if (prevDate <= now) {
                     deadlines.push({
                         subject: `ОРГ, Презентация ${i}`,
                         date: date
@@ -382,7 +367,7 @@
                 prevDate.setDate(pythonStartDate.getDate() + (i-2)*7);
                 prevDate.setHours(13, 0, 0, 0);
                 
-                if (prevDate <= now && date > now) {
+                if (prevDate <= now) {
                     deadlines.push({
                         subject: `Программирование на Python, ЛР ${i}`,
                         date: date
@@ -402,7 +387,7 @@
                 prevDate.setDate(programmingStartDate.getDate() + (i-2)*7);
                 prevDate.setHours(13, 0, 0, 0);
                 
-                if (prevDate <= now && date > now) {
+                if (prevDate <= now) {
                     deadlines.push({
                         subject: `Программирование, ЛР ${i}`,
                         date: date
