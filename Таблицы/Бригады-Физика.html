@@ -128,10 +128,25 @@
             border-radius: 10px;
             background: rgba(44, 62, 80, 0.6);
             align-items: center;
+            position: relative;
         }
         
         .team:last-child {
             margin-bottom: 0;
+        }
+        
+        .team-number {
+            position: absolute;
+            top: -12px;
+            left: 15px;
+            background: #e74c3c;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            min-width: 30px;
+            text-align: center;
         }
         
         .team-member {
@@ -190,6 +205,12 @@
                 grid-template-columns: 1fr;
                 gap: 8px;
             }
+            
+            .team-number {
+                left: 10px;
+                font-size: 0.8rem;
+                padding: 2px 8px;
+            }
         }
         
         @media (max-width: 550px) {
@@ -214,7 +235,12 @@
             }
             
             .team {
-                padding: 10px;
+                padding: 12px 10px 10px 10px;
+            }
+            
+            .team-number {
+                top: -10px;
+                left: 8px;
             }
         }
     </style>
@@ -237,6 +263,7 @@
                 </div>
                 <ul class="team-list">
                     <li class="team">
+                        <div class="team-number">1</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Кутейникова Надежда Михайловна
                         </div>
@@ -245,6 +272,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">2</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Суховерков Максим Вячеславович
                         </div>
@@ -253,6 +281,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">3</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Смирнов Илья Дмитриевич
                         </div>
@@ -261,6 +290,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">4</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Малиновкин Егор Алексеевич
                         </div>
@@ -269,14 +299,16 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">5</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Берсенев Дмитрий Алексеевич
                         </div>
                         <div class="team-member">
-                            <i class="fas fa-user member-icon"></i> Ленкова Таисия Михайловна
+                            <i class="fas fa-user member-icon"></i> Ленкова Таисия Михайловna
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">6</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Мвэва Букатами
                         </div>
@@ -285,6 +317,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">7</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Круз Эштевао Мавинга Лоуренсу
                         </div>
@@ -293,6 +326,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">8</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Исаков Эмир Бесланович
                         </div>
@@ -301,6 +335,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">9</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Макаров Михаил Алексеевич
                         </div>
@@ -320,6 +355,7 @@
                 </div>
                 <ul class="team-list">
                     <li class="team">
+                        <div class="team-number">10</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Половинкин Данила Владимирович
                         </div>
@@ -328,14 +364,16 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">11</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Титова Анастасия Олеговна
                         </div>
                         <div class="team-member">
-                            <i class="fas fa-user member-icon"></i> Хакимова Анна Юрьевna
+                            <i class="fas fa-user member-icon"></i> Хакимова Анна Юрьевна
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">12</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Притыченко Артём Михайлович
                         </div>
@@ -344,6 +382,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">13</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Быков Артём Aлексеевич
                         </div>
@@ -352,6 +391,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">14</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Головин Егор Денисович
                         </div>
@@ -360,6 +400,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">15</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Реберг Герман Сергеевич
                         </div>
@@ -368,6 +409,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">16</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Шмельков Владимир Артемович
                         </div>
@@ -376,6 +418,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">17</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Караман Антон Вадимович
                         </div>
@@ -384,6 +427,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">18</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Ерохин Роман Олегович
                             <span class="absent-mark">❌</span>
@@ -394,6 +438,7 @@
                         </div>
                     </li>
                     <li class="team">
+                        <div class="team-number">19</div>
                         <div class="team-member">
                             <i class="fas fa-user member-icon"></i> Капитоненко Иван Игоревич
                             <span class="absent-mark">❌</span>
