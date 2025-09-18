@@ -129,8 +129,8 @@
         }
         
         .deadline-date {
-            font-size: 1.1rem;
-            color: #ffffff;
+            font-size: 1rem;
+            color: #bdc3c7;
             margin-top: 8px;
         }
         
@@ -156,7 +156,7 @@
         .warning {
             color: #f39c12;
             background: rgba(243, 156, 18, 0.2);
-            border: 2px solid rgba(243, 156, 18, 0.5);
+            border: 2px solid rgba(243, 156, 18, 极速5);
         }
         
         .normal {
@@ -228,7 +228,7 @@
             }
             
             .deadline-date {
-                font-size: 1.1rem;
+                font-size: 1.05rem;
                 text-align: center;
             }
             
@@ -268,7 +268,7 @@
             }
             
             .deadline-date {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             
             .countdown {
@@ -311,6 +311,7 @@
     <div class="container">
         <header>
             <div class="logo">
+                <i class="fas fa-hourglass-half logo-icon"></i>
                 <h1>Проектная деятельность</h1>
             </div>
             <p class="subtitle">Дедлайны и обратные отсчеты по практическим и лабораторным занятиям</p>
@@ -401,11 +402,11 @@
             // Генерация будущих дедлайнов (появляются только после наступления времени предыдущего)
             
             // ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-18)
-            const orgStartDate = new Date(2025, 8, 18); // 8 = сентябрь (0-indexed)
+            const orgStartDate = addTimeToDate("2025-09-18", "10:05");
             for (let i = 2; i <= 10; i++) {
                 const date = new Date(orgStartDate);
                 date.setDate(orgStartDate.getDate() + (i-1)*14);
-                date.setHours(11, 25, 0, 0);
+                date.setHours(11, 25, 0, 0); // Всегда в 11:25 для следующих
                 
                 // Добавляем только если предыдущий дедлайн уже прошел
                 const prevDate = new Date(orgStartDate);
@@ -420,16 +421,16 @@
                 }
             }
             
-            // Программирование на Python, ЛР (каждую неделю в 13:00, начиная с 2025-09-17)
-            const pythonStartDate = new Date(2025, 8, 17); // 8 = сентябрь (0-indexed)
+            // Программирование на Python, ЛР (каждую неделю в 13:00, начиная с 2025-09-24)
+            const pythonStartDate = addTimeToDate("2025-09-24", "11:40");
             for (let i = 4; i <= 15; i++) {
                 const date = new Date(pythonStartDate);
-                date.setDate(pythonStartDate.getDate() + (i-1)*7);
-                date.setHours(13, 0, 0, 0);
+                date.setDate(pythonStartDate.getDate() + (i-3)*7);
+                date.setHours(13, 0, 0, 0); // Всегда в 13:00 для следующих
                 
                 // Добавляем только если предыдущий дедлайн уже прошел
                 const prevDate = new Date(pythonStartDate);
-                prevDate.setDate(pythonStartDate.getDate() + (i-2)*7);
+                prevDate.setDate(pythonStartDate.getDate() + (i-4)*7);
                 prevDate.setHours(13, 0, 0, 0);
                 
                 if (prevDate <= now) {
@@ -441,11 +442,11 @@
             }
             
             // Программирование, ЛР (каждую неделю в 13:00, начиная с 2025-09-19)
-            const programmingStartDate = new Date(2025, 8, 19); // 8 = сентябрь (0-indexed)
+            const programmingStartDate = addTimeToDate("2025-09-19", "11:40");
             for (let i = 2; i <= 15; i++) {
                 const date = new Date(programmingStartDate);
                 date.setDate(programmingStartDate.getDate() + (i-1)*7);
-                date.setHours(13, 0, 0, 0);
+                date.setHours(13, 0, 0, 0); // Всегда в 13:00 для следующих
                 
                 // Добавляем только если предыдущий дедлайн уже прошел
                 const prevDate = new Date(programmingStartDate);
@@ -483,7 +484,7 @@
             };
         }
         
-        // Функция для форматирования дата
+        // Функция для форматирования даты
         function formatDate(date) {
             return new Date(date).toLocaleString('ru-RU', {
                 day: '2-digit',
