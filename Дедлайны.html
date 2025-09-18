@@ -432,7 +432,7 @@
                     });
                 }
             }
-            
+
             // 3. ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-04)
             const orgStartDate = addTimeToDate("2025-09-04", "11:25");
             for (let i = 1; i <= 10; i++) {
@@ -445,6 +445,24 @@
                 if (publishDate <= now) {
                     deadlines.push({
                         subject: `ОРГ, Презентация ${i}`,
+                        date: deadlineDate,
+                        publishDate: publishDate
+                    });
+                }
+            }
+
+            // 4. Жизненный цикл ИТ-проекта, ПР (каждые 2 недели в 16:40, начиная с 2025-09-15)
+            const itStartDate = addTimeToDate("2025-09-15", "16:40");
+            for (let i = 1; i <= 10; i++) {
+                const publishDate = new Date(itStartDate);
+                publishDate.setDate(itStartDate.getDate() + (i-1)*14);
+                
+                const deadlineDate = new Date(publishDate);
+                deadlineDate.setDate(publishDate.getDate() + 7); // 1 неделя срок
+                
+                if (publishDate <= now) {
+                    deadlines.push({
+                        subject: `Жизненный цикл ИТ-проекта, ПР ${i}`,
                         date: deadlineDate,
                         publishDate: publishDate
                     });
