@@ -166,14 +166,21 @@
         }
         
         .completed {
-            opacity: 0.6;
+            opacity: 0.8;
         }
         
         .completed .countdown {
-            color: #95a5a6;
-            text-decoration: line-through;
-            background: rgba(149, 165, 166, 0.15);
-            border: 2px solid rgba(149, 165, 166, 0.4);
+            color: #ffffff;
+            background: rgba(149, 165, 166, 0.3);
+            border: 2px solid rgba(149, 165, 166, 0.5);
+        }
+        
+        .completed .subject {
+            color: #bdc3c7;
+        }
+        
+        .completed .deadline-date {
+            color: #bdc3c7;
         }
         
         footer {
@@ -243,6 +250,16 @@
                 font-size: 1.6rem;
                 text-align: center;
             }
+            
+            /* Специальные стили для завершенных дедлайнов на мобильных */
+            .completed .subject-container {
+                flex-direction: column;
+            }
+            
+            .completed .countdown {
+                min-width: 200px;
+                font-size: 1.2rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -284,6 +301,12 @@
             footer {
                 font-size: 0.95rem;
             }
+            
+            .completed .countdown {
+                min-width: 180px;
+                font-size: 1.1rem;
+                padding: 10px 12px;
+            }
         }
 
         @media (max-width: 360px) {
@@ -304,6 +327,12 @@
             .section-title {
                 font-size: 1.4rem;
             }
+            
+            .completed .countdown {
+                min-width: 160px;
+                font-size: 1rem;
+                padding: 8px 10px;
+            }
         }
     </style>
 </head>
@@ -311,9 +340,10 @@
     <div class="container">
         <header>
             <div class="logo">
-                <h1>Проектная деятельность</h1>
+                <i class="fas fa-hourglass-half logo-icon"></i>
+                <h1>Отслеживание дат</h1>
             </div>
-            <p class="subtitle">Дедлайны и обратные отсчеты по практическим и лабораторным занятиям</p>
+            <p class="subtitle">Дедлайны и обратные отсчеты по практическим и лабораторным работам</p>
         </header>
         
         <div class="deadline-section">
@@ -363,101 +393,46 @@
             const deadlines = [];
             const now = new Date();
             
-            // ОРГ, Презентация 1 - 2025-09-18 в 10:05
-            deadlines.push({
-                subject: "ОРГ, Презентация 1",
-                date: addTimeToDate("2025-09-18", "10:05")
-            });
+            // Генерация дедлайнов согласно новым требованиям
             
-            // Программирование, ЛР 1 - 2025-09-19 в 11:40
-            deadlines.push({
-                subject: "Программирование, ЛР 1",
-                date: addTimeToDate("2025-09-19", "11:40")
-            });
-            
-            // Программирование на Python, ЛР 1 и ЛР 2 - 2025-09-24 в 11:40
-            deadlines.push({
-                subject: "Программирование на Python, ЛР 1",
-                date: addTimeToDate("2025-09-24", "11:40")
-            });
-            
-            deadlines.push({
-                subject: "Программирование на Python, ЛР 2",
-                date: addTimeToDate("2025-09-24", "11:40")
-            });
-            
-            // Программирование на Python, ЛР 3 - 2025-10-01 в 11:40
-            deadlines.push({
-                subject: "Программирование на Python, ЛР 3",
-                date: addTimeToDate("2025-10-01", "11:40")
-            });
-            
-            // Жизненный цикл ИТ-проекта - 2025-09-22 в 15:20
-            deadlines.push({
-                subject: "Жизненный цикл ИТ-проекта",
-                date: addTimeToDate("2025-09-22", "15:20")
-            });
-            
-            // Генерация будущих дедлайнов (появляются только после наступления времени предыдущего)
-            
-            // ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-18)
-            const orgStartDate = addTimeToDate("2025-09-18", "10:05");
-            for (let i = 2; i <= 10; i++) {
-                const date = new Date(orgStartDate);
-                date.setDate(orgStartDate.getDate() + (i-1)*14);
-                date.setHours(11, 25, 0, 0); // Всегда в 11:25 для следующих
-                
-                // Добавляем только если предыдущий дедлайн уже прошел
-                const prevDate = new Date(orgStartDate);
-                prevDate.setDate(orgStartDate.getDate() + (i-2)*14);
-                prevDate.setHours(11, 25, 0, 0);
-                
-                if (prevDate <= now) {
-                    deadlines.push({
-                        subject: `ОРГ, Презентация ${i}`,
-                        date: date
-                    });
-                }
-            }
-            
-            // Программирование на Python, ЛР (каждую неделю в 13:00, начиная с 2025-09-24)
-            const pythonStartDate = addTimeToDate("2025-09-24", "11:40");
-            for (let i = 4; i <= 15; i++) {
+            // 1. Программирование на Python, ЛР (каждую неделю в 13:00, начиная с 2025-09-03, срок = 2 недели)
+            const pythonStartDate = addTimeToDate("2025-09-03", "13:00");
+            for (let i = 1; i <= 15; i++) {
                 const date = new Date(pythonStartDate);
-                date.setDate(pythonStartDate.getDate() + (i-3)*7);
-                date.setHours(13, 0, 0, 0); // Всегда в 13:00 для следующих
+                date.setDate(pythonStartDate.getDate() + (i-1)*7); // Каждую неделю
+                date.setHours(13, 0, 0, 0);
                 
-                // Добавляем только если предыдущий дедлайн уже прошел
-                const prevDate = new Date(pythonStartDate);
-                prevDate.setDate(pythonStartDate.getDate() + (i-4)*7);
-                prevDate.setHours(13, 0, 0, 0);
-                
-                if (prevDate <= now) {
-                    deadlines.push({
-                        subject: `Программирование на Python, ЛР ${i}`,
-                        date: date
-                    });
-                }
+                // Добавляем дедлайн, если он еще не наступил или уже прошел
+                deadlines.push({
+                    subject: `Программирование на Python, ЛР ${i}`,
+                    date: date
+                });
             }
             
-            // Программирование, ЛР (каждую неделю в 13:00, начиная с 2025-09-19)
-            const programmingStartDate = addTimeToDate("2025-09-19", "11:40");
-            for (let i = 2; i <= 15; i++) {
+            // 2. Программирование, ЛР (каждую неделю в 13:00, начиная с 2025-09-12, срок = 1 неделя)
+            const programmingStartDate = addTimeToDate("2025-09-12", "13:00");
+            for (let i = 1; i <= 15; i++) {
                 const date = new Date(programmingStartDate);
-                date.setDate(programmingStartDate.getDate() + (i-1)*7);
-                date.setHours(13, 0, 0, 0); // Всегда в 13:00 для следующих
+                date.setDate(programmingStartDate.getDate() + (i-1)*7); // Каждую неделю
+                date.setHours(13, 0, 0, 0);
                 
-                // Добавляем только если предыдущий дедлайн уже прошел
-                const prevDate = new Date(programmingStartDate);
-                prevDate.setDate(programmingStartDate.getDate() + (i-2)*7);
-                prevDate.setHours(13, 0, 0, 0);
+                deadlines.push({
+                    subject: `Программирование, ЛР ${i}`,
+                    date: date
+                });
+            }
+            
+            // 3. ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-04, срок = 2 недели)
+            const orgStartDate = addTimeToDate("2025-09-04", "11:25");
+            for (let i = 1; i <= 10; i++) {
+                const date = new Date(orgStartDate);
+                date.setDate(orgStartDate.getDate() + (i-1)*14); // Каждые 2 недели
+                date.setHours(11, 25, 0, 0);
                 
-                if (prevDate <= now) {
-                    deadlines.push({
-                        subject: `Программирование, ЛР ${i}`,
-                        date: date
-                    });
-                }
+                deadlines.push({
+                    subject: `ОРГ, Презентация ${i}`,
+                    date: date
+                });
             }
             
             return deadlines;
@@ -512,7 +487,7 @@
                 
                 // Форматируем время
                 const timeString = time.total <= 0 
-                    ? `0 д. 00:00:00` 
+                    ? `Завершено` 
                     : `${time.days} д. ${String(time.hours).padStart(2, '0')}:${String(time.minutes).padStart(2, '0')}:${String(time.seconds).padStart(2, '0')}`;
                 
                 // Определяем класс для цвета в зависимости от оставшегося времени
@@ -553,12 +528,12 @@
             
             // Если нет активных дедлайнов
             if (activeTable.children.length === 0) {
-                activeTable.innerHTML = '<tr><td style="text-align: center; font-size: 1.1rem;">Нет активных дедлайнов</td></tr>';
+                activeTable.innerHTML = '<tr><td style="text-align: center; font-size: 1.1rem; padding: 20px;">Нет активных дедлайнов</td></tr>';
             }
             
             // Если нет завершенных дедлайнов
             if (completedTable.children.length === 0) {
-                completedTable.innerHTML = '<tr><td style="text-align: center; font-size: 1.1rem;">Нет завершенных дедлайнов</td></tr>';
+                completedTable.innerHTML = '<tr><td style="text-align: center; font-size: 1.1rem; padding: 20px;">Нет завершенных дедлайнов</td></tr>';
             }
         }
         
