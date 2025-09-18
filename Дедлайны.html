@@ -393,46 +393,64 @@
             const deadlines = [];
             const now = new Date();
             
-            // Генерация дедлайнов согласно новым требованиям
-            
-            // 1. Программирование на Python, ЛР (каждую неделю в 13:00, начиная с 2025-09-03, срок = 2 недели)
+            // 1. Программирование на Python, ЛР (каждую неделю в 13:00, начиная с 2025-09-03)
             const pythonStartDate = addTimeToDate("2025-09-03", "13:00");
             for (let i = 1; i <= 15; i++) {
-                const date = new Date(pythonStartDate);
-                date.setDate(pythonStartDate.getDate() + (i-1)*7); // Каждую неделю
-                date.setHours(13, 0, 0, 0);
+                const publishDate = new Date(pythonStartDate);
+                publishDate.setDate(pythonStartDate.getDate() + (i-1)*7);
                 
-                // Добавляем дедлайн, если он еще не наступил или уже прошел
-                deadlines.push({
-                    subject: `Программирование на Python, ЛР ${i}`,
-                    date: date
-                });
+                // Для ЛР1 - срок 3 недели, для остальных - 2 недели
+                const deadlineDate = new Date(publishDate);
+                if (i === 1) {
+                    deadlineDate.setDate(publishDate.getDate() + 21); // 3 недели для ЛР1
+                } else {
+                    deadlineDate.setDate(publishDate.getDate() + 14); // 2 недели для остальных
+                }
+                
+                // Добавляем только если дата публикации уже наступила
+                if (publishDate <= now) {
+                    deadlines.push({
+                        subject: `Программирование на Python, ЛР ${i}`,
+                        date: deadlineDate,
+                        publishDate: publishDate
+                    });
+                }
             }
             
-            // 2. Программирование, ЛР (каждую неделю в 13:00, начиная с 2025-09-12, срок = 1 неделя)
+            // 2. Программирование, ЛР (каждую неделю в 13:00, начиная с 2025-09-12)
             const programmingStartDate = addTimeToDate("2025-09-12", "13:00");
             for (let i = 1; i <= 15; i++) {
-                const date = new Date(programmingStartDate);
-                date.setDate(programmingStartDate.getDate() + (i-1)*7); // Каждую неделю
-                date.setHours(13, 0, 0, 0);
+                const publishDate = new Date(programmingStartDate);
+                publishDate.setDate(programmingStartDate.getDate() + (i-1)*7);
                 
-                deadlines.push({
-                    subject: `Программирование, ЛР ${i}`,
-                    date: date
-                });
+                const deadlineDate = new Date(publishDate);
+                deadlineDate.setDate(publishDate.getDate() + 7); // 1 неделя срок
+                
+                if (publishDate <= now) {
+                    deadlines.push({
+                        subject: `Программирование, ЛР ${i}`,
+                        date: deadlineDate,
+                        publishDate: publishDate
+                    });
+                }
             }
             
-            // 3. ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-04, срок = 2 недели)
+            // 3. ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-04)
             const orgStartDate = addTimeToDate("2025-09-04", "11:25");
             for (let i = 1; i <= 10; i++) {
-                const date = new Date(orgStartDate);
-                date.setDate(orgStartDate.getDate() + (i-1)*14); // Каждые 2 недели
-                date.setHours(11, 25, 0, 0);
+                const publishDate = new Date(orgStartDate);
+                publishDate.setDate(orgStartDate.getDate() + (i-1)*14);
                 
-                deadlines.push({
-                    subject: `ОРГ, Презентация ${i}`,
-                    date: date
-                });
+                const deadlineDate = new Date(publishDate);
+                deadlineDate.setDate(publishDate.getDate() + 14); // 2 недели срок
+                
+                if (publishDate <= now) {
+                    deadlines.push({
+                        subject: `ОРГ, Презентация ${i}`,
+                        date: deadlineDate,
+                        publishDate: publishDate
+                    });
+                }
             }
             
             return deadlines;
