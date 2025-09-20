@@ -490,7 +490,7 @@
                 publishDate.setDate(programmingStartDate.getDate() + (i-1)*14);
                 
                 const deadlineDate = new Date(publishDate);
-                deadlineDate.setDate(publishDate.getDate() + 14); // 1 неделя срок
+                deadlineDate.setDate(publishDate.getDate() + 7); // 1 неделя срок
                 
                 if (publishDate <= now) {
                     deadlines.push({
