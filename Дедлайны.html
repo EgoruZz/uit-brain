@@ -415,14 +415,14 @@
                 }
             }
             
-            // 2. Программирование, ЛР (каждую неделю в 13:00, начиная с 2025-09-12)
+            // 2. Программирование, ЛР (каждые 2 недели в 13:00, начиная с 2025-09-12)
             const programmingStartDate = addTimeToDate("2025-09-12", "13:00");
             for (let i = 1; i <= 15; i++) {
                 const publishDate = new Date(programmingStartDate);
-                publishDate.setDate(programmingStartDate.getDate() + (i-1)*7);
+                publishDate.setDate(programmingStartDate.getDate() + (i-1)*14);
                 
                 const deadlineDate = new Date(publishDate);
-                deadlineDate.setDate(publishDate.getDate() + 7); // 1 неделя срок
+                deadlineDate.setDate(publishDate.getDate() + 14); // 2 недели срок
                 
                 if (publishDate <= now) {
                     deadlines.push({
@@ -433,14 +433,14 @@
                 }
             }
 
-            // 3. ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-04)
-            const orgStartDate = addTimeToDate("2025-09-04", "11:25");
+            // 3. ОРГ, Презентации (каждую 1 неделю в 11:25, начиная с 2025-09-11)
+            const orgStartDate = addTimeToDate("2025-09-11", "11:25");
             for (let i = 1; i <= 10; i++) {
                 const publishDate = new Date(orgStartDate);
                 publishDate.setDate(orgStartDate.getDate() + (i-1)*14);
                 
                 const deadlineDate = new Date(publishDate);
-                deadlineDate.setDate(publishDate.getDate() + 14); // 2 недели срок
+                deadlineDate.setDate(publishDate.getDate() + 7); // 1 недедя срок
                 
                 if (publishDate <= now) {
                     deadlines.push({
@@ -458,7 +458,7 @@
                 publishDate.setDate(itStartDate.getDate() + (i-1)*14);
                 
                 const deadlineDate = new Date(publishDate);
-                deadlineDate.setDate(publishDate.getDate() + 7); // 1 неделя срок
+                deadlineDate.setDate(publishDate.getDate() + 14); // 2 недели срок
                 
                 if (publishDate <= now) {
                     deadlines.push({
