@@ -422,7 +422,7 @@
                 publishDate.setDate(programmingStartDate.getDate() + (i-1)*14);
                 
                 const deadlineDate = new Date(publishDate);
-                deadlineDate.setDate(publishDate.getDate() + 14); // 2 недели срок
+                deadlineDate.setDate(publishDate.getDate() + 14); // 1 неделя срок
                 
                 if (publishDate <= now) {
                     deadlines.push({
@@ -433,7 +433,7 @@
                 }
             }
 
-            // 3. ОРГ, Презентации (каждую 1 неделю в 11:25, начиная с 2025-09-11)
+            // 3. ОРГ, Презентации (каждые 2 недели в 11:25, начиная с 2025-09-11)
             const orgStartDate = addTimeToDate("2025-09-11", "11:25");
             for (let i = 1; i <= 10; i++) {
                 const publishDate = new Date(orgStartDate);
@@ -458,7 +458,7 @@
                 publishDate.setDate(itStartDate.getDate() + (i-1)*14);
                 
                 const deadlineDate = new Date(publishDate);
-                deadlineDate.setDate(publishDate.getDate() + 14); // 2 недели срок
+                deadlineDate.setDate(publishDate.getDate() + 7); // 1 неделя срок
                 
                 if (publishDate <= now) {
                     deadlines.push({
