@@ -43,12 +43,18 @@
             position: relative;
         }
         
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
         .logo {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 15px;
-            margin-bottom: 20px;
         }
         
         .logo-icon {
@@ -69,6 +75,7 @@
             margin: 0 auto;
             line-height: 1.6;
             color: #ffffff;
+            text-align: center;
         }
         
         .deadline-section {
@@ -158,14 +165,10 @@
         }
         
         .show-completed-btn {
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
             background: rgba(231, 76, 60, 0.3);
             border: none;
             color: #ffcc5f;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 30px;
             cursor: pointer;
             font-size: 1rem;
@@ -174,11 +177,12 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            margin: 10px auto;
         }
         
         .show-completed-btn:hover {
             background: rgba(231, 76, 60, 0.5);
-            transform: translateY(-50%) scale(1.05);
+            transform: scale(1.05);
         }
         
         /* Модальное окно */
@@ -328,15 +332,6 @@
                 margin-top: 5px;
             }
             
-            .show-completed-btn {
-                position: relative;
-                margin: 20px auto;
-                top: 0;
-                transform: none;
-                width: 100%;
-                max-width: 300px;
-            }
-            
             .completed-deadline {
                 flex-direction: column;
                 text-align: center;
@@ -406,12 +401,15 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo">
-                <h1>Дедлайны</h1>
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Дедлайны</h1>
+                </div>
+                <p class="subtitle">До конца срока сдачи осталось...</p>
+                <button class="show-completed-btn" id="show-completed">
+                    <i class="fas fa-history"></i> Завершенные дедлайны
+                </button>
             </div>
-            <button class="show-completed-btn" id="show-completed">
-                <i class="fas fa-history"></i> Посмотреть завершенные
-            </button>
         </header>
         
         <div class="deadline-section">
@@ -489,7 +487,7 @@
                 publishDate.setDate(programmingStartDate.getDate() + (i-1)*14);
                 
                 const deadlineDate = new Date(publishDate);
-                deadlineDate.setDate(publishDate.getDate() + 7); // 1 неделя срок
+                deadlineDate.setDate(publishDate.getDate() + 14); // 1 неделя срок
                 
                 if (publishDate <= now) {
                     deadlines.push({
