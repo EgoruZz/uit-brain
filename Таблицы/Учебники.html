@@ -28,30 +28,29 @@
             max-width: 1200px;
             background: rgba(44, 62, 80, 0.95);
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             margin: 20px 0;
-            padding: 30px;
+            padding: 20px;
         }
         
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(230, 126, 34, 0.5);
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 10px;
             color: #ffcc5f;
         }
         
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
-            line-height: 1.6;
+            line-height: 1.5;
         }
         
         .info-box {
@@ -60,39 +59,50 @@
             padding: 15px;
             border-radius: 8px;
             margin: 20px 0;
+            font-size: 0.95rem;
         }
         
-        /* АДАПТИВНАЯ ТАБЛИЦА */
-        .materials-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
+        .materials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
         }
         
-        .materials-table th {
-            background: rgba(231, 76, 60, 0.3);
-            padding: 15px 10px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 1.1rem;
+        .subject-card {
+            background: rgba(52, 73, 94, 0.8);
+            border-radius: 12px;
+            padding: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border: 2px solid #e74c3c;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-3px);
+            background: rgba(52, 73, 94, 0.9);
+        }
+        
+        .subject-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             color: #ffcc5f;
-            border-bottom: 2px solid #e74c3c;
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(255, 204, 95, 0.5);
         }
         
-        .materials-table td {
-            padding: 15px 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            vertical-align: top;
+        .material-type {
+            margin-bottom: 15px;
         }
         
-        .materials-table tr:hover {
-            background: rgba(52, 73, 94, 0.7);
-        }
-        
-        .subject-name {
-            font-weight: 600;
+        .type-title {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             color: #ffcc5f;
-            width: 20%;
         }
         
         .material-links {
@@ -111,6 +121,7 @@
             color: #ecf0f1;
             transition: all 0.3s ease;
             border-left: 3px solid #ffcc5f;
+            font-size: 0.9rem;
         }
         
         .material-link:hover {
@@ -161,7 +172,7 @@
         
         footer {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 30px;
             padding-top: 20px;
             border-top: 2px solid rgba(230, 126, 34, 0.3);
             width: 100%;
@@ -169,69 +180,44 @@
             color: #bdc3c7;
         }
         
-        /* АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ */
+        /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
             .container {
                 padding: 15px;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .subtitle {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
             }
             
-            .materials-table {
-                display: block;
-                overflow-x: visible;
+            .materials-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
             
-            .materials-table th,
-            .materials-table td {
-                padding: 10px 5px;
-                display: block;
-                width: 100%;
-                text-align: center;
+            .subject-card {
+                padding: 12px;
             }
             
-            .materials-table th {
-                font-size: 1rem;
-                padding: 12px 5px;
-                margin-top: 10px;
-                border-radius: 8px;
-            }
-            
-            .materials-table tr {
-                display: block;
-                margin-bottom: 20px;
-                background: rgba(52, 73, 94, 0.8);
-                border-radius: 10px;
-                padding: 10px;
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            
-            .subject-name {
-                width: 100%;
+            .subject-title {
                 font-size: 1.1rem;
-                padding-bottom: 10px;
-                border-bottom: 2px solid rgba(255, 204, 95, 0.3);
-                margin-bottom: 10px;
             }
             
             .material-link {
                 padding: 6px 8px;
-                margin-bottom: 5px;
+                font-size: 0.85rem;
             }
             
             .link-text {
                 font-size: 0.85rem;
-            }
-            
-            .link-badge {
-                font-size: 0.75rem;
-                padding: 1px 4px;
             }
         }
         
@@ -241,11 +227,11 @@
             }
             
             h1 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             
             .subtitle {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
             
             .info-box {
@@ -253,26 +239,47 @@
                 font-size: 0.9rem;
             }
             
-            .materials-table th {
-                font-size: 0.9rem;
-                padding: 8px 5px;
+            .subject-card {
+                padding: 10px;
+            }
+            
+            .subject-title {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+            
+            .type-title {
+                font-size: 0.95rem;
             }
             
             .material-link {
                 flex-direction: column;
                 text-align: center;
                 padding: 8px;
+                gap: 5px;
             }
             
             .link-icon {
                 margin-right: 0;
-                margin-bottom: 5px;
                 font-size: 1rem;
             }
             
             .link-badge {
                 margin-left: 0;
-                margin-top: 5px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 1.3rem;
+            }
+            
+            .subject-card {
+                padding: 8px;
+            }
+            
+            .material-link {
+                padding: 6px;
             }
         }
     </style>
@@ -290,79 +297,74 @@
             <p>• Ссылки на PDF-документы могут загружаться до 10-15 секунд.</p>
         </div>
         
-        <table class="materials-table">
-            <thead>
-                <tr>
-                    <th>Предмет</th>
-                    <th>Лекции</th>
-                    <th>Практика</th>
-                    <th>Лабораторные</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Физика -->
-                <tr>
-                    <td class="subject-name">Физика</td>
-                    <td>
-                        <div class="material-links">
-                            <a href="https://www.bsut.by/images/MainMenuFiles/Obrazovanie/Studentam/eumkd/et/euk_45_001/ch1/ch1_3/ch1_3_4.pdf" class="material-link" target="_blank">
-                                <i class="fas fa-external-link-alt link-icon"></i>
-                                <span class="link-text">Трофимова Т.И. Курс физики</span>
-                                <span class="link-badge badge-pdf">PDF</span>
-                            </a>
-                            <a href="https://e.lanbook.com/book/142380" class="material-link" target="_blank">
-                                <i class="fas fa-external-link-alt link-icon"></i>
-                                <span class="link-text">Савельев И.В. Курс общей физики</span>
-                                <span class="link-badge badge-lan">Лань</span>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="material-links">
-                            <a href="https://miem.hse.ru/data/2012/04/10/1251363572/Trofimova_Zad_reschenia.pdf" class="material-link" target="_blank">
-                                <i class="fas fa-external-link-alt link-icon"></i>
-                                <span class="link-text">Трофимова Т.И. Сборник задач</span>
-                                <span class="link-badge badge-pdf">PDF</span>
-                            </a>
-                            <a href="https://library.miit.ru/bookscatalog/upos/03-19701.pdf" class="material-link" target="_blank">
-                                <i class="fas fa-external-link-alt link-icon"></i>
-                                <span class="link-text">Кокин С.М. Алгоритм и рекомендации</span>
-                                <span class="link-badge badge-pdf">PDF</span>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="no-materials">Конспекты, НТБ, Лаборатория</div>
-                    </td>
-                </tr>
+        <div class="materials-container">
+            <!-- Физика -->
+            <div class="subject-card">
+                <h3 class="subject-title">Физика</h3>
                 
-                <!-- Линейная Алгебра -->
-                <tr>
-                    <td class="subject-name">Линейная Алгебра</td>
-                    <td>
-                        <div class="material-links">
-                            <a href="https://mathprofi.com/uploads/files/1351_f_41_uchebnik-po-lineinoi-algebre-v.a.ilin-e.g.poznyak.pdf?key=d0124372d503affaaa7e4740b337e814" class="material-link" target="_blank">
-                                <i class="fas fa-external-link-alt link-icon"></i>
-                                <span class="link-text">Ильин Линейная алгебра</span>
-                                <span class="link-badge badge-pdf">PDF</span>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="material-links">
-                            <a href="http://elibrary.sgu.ru/uch_lit/560.pdf" class="material-link" target="_blank">
-                                <i class="fas fa-external-link-alt link-icon"></i>
-                                <span class="link-text">Проскуряков Задачник</span>
-                                <span class="link-badge badge-pdf">PDF</span>
-                            </a>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="no-materials">Материалы отсутствуют</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+                <div class="material-type">
+                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
+                    <div class="material-links">
+                        <a href="https://www.bsut.by/images/MainMenuFiles/Obrazovanie/Studentam/eumkd/et/euk_45_001/ch1/ch1_3/ch1_3_4.pdf" class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Трофимова Т.И. Курс физики</span>
+                            <span class="link-badge badge-pdf">PDF</span>
+                        </a>
+                        <a href="https://e.lanbook.com/book/142380" class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Савельев И.В. Курс общей физики</span>
+                            <span class="link-badge badge-lan">Лань</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="material-type">
+                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
+                    <div class="material-links">
+                        <a href="https://miem.hse.ru/data/2012/04/10/1251363572/Trofimova_Zad_reschenia.pdf" class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Трофимова Т.И. Сборник задач</span>
+                            <span class="link-badge badge-pdf">PDF</span>
+                        </a>
+                        <a href="https://library.miit.ru/bookscatalog/upos/03-19701.pdf" class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Кокин С.М. Алгоритм и рекомендации</span>
+                            <span class="link-badge badge-pdf">PDF</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Линейная Алгебра -->
+            <div class="subject-card">
+                <h3 class="subject-title">Линейная Алгебра</h3>
+                
+                <div class="material-type">
+                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
+                    <div class="material-links">
+                        <a href="https://mathprofi.com/uploads/files/1351_f_41_uchebnik-po-lineinoi-algebre-v.a.ilin-e.g.poznyak.pdf?key=d0124372d503affaaa7e4740b337e814" class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Ильин Линейная алгебра</span>
+                            <span class="link-badge badge-pdf">PDF</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="material-type">
+                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
+                    <div class="material-links">
+                        <a href="http://elibrary.sgu.ru/uch_lit/560.pdf" class="material-link" target="_blank">
+                            <i class="fas fa-external-link-alt link-icon"></i>
+                            <span class="link-text">Проскуряков Задачник</span>
+                            <span class="link-badge badge-pdf">PDF</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Остальные карточки... -->
+            
+        </div>
         
         <footer>
             <p>УИТ-111 © 2025</p>
