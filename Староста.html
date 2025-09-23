@@ -165,6 +165,22 @@
         .special-contact .contact-title {
             color: #fdbb2d;
         }
+
+        .phone-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .phone-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
         
         footer {
             text-align: center;
@@ -220,20 +236,20 @@
             <div class="logo">
                 <h1>Написать старосте</h1>
             </div>
-            <p class="subtitle">Свяжитесь со старостой группы УИТ-111 удобным для вас способом</p>
+            <p class="subtitle">Связь со старостой группы УИТ-111</p>
+            <p class="subtitle">Понедельник - Воскрсенье (00:00 - 23:59)</p>
         </header>
         
         <div class="contact-container">
             <!-- Телефон -->
             <div class="contact-card special-contact" onclick="callPhone()">
                 <div class="contact-header">
-                    <div class="contact-title">Телефон</div>
+                    <div class="contact-title"><i class="fas fa-phone contact-icon"></i> Телефон</div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
                         <div class="contact-details">
-                            <i class="fas fa-phone contact-icon"></i>
-                            <span class="contact-value">+7 (968) 577-35-23</span>
+                            <a href="tel:+79152422047" class="phone-btn">+7 915 242-20-47 доб. 45-79</a>,
                         </div>
                     </li>
                     <li class="contact-item">
@@ -245,12 +261,11 @@
             <!-- Электронная почта -->
             <div class="contact-card" onclick="sendEmail()">
                 <div class="contact-header">
-                    <div class="contact-title">Электронная почта</div>
+                    <div class="contact-title"><i class="fas fa-envelope contact-icon"></i> Электронная почта</div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
                         <div class="contact-details">
-                            <i class="fas fa-envelope contact-icon"></i>
                             <span class="contact-value">egor.s.sergeev@mail.ru</span>
                         </div>
                     </li>
@@ -263,12 +278,11 @@
             <!-- Telegram -->
             <div class="contact-card" onclick="openTelegram()">
                 <div class="contact-header">
-                    <div class="contact-title">Telegram</div>
+                    <div class="contact-title"><i class="fab fa-telegram contact-icon"></i> Telegram</div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
                         <div class="contact-details">
-                            <i class="fab fa-telegram contact-icon"></i>
                             <span class="contact-value">@gggggzks</span>
                         </div>
                     </li>
@@ -282,25 +296,25 @@
         <!-- Дополнительная информация -->
         <div class="contact-card" style="margin-top: 30px; grid-column: 1 / -1;">
             <div class="contact-header">
-                <div class="contact-title">Когда обращаться к старосте?</div>
+                <div class="contact-title">Зачем обращаться к старосте?</div>
             </div>
             <ul class="contact-info">
                 <li class="contact-item">
                     <div class="contact-details">
                         <i class="fas fa-info-circle contact-icon"></i>
-                        <span>По вопросам расписания, учебных материалов, организационных моментов</span>
+                        <span>По вопросам расписания, списка группы, учебных материалов, организационных моментов</span>
                     </div>
                 </li>
                 <li class="contact-item">
                     <div class="contact-details">
                         <i class="fas fa-info-circle contact-icon"></i>
-                        <span>Проблемы с доступом к ресурсам или любые другие вопросы по учебе</span>
+                        <span>Проблемы с доступом к ресурсам или любые другие вопросы по учебному процессу</span>
                     </div>
                 </li>
                 <li class="contact-item">
                     <div class="contact-details">
                         <i class="fas fa-info-circle contact-icon"></i>
-                        <span>Староста всегда готов помочь!</span>
+                        <span>Передать информацию группе УИТ-111</span>
                     </div>
                 </li>
             </ul>
