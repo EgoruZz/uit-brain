@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Электронные учебные материалы - УИТ-111</title>
+    <title>Учебники - УИТ-111</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -70,117 +70,126 @@
             color: #ffffff;
         }
         
-        .info-box {
-            background: rgba(255, 204, 95, 0.1);
-            border-left: 4px solid #ffcc5f;
-            padding: 15px;
-            border-radius: 8px;
+        /* Контейнер для таблицы с прокруткой */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
             margin: 20px 0;
-            color: #ecf0f1;
+            border-radius: 10px;
+            background: rgba(52, 73, 94, 0.5);
         }
         
-        .materials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        /* Сама таблица */
+        .textbooks-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; /* Минимальная ширина для читаемости */
         }
         
-        .subject-card {
-            background: rgba(52, 73, 94, 0.8);
-            border-radius: 15px;
-            padding: 20px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 2px solid #e74c3c;
-        }
-        
-        .subject-card:hover {
-            transform: translateY(-5px);
-            background: rgba(52, 73, 94, 0.9);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .subject-title {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #ffcc5f;
-            text-align: center;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(255, 204, 95, 0.5);
-        }
-        
-        .material-type {
-            margin-bottom: 20px;
-        }
-        
-        .type-title {
+        .textbooks-table th {
+            background: rgba(231, 76, 60, 0.3);
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
             font-size: 1.1rem;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
             color: #ffcc5f;
+            border-bottom: 2px solid #e74c3c;
         }
         
-        .material-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .textbooks-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: middle;
         }
         
-        .material-link {
-            display: flex;
-            align-items: center;
-            padding: 10px 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+        .textbooks-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .textbooks-table tr:hover {
+            background: rgba(52, 73, 94, 0.7);
+        }
+        
+        .subject-name {
+            font-weight: 600;
+            color: #ffcc5f;
+            min-width: 150px;
+        }
+        
+        .textbook-link {
+            color: #3498db;
             text-decoration: none;
-            color: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 5px;
+            background: rgba(52, 152, 219, 0.2);
             transition: all 0.3s ease;
-            border-left: 3px solid #ffcc5f;
+            display: inline-block;
+            margin: 2px 0;
         }
         
-        .material-link:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
+        .textbook-link:hover {
+            background: rgba(52, 152, 219, 0.4);
+            transform: translateY(-2px);
         }
         
-        .link-icon {
-            margin-right: 10px;
-            color: #ffcc5f;
-            min-width: 20px;
+        .textbook-link i {
+            margin-right: 5px;
         }
         
-        .link-text {
-            flex: 1;
-        }
-        
-        .link-badge {
-            margin-left: 10px;
-            padding: 3px 7px;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-        
-        .badge-lan {
-            background: rgba(85, 246, 61, 0.3);
-            color: #4efe54;
-        }
-        
-        .badge-pdf {
-            background: rgba(246, 95, 61, 0.3);
-            color: #fe4e4e;
-        }
-        
-        .no-materials {
-            text-align: center;
-            padding: 12px;
-            font-style: italic;
+        .file-info {
+            font-size: 0.9rem;
             color: #bdc3c7;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            margin-top: 5px;
+        }
+        
+        /* Стили для мобильной версии таблицы */
+        @media (max-width: 768px) {
+            .textbooks-table {
+                font-size: 0.9rem;
+            }
+            
+            .textbooks-table th,
+            .textbooks-table td {
+                padding: 10px 8px;
+            }
+            
+            .textbook-link {
+                padding: 6px 8px;
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .textbooks-table {
+                min-width: 500px;
+            }
+            
+            .textbooks-table th,
+            .textbooks-table td {
+                padding: 8px 6px;
+                font-size: 0.85rem;
+            }
+            
+            .textbook-link {
+                padding: 5px 6px;
+                font-size: 0.85rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
         }
         
         footer {
@@ -193,44 +202,25 @@
             color: #bdc3c7;
         }
         
-        /* Адаптивность для мобильных устройств */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .materials-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 20px;
-            }
+        /* Индикатор прокрутки для мобильных */
+        .scroll-hint {
+            display: none;
+            text-align: center;
+            color: #ffcc5f;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            animation: pulse 2s infinite;
         }
         
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .logo-icon {
-                font-size: 2rem;
-            }
-            
-            .container {
-                padding: 15px;
-            }
-            
-            .subject-card {
-                padding: 15px;
-            }
-            
-            .subject-title {
-                font-size: 1.1rem;
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+        
+        @media (max-width: 768px) {
+            .scroll-hint {
+                display: block;
             }
         }
     </style>
@@ -239,215 +229,119 @@
     <div class="container">
         <header>
             <div class="logo">
-                <h1>Электронные учебные материалы</h1>
+                <i class="fas fa-book logo-icon"></i>
+                <h1>Учебники</h1>
             </div>
-            <p class="subtitle">Доступ к электронным учебным ресурсам (их называют нам преподаватели)</p>
+            <p class="subtitle">Электронные версии учебников и учебных материалов для группы УИТ-111</p>
         </header>
         
-        <div class="info-box">
-            <p><i class="fas fa-info-circle"></i> <strong>Важная информация:</strong></p>
-            <br>
-            <p>• Некоторые ссылки ведут на <a href="https://e.lanbook.com" style="color: #a5c9ff;">ЭБС Лань</a> - для доступа требуется регистрация как обучающегося РУТ (МИИТ)</p>
-            <br>
-            <p>• Ссылки на PDF-документы могут загружаться до 10-15 секунд.</p>
+        <div class="table-container">
+            <table class="textbooks-table">
+                <thead>
+                    <tr>
+                        <th width="25%">Предмет</th>
+                        <th width="75%">Ссылки на материалы</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="subject-name">Программирование на Python</td>
+                        <td>
+                            <a href="https://example.com/python-textbook.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>Учебник по Python
+                            </a>
+                            <div class="file-info">PDF, 5.2 MB</div>
+                            
+                            <a href="https://example.com/python-examples.zip" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-archive"></i>Примеры кода
+                            </a>
+                            <div class="file-info">ZIP, 3.1 MB</div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="subject-name">Физика</td>
+                        <td>
+                            <a href="https://example.com/physics-theory.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>Теоретический курс
+                            </a>
+                            <div class="file-info">PDF, 8.7 MB</div>
+                            
+                            <a href="https://example.com/physics-lab.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>Лабораторные работы
+                            </a>
+                            <div class="file-info">PDF, 4.3 MB</div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="subject-name">Математика</td>
+                        <td>
+                            <a href="https://example.com/math-calculus.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>Математический анализ
+                            </a>
+                            <div class="file-info">PDF, 6.9 MB</div>
+                            
+                            <a href="https://example.com/math-linear-algebra.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>Линейная алгебра
+                            </a>
+                            <div class="file-info">PDF, 5.4 MB</div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="subject-name">Базы данных</td>
+                        <td>
+                            <a href="https://example.com/database-sql.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>SQL и реляционные БД
+                            </a>
+                            <div class="file-info">PDF, 7.1 MB</div>
+                            
+                            <a href="https://example.com/database-exercises.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>Практические задания
+                            </a>
+                            <div class="file-info">PDF, 2.8 MB</div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="subject-name">Веб-технологии</td>
+                        <td>
+                            <a href="https://example.com/web-html-css.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>HTML и CSS
+                            </a>
+                            <div class="file-info">PDF, 4.5 MB</div>
+                            
+                            <a href="https://example.com/web-javascript.pdf" class="textbook-link" target="_blank">
+                                <i class="fas fa-file-pdf"></i>JavaScript
+                            </a>
+                            <div class="file-info">PDF, 6.2 MB</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         
-        <div class="materials-container">
-            <!-- Физика -->
-            <div class="subject-card">
-                <h3 class="subject-title">Физика</h3>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
-                    <div class="material-links">
-                        <a href="https://www.bsut.by/images/MainMenuFiles/Obrazovanie/Studentam/eumkd/et/euk_45_001/ch1/ch1_3/ch1_3_4.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Трофимова Т.И. Курс физики</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                        <a href="https://e.lanbook.com/book/142380" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Савельев И.В. Курс общей физики</span>
-                            <span class="link-badge badge-lan">Лань</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
-                    <div class="material-links">
-                        <a href="https://miem.hse.ru/data/2012/04/10/1251363572/Trofimova_Zad_reschenia.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Трофимова Т.И. Сборник задач</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                        <a href="https://library.miit.ru/bookscatalog/upos/03-19701.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Кокин С.М. Алгоритм и рекомендации</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                        <a href="https://phti.tj/phti_tj/ozmun_ifm/Physics_books/volkenshtein_sbornik.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Волькинштейн В.С. Сборник задач</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-flask"></i> Лабораторные</h4>
-                    <div class="material-links">
-                        <div class="no-materials">Конспекты, НТБ, Лаборатория</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Линейная Алгебра -->
-            <div class="subject-card">
-                <h3 class="subject-title">Линейная Алгебра</h3>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
-                    <div class="material-links">
-                        <a href="https://mathprofi.com/uploads/files/1351_f_41_uchebnik-po-lineinoi-algebre-v.a.ilin-e.g.poznyak.pdf?key=d0124372d503affaaa7e4740b337e814" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Ильин Линейная алгебра</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                        <a href="https://e.lanbook.com/book/52" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Воеводин линейная алгебра</span>
-                            <span class="link-badge badge-lan">Лань</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
-                    <div class="material-links">
-                        <a href="http://elibrary.sgu.ru/uch_lit/560.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Проскуряков Задачник</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                        <a href="https://go.11klasov.net/7574-analiticheskaja-geometrija-v-primerah-i-zadachah-bortakovskij-as-panteleev-av.html" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Бортаковский_Пантелеев</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Единая транспортная система -->
-            <div class="subject-card">
-                <h3 class="subject-title">Единая транспортная система</h3>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
-                    <div class="no-materials">Материалы отсутствуют</div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
-                    <div class="material-links">
-                        <a href="https://e.lanbook.com/book/193890" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">А.В. Буянкин "Автотранспортные средства"</span>
-                            <span class="link-badge badge-lan">Лань</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-flask"></i> Лабораторные</h4>
-                    <div class="no-materials">Материалы отсутствуют</div>
-                </div>
-            </div>
-            
-            <!-- Математика -->
-            <div class="subject-card">
-                <h3 class="subject-title">Математика</h3>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
-                    <div class="no-materials">Материалы отсутствуют</div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
-                    <div class="material-links">
-                        <a href="https://chembaby.ru/wp-content/uploads/2013/11/Vysshaya_matematika_Minorskiy.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Минорский В.П. - Сборник задач</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Программирование на языке Python -->
-            <div class="subject-card">
-                <h3 class="subject-title">Программирование на Python</h3>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-chalkboard-teacher"></i> Лекции</h4>
-                    <div class="material-links">
-                        <a href="http://www.cosmic-rays.ru/books51/02/1968Fixtengolz1.pdf" class="material-link" target="_blank">
-                            <i class="fas fa-external-link-alt link-icon"></i>
-                            <span class="link-text">Фехтенгольц основы мат. анализа</span>
-                            <span class="link-badge badge-pdf">PDF</span>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-pen-fancy"></i> Практика</h4>
-                    <div class="no-materials">Материалы отсутствуют</div>
-                </div>
-                
-                <div class="material-type">
-                    <h4 class="type-title"><i class="fas fa-flask"></i> Лабораторные</h4>
-                    <div class="no-materials">Материалы отсутствуют</div>
-                </div>
-            </div>
-            
-            <!-- Остальные дисциплины -->
-            <div class="subject-card">
-                <h3 class="subject-title">Программирование</h3>
-                <div class="no-materials">Материалы отсутствуют</div>
-            </div>
-            
-            <div class="subject-card">
-                <h3 class="subject-title">Жизненный цикл ИТ-проекта</h3>
-                <div class="no-materials">Материалы отсутствуют</div>
-            </div>
-            
-            <div class="subject-card">
-                <h3 class="subject-title">Основы российской государственности</h3>
-                <div class="no-materials">Материалы отсутствуют</div>
-            </div>
-            
-            <div class="subject-card">
-                <h3 class="subject-title">Иностранный язык</h3>
-                <div class="no-materials">Материалы отсутствуют</div>
-            </div>
-            
-            <div class="subject-card">
-                <h3 class="subject-title">Физкультура и спорт</h3>
-                <div class="no-materials">Материалы отсутствуют</div>
-            </div>
-            
-            <div class="subject-card">
-                <h3 class="subject-title">Проектная деятельность</h3>
-                <div class="no-materials">Материалы отсутствуют</div>
-            </div>
+        <div class="scroll-hint">
+            <i class="fas fa-arrows-alt-h"></i> Прокрутите таблицу вправо для просмотра
         </div>
-        
-        <footer>
-            <p>УИТ-111 © 2025</p>
-            <p>Сайт для студентов и преподавателей</p>
-        </footer>
     </div>
+    
+    <footer>
+        <p>УИТ-111 © 2025</p>
+        <p>Сайт для студентов и преподавателей</p>
+    </footer>
+
+    <script>
+        // Добавляем интерактивность ссылкам
+        document.querySelectorAll('.textbook-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+        });
+    </script>
 </body>
 </html>

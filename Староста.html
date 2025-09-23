@@ -106,6 +106,8 @@
             font-weight: 600;
             color: #fdbb2d;
             text-align: center;
+            text-decoration: none;
+            border-bottom: none;
         }
         
         .contact-info {
@@ -176,10 +178,12 @@
             margin-top: 5px;
             font-size: 1.1rem;
             transition: all 0.3s ease;
+            border-bottom: none;
         }
         
         .phone-btn:hover {
             background: rgba(255, 255, 255, 0.2);
+            text-decoration: none;
         }
         
         footer {
@@ -244,12 +248,14 @@
             <!-- Телефон -->
             <div class="contact-card" onclick="callPhone()">
                 <div class="contact-header">
-                    <div class="contact-title"><i class="fas fa-phone contact-icon"></i> Телефон</div>
+                    <div class="contact-title">
+                        <i class="fas fa-phone contact-icon"></i> Телефон
+                    </div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
                         <div class="contact-details">
-                            <a href="tel:+79152422047" class="phone-btn">+7 (968) 577-35-23</a>
+                            <a href="tel:+79685773523" class="phone-btn">+7 (968) 577-35-23</a>
                         </div>
                     </li>
                 </ul>
@@ -258,12 +264,14 @@
             <!-- Электронная почта -->
             <div class="contact-card" onclick="sendEmail()">
                 <div class="contact-header">
-                    <div class="contact-title"><i class="fas fa-envelope contact-icon"></i> Электронная почта</div>
+                    <div class="contact-title">
+                        <i class="fas fa-envelope contact-icon"></i> Электронная почта
+                    </div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
                         <div class="contact-details">
-                            <span class="contact-value">egor.s.sergeev@mail.ru</span>
+                            <a href="mailto:egor.s.sergeev@mail.ru" class="phone-btn">egor.s.sergeev@mail.ru</a>
                         </div>
                     </li>
                 </ul>
@@ -272,12 +280,14 @@
             <!-- Telegram -->
             <div class="contact-card" onclick="openTelegram()">
                 <div class="contact-header">
-                    <div class="contact-title"><i class="fab fa-telegram contact-icon"></i> Telegram</div>
+                    <div class="contact-title">
+                        <i class="fab fa-telegram contact-icon"></i> Telegram
+                    </div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
                         <div class="contact-details">
-                            <span class="contact-value">@gggggzks</span>
+                            <a href="https://t.me/gggggzks" class="phone-btn">@gggggzks</a>
                         </div>
                     </li>
                 </ul>
