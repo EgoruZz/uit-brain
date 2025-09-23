@@ -14,8 +14,8 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: #fff;
+            background: #2c3e50;
+            color: #ecf0f1;
             min-height: 100vh;
             padding: 20px;
             display: flex;
@@ -26,8 +26,7 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(44, 62, 80, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             overflow: hidden;
@@ -78,23 +77,24 @@
         }
         
         .contact-card {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(52, 73, 94, 0.8);
             border-radius: 15px;
             padding: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             border: 2px solid #fdbb2d;
+            cursor: pointer;
         }
         
         .contact-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(52, 73, 94, 0.9);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .contact-header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             margin-bottom: 15px;
             padding-bottom: 10px;
@@ -105,18 +105,12 @@
             font-size: 1.2rem;
             font-weight: 600;
             color: #fdbb2d;
-        }
-        
-        .contact-type {
-            color: #ffffff;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            background: rgba(253, 187, 45, 0.2);
+            text-align: center;
         }
         
         .contact-info {
             list-style: none;
+            text-align: center;
         }
         
         .contact-item {
@@ -124,7 +118,8 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            flex-direction: column;
         }
         
         .contact-item:last-child {
@@ -134,22 +129,32 @@
         .contact-details {
             display: flex;
             align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
         }
         
         .contact-icon {
-            margin-right: 10px;
+            margin-right: 0;
+            margin-bottom: 10px;
             color: #fdbb2d;
+            font-size: 1.5rem;
         }
         
         .contact-value {
             font-size: 1.1rem;
             font-weight: 500;
+            color: #ffffff;
+            text-align: center;
+            word-break: break-all;
         }
         
         .contact-note {
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.9rem;
             font-style: italic;
+            text-align: center;
+            margin-top: 5px;
         }
         
         .special-contact {
@@ -220,10 +225,9 @@
         
         <div class="contact-container">
             <!-- Телефон -->
-            <div class="contact-card special-contact">
+            <div class="contact-card special-contact" onclick="callPhone()">
                 <div class="contact-header">
                     <div class="contact-title">Телефон</div>
-                    <div class="contact-type">Быстрая связь</div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
@@ -239,10 +243,9 @@
             </div>
             
             <!-- Электронная почта -->
-            <div class="contact-card">
+            <div class="contact-card" onclick="sendEmail()">
                 <div class="contact-header">
                     <div class="contact-title">Электронная почта</div>
-                    <div class="contact-type">Официально</div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
@@ -258,10 +261,9 @@
             </div>
             
             <!-- Telegram -->
-            <div class="contact-card">
+            <div class="contact-card" onclick="openTelegram()">
                 <div class="contact-header">
                     <div class="contact-title">Telegram</div>
-                    <div class="contact-type">Мгновенно</div>
                 </div>
                 <ul class="contact-info">
                     <li class="contact-item">
@@ -281,7 +283,6 @@
         <div class="contact-card" style="margin-top: 30px; grid-column: 1 / -1;">
             <div class="contact-header">
                 <div class="contact-title">Когда обращаться к старосте?</div>
-                <div class="contact-type">Помощь</div>
             </div>
             <ul class="contact-info">
                 <li class="contact-item">
@@ -312,6 +313,19 @@
     </footer>
 
     <script>
+        // Функции для кликабельных карточек
+        function callPhone() {
+            window.location.href = 'tel:+79685773523';
+        }
+        
+        function sendEmail() {
+            window.location.href = 'mailto:egor.s.sergeev@mail.ru';
+        }
+        
+        function openTelegram() {
+            window.open('https://t.me/gggggzks', '_blank');
+        }
+        
         // Добавляем интерактивность карточкам
         document.querySelectorAll('.contact-card').forEach(card => {
             card.addEventListener('click', function() {
