@@ -56,7 +56,8 @@
         }
         
         .theme-toggle {
-            position: absolute;
+            position: relative;
+            margin: 0 auto 20px auto;
             top: 20px;
             right: 20px;
             background: rgba(255, 255, 255, 0.1);
@@ -304,12 +305,11 @@
 </head>
 <body>
     <div class="container">
-        <button class="theme-toggle" id="themeToggle">
-            <i class="fas fa-moon"></i>
-        </button>
-        
         <header>
             <div class="logo">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <h1>Добро пожаловать</h1>
             </div>
             <p class="subtitle">Информационный портал для студентов группы УИТ-111</p>
