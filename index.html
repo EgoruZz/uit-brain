@@ -60,9 +60,9 @@
             margin: 20px auto 40px auto;
             background: rgba(255, 255, 255, 0.1);
             border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            border-radius: 10px; /* Изменил с 50% на 10px */
+            width: 120px; /* Увеличил ширину */
+            height: 50px; /* Оставил высоту */
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -70,11 +70,12 @@
             font-size: 1.5rem;
             color: #4dccbd;
             transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Добавил тень */
         }
         
-        .light-theme .theme-toggle {
-            background: rgba(44, 62, 80, 0.1);
-            color: #3498db;
+        .theme-toggle:hover {
+            transform: scale(1.05); /* Уменьшил масштаб при наведении */
+            background: rgba(255, 255, 255, 0.2);
         }
         
         .theme-toggle:hover {
@@ -268,7 +269,7 @@
             }
             
             .theme-toggle {
-                width: 45px;
+                width: 100px;
                 height: 45px;
                 font-size: 1.3rem;
             }
@@ -292,7 +293,7 @@
             }
             
             .theme-toggle {
-                width: 40px;
+                width: 90px;
                 height: 40px;
                 font-size: 1.2rem;
             }
