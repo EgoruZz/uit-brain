@@ -19,6 +19,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         
         body {
@@ -31,6 +32,11 @@
             padding: 20px;
         }
         
+        body.light-theme {
+            background: #f5f7fa;
+            color: #2c3e50;
+        }
+        
         .container {
             width: 100%;
             max-width: 1200px;
@@ -40,6 +46,45 @@
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
+            position: relative;
+        }
+        
+        .light-theme .container {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #4dccbd;
+            transition: all 0.3s ease;
+        }
+        
+        .light-theme .theme-toggle {
+            background: rgba(44, 62, 80, 0.1);
+            color: #3498db;
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .light-theme .theme-toggle:hover {
+            background: rgba(44, 62, 80, 0.2);
         }
         
         header {
@@ -47,6 +92,10 @@
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .light-theme header {
+            border-bottom: 2px solid rgba(44, 62, 80, 0.1);
         }
         
         .logo {
@@ -62,9 +111,17 @@
             color: #4dccbd;
         }
         
+        .light-theme .logo-icon {
+            color: #3498db;
+        }
+        
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
+        }
+        
+        .light-theme h1 {
+            color: #2c3e50;
         }
         
         .subtitle {
@@ -73,6 +130,10 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
+        }
+        
+        .light-theme .subtitle {
+            color: #34495e;
         }
         
         .section {
@@ -91,6 +152,14 @@
         
         .section-title i {
             color: #4dccbd;
+        }
+        
+        .light-theme .section-title {
+            color: #2c3e50;
+        }
+        
+        .light-theme .section-title i {
+            color: #3498db;
         }
         
         .buttons-grid {
@@ -119,10 +188,22 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
+        .light-theme .btn {
+            background: rgba(255, 255, 255, 0.7);
+            color: #2c3e50;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(34, 135, 202, 0.986);
+        }
+        
         .btn:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .light-theme .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
         .btn i {
@@ -131,11 +212,19 @@
             color: #4dccbd;
         }
         
+        .light-theme .btn i {
+            color: #3498db;
+        }
+        
         .btn span {
             font-size: 1rem;
             opacity: 0.9;
             margin-top: 8px;
             font-weight: normal;
+        }
+        
+        .light-theme .btn span {
+            color: #34495e;
         }
         
         footer {
@@ -146,6 +235,11 @@
             width: 100%;
             font-size: 0.9rem;
             opacity: 0.8;
+        }
+        
+        .light-theme footer {
+            border-top: 2px solid rgba(44, 62, 80, 0.1);
+            color: #7f8c8d;
         }
         
         /* Адаптивность для мобильных устройств */
@@ -173,6 +267,14 @@
             .container {
                 padding: 20px;
             }
+            
+            .theme-toggle {
+                top: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -191,14 +293,23 @@
             .btn {
                 font-size: 1rem;
             }
+            
+            .theme-toggle {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        
         <header>
             <div class="logo">
-                <i class="fas fa-brain logo-icon"></i>
                 <h1>Добро пожаловать</h1>
             </div>
             <p class="subtitle">Информационный портал для студентов группы УИТ-111</p>
@@ -243,7 +354,7 @@
                 </a>
 
                 <a href="Таблицы/Ресурсы.html" class="btn">
-                    <i class="fas fa-rocket"></i>
+                    <i class="fas fa-code"></i>
                     Программирование
                     <span>Ресурсы с обучением и задачами</span>
                 </a>
@@ -269,6 +380,28 @@
     </footer>
 
     <script>
+        // Переключение темы
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        // Проверяем сохраненную тему в localStorage
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('light-theme');
+            
+            if (body.classList.contains('light-theme')) {
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
         // Анимация кнопок при наведении
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('mouseenter', function() {
