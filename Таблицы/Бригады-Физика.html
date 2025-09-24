@@ -15,13 +15,13 @@
         }
         
         body {
-            background: #1a1a2e;
-            color: #fff;
+            background: #2c3e50;
+            color: #ecf0f1;
             min-height: 100vh;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
         }
         
         body.light-theme {
@@ -32,13 +32,13 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: rgba(44, 62, 80, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
-            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .light-theme .container {
@@ -51,12 +51,11 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-            position: relative;
+            border-bottom: 2px solid rgba(230, 126, 34, 0.5);
         }
         
         .light-theme header {
-            border-bottom: 2px solid rgba(44, 62, 80, 0.1);
+            border-bottom: 2px solid rgba(231, 76, 60, 0.3);
         }
         
         .logo {
@@ -69,21 +68,21 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #4dccbd;
+            color: #ffcc5f;
         }
         
         .light-theme .logo-icon {
-            color: #3498db;
+            color: #e74c3c;
         }
         
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            color: #4dccbd;
+            color: #ffcc5f;
         }
         
         .light-theme h1 {
-            color: #3498db;
+            color: #e74c3c;
         }
         
         .subtitle {
@@ -92,10 +91,11 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
+            color: #ffffff;
         }
         
         .light-theme .subtitle {
-            color: #34495e;
+            color: #2c3e50;
         }
         
         .groups-container {
@@ -105,28 +105,28 @@
         }
         
         .group-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(52, 73, 94, 0.8);
             border-radius: 15px;
             padding: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 2px solid #4dccbd;
+            border: 2px solid #ffcc5f;
         }
         
         .light-theme .group-card {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.9);
             border: 2px solid #3498db;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .group-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(52, 73, 94, 0.9);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .light-theme .group-card:hover {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 1);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
@@ -136,7 +136,7 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #4dccbd;
+            border-bottom: 2px solid #e74c3c;
         }
         
         .light-theme .group-header {
@@ -146,19 +146,19 @@
         .group-title {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #4dccbd;
+            color: #ffcc5f;
         }
         
         .light-theme .group-title {
-            color: #3498db;
+            color: #2c3e50;
         }
         
         .group-size {
-            color: #fff;
+            color: #ecf0f1;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
-            background: rgba(77, 204, 189, 0.2);
+            background: rgba(231, 76, 60, 0.2);
         }
         
         .light-theme .group-size {
@@ -176,9 +176,9 @@
             gap: 10px;
             padding: 15px;
             margin-bottom: 15px;
-            border: 2px solid #4dccbd;
+            border: 2px solid #e74c3c;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(44, 62, 80, 0.6);
             align-items: center;
             position: relative;
         }
@@ -196,7 +196,7 @@
             position: absolute;
             top: -12px;
             left: 15px;
-            background: #4dccbd;
+            background: #e74c3c;
             color: white;
             padding: 3px 10px;
             border-radius: 15px;
@@ -220,7 +220,7 @@
         }
         
         .light-theme .team-member {
-            background: rgba(207, 244, 249, 0.5);
+            background: rgba(255, 255, 255, 0.5);
         }
         
         .team-member.absent {
@@ -229,7 +229,7 @@
         
         .member-icon {
             margin-right: 10px;
-            color: #4dccbd;
+            color: #ffcc5f;
             min-width: 20px;
         }
         
@@ -246,14 +246,14 @@
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.1);
+            border-top: 2px solid rgba(230, 126, 34, 0.3);
             width: 100%;
             font-size: 0.9rem;
-            opacity: 0.8;
+            color: #bdc3c7;
         }
         
         .light-theme footer {
-            border-top: 2px solid rgba(44, 62, 80, 0.1);
+            border-top: 2px solid rgba(52, 152, 219, 0.3);
             color: #7f8c8d;
         }
         
