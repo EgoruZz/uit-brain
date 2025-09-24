@@ -22,7 +22,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: #1a1a2e;
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -34,8 +34,7 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
@@ -47,7 +46,7 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
         
         .logo {
@@ -60,13 +59,12 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #fdbb2d;
+            color: #4dccbd;
         }
         
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .subtitle {
@@ -92,7 +90,7 @@
         }
         
         .section-title i {
-            color: #fdbb2d;
+            color: #4dccbd;
         }
         
         .buttons-grid {
@@ -107,7 +105,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.08);
             border: none;
             border-radius: 15px;
             padding: 25px 20px;
@@ -123,14 +121,14 @@
         
         .btn:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .btn i {
             font-size: 2.2rem;
             margin-bottom: 15px;
-            color: #fdbb2d;
+            color: #4dccbd;
         }
         
         .btn span {
@@ -144,7 +142,7 @@
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
             width: 100%;
             font-size: 0.9rem;
             opacity: 0.8;
@@ -200,6 +198,7 @@
     <div class="container">
         <header>
             <div class="logo">
+                <i class="fas fa-brain logo-icon"></i>
                 <h1>Добро пожаловать</h1>
             </div>
             <p class="subtitle">Информационный портал для студентов группы УИТ-111</p>
@@ -229,7 +228,7 @@
                 <a href="Таблицы/Группы-Жизненного-цикла.html" class="btn">
                     <i class="fas fa-code-branch"></i>
                     Жизненный цикл ИТ-проекта
-                    <span>Распределние по группам</span>
+                    <span>Распределение по группам</span>
                 </a>
             </div>
         </div>
@@ -270,9 +269,8 @@
     </footer>
 
     <script>
-        // Убираем старый обработчик, так как ссылки теперь рабочие
+        // Анимация кнопок при наведении
         document.querySelectorAll('.btn').forEach(btn => {
-            // Оставляем только анимацию при наведении, без alert
             btn.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-5px)';
             });
@@ -282,7 +280,5 @@
             });
         });
     </script>
-</body>
-</html>
 </body>
 </html>
