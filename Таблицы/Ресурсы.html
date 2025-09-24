@@ -11,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         
         body {
@@ -21,6 +22,11 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
+        }
+        
+        body.light-theme {
+            background: #f5f7fa;
+            color: #2c3e50;
         }
         
         .container {
@@ -34,11 +40,21 @@
             padding: 30px;
         }
         
+        .light-theme .container {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
         header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .light-theme header {
+            border-bottom: 2px solid rgba(44, 62, 80, 0.1);
         }
         
         .logo {
@@ -54,9 +70,18 @@
             color: #4dccbd;
         }
         
+        .light-theme .logo-icon {
+            color: #3498db;
+        }
+        
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
+            color: #4dccbd;
+        }
+        
+        .light-theme h1 {
+            color: #3498db;
         }
         
         .subtitle {
@@ -65,6 +90,10 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
+        }
+        
+        .light-theme .subtitle {
+            color: #34495e;
         }
         
         .section {
@@ -79,10 +108,19 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            color: #4dccbd;
+        }
+        
+        .light-theme .section-title {
+            color: #3498db;
         }
         
         .section-title i {
             color: #4dccbd;
+        }
+        
+        .light-theme .section-title i {
+            color: #3498db;
         }
         
         .buttons-grid {
@@ -109,12 +147,27 @@
             transition: all 0.3s ease;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(77, 204, 189, 0.3);
+        }
+        
+        .light-theme .btn {
+            background: rgba(255, 255, 255, 0.7);
+            color: #2c3e50;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
         }
         
         .btn:hover {
             transform: translateY(-5px);
             background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-color: #4dccbd;
+        }
+        
+        .light-theme .btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-color: #3498db;
         }
         
         .btn i {
@@ -123,11 +176,19 @@
             color: #4dccbd;
         }
         
+        .light-theme .btn i {
+            color: #3498db;
+        }
+        
         .btn span {
             font-size: 1rem;
             opacity: 0.9;
             margin-top: 8px;
             font-weight: normal;
+        }
+        
+        .light-theme .btn span {
+            color: #34495e;
         }
         
         footer {
@@ -138,6 +199,11 @@
             width: 100%;
             font-size: 0.9rem;
             opacity: 0.8;
+        }
+        
+        .light-theme footer {
+            border-top: 2px solid rgba(44, 62, 80, 0.1);
+            color: #7f8c8d;
         }
         
         /* Адаптивность для мобильных устройств */
@@ -190,13 +256,14 @@
     <div class="container">
         <header>
             <div class="logo">
+                <i class="fas fa-code logo-icon"></i>
                 <h1>Учебные ресурсы по программированию</h1>
             </div>
-            <p class="subtitle">Интерактиваное обучение, мониторинг прогресса</p>
+            <p class="subtitle">Интерактивное обучение, мониторинг прогресса</p>
         </header>
         
         <div class="section">
-            <h2 class="section-title">Python</h2>
+            <h2 class="section-title"><i class="fab fa-python"></i> Python</h2>
             <div class="buttons-grid">
                 <a href="https://ru.pythontutor.ru/" class="btn" target="_blank">
                     <i class="fas fa-graduation-cap"></i>
@@ -219,7 +286,7 @@
         </div>
         
         <div class="section">
-            <h2 class="section-title">C++</h2>
+            <h2 class="section-title"><i class="fas fa-copyright"></i> C++</h2>
             <div class="buttons-grid">
                 <a href="https://stepik.org/course/193691/promo?search=7880161786" class="btn" target="_blank">
                     <i class="fas fa-graduation-cap"></i>
@@ -242,7 +309,7 @@
         </div>
         
         <div class="section">
-            <h2 class="section-title">Java</h2>
+            <h2 class="section-title"><i class="fab fa-java"></i> Java</h2>
             <div class="buttons-grid">
                 <a href="https://hyperskill.org/courses/39-java-full-stack-developer" class="btn" target="_blank">
                     <i class="fas fa-graduation-cap"></i>
@@ -265,7 +332,7 @@
         </div>
         
         <div class="section">
-            <h2 class="section-title">Тренажеры</h2>
+            <h2 class="section-title"><i class="fas fa-dumbbell"></i> Тренажеры</h2>
             <div class="buttons-grid">
                 <a href="https://leetcode.com/" class="btn" target="_blank">
                     <i class="fas fa-code"></i>
@@ -294,6 +361,14 @@
     </footer>
 
     <script>
+        // Автоматическое применение темы без переключателя
+        const body = document.body;
+        
+        // Проверяем сохраненную тему в localStorage и применяем
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+        }
+        
         // Анимация кнопок при наведении
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('mouseenter', function() {
