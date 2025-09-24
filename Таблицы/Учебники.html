@@ -11,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         
         body {
@@ -21,6 +22,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+        
+        /* Светлая тема */
+        body.light-theme {
+            background: #f5f7fa;
+            color: #2c3e50;
         }
         
         .container {
@@ -35,11 +42,21 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        .light-theme .container {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
         header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(230, 126, 34, 0.5);
+        }
+        
+        .light-theme header {
+            border-bottom: 2px solid rgba(231, 76, 60, 0.3);
         }
         
         .logo {
@@ -55,10 +72,18 @@
             color: #ffcc5f;
         }
         
+        .light-theme .logo-icon {
+            color: #e74c3c;
+        }
+        
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
             color: #ffcc5f;
+        }
+        
+        .light-theme h1 {
+            color: #e74c3c;
         }
         
         .subtitle {
@@ -70,6 +95,10 @@
             color: #ffffff;
         }
         
+        .light-theme .subtitle {
+            color: #2c3e50;
+        }
+        
         .info-box {
             background: rgba(255, 204, 95, 0.1);
             border-left: 4px solid #ffcc5f;
@@ -77,6 +106,20 @@
             border-radius: 8px;
             margin: 20px 0;
             color: #ecf0f1;
+        }
+        
+        .light-theme .info-box {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            color: #2c3e50;
+        }
+        
+        .info-box a {
+            color: #a5c9ff;
+        }
+        
+        .light-theme .info-box a {
+            color: #3498db;
         }
         
         .materials-container {
@@ -95,10 +138,21 @@
             border: 2px solid #e74c3c;
         }
         
+        .light-theme .subject-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
         .subject-card:hover {
             transform: translateY(-5px);
             background: rgba(52, 73, 94, 0.9);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .light-theme .subject-card:hover {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
         .subject-title {
@@ -108,6 +162,11 @@
             text-align: center;
             padding-bottom: 10px;
             border-bottom: 2px solid rgba(255, 204, 95, 0.5);
+        }
+        
+        .light-theme .subject-title {
+            color: #3498db;
+            border-bottom: 2px solid rgba(52, 152, 219, 0.5);
         }
         
         .material-type {
@@ -121,6 +180,10 @@
             align-items: center;
             gap: 10px;
             color: #ffcc5f;
+        }
+        
+        .light-theme .type-title {
+            color: #3498db;
         }
         
         .material-links {
@@ -141,9 +204,19 @@
             border-left: 3px solid #ffcc5f;
         }
         
+        .light-theme .material-link {
+            background: rgba(255, 255, 255, 0.7);
+            color: #2c3e50;
+            border-left: 3px solid #3498db;
+        }
+        
         .material-link:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: translateX(5px);
+        }
+        
+        .light-theme .material-link:hover {
+            background: rgba(255, 255, 255, 0.9);
         }
         
         .link-icon {
@@ -152,10 +225,18 @@
             min-width: 20px;
         }
         
+        .light-theme .link-icon {
+            color: #3498db;
+        }
+        
         .link-text {
             flex: 1;
             word-break: break-word;
             overflow-wrap: break-word;
+        }
+        
+        .light-theme .link-text {
+            color: #2c3e50;
         }
         
         .link-badge {
@@ -173,9 +254,19 @@
             color: #4efe54;
         }
         
+        .light-theme .badge-lan {
+            background: rgba(52, 152, 219, 0.3);
+            color: #2980b9;
+        }
+        
         .badge-pdf {
             background: rgba(246, 95, 61, 0.3);
             color: #fe4e4e;
+        }
+        
+        .light-theme .badge-pdf {
+            background: rgba(231, 76, 60, 0.3);
+            color: #c0392b;
         }
         
         .no-materials {
@@ -187,6 +278,11 @@
             border-radius: 8px;
         }
         
+        .light-theme .no-materials {
+            color: #7f8c8d;
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
         footer {
             text-align: center;
             margin-top: 40px;
@@ -195,6 +291,11 @@
             width: 100%;
             font-size: 0.9rem;
             color: #bdc3c7;
+        }
+        
+        .light-theme footer {
+            border-top: 2px solid rgba(52, 152, 219, 0.3);
+            color: #7f8c8d;
         }
         
         /* Адаптивность для мобильных устройств */
@@ -329,6 +430,7 @@
     <div class="container">
         <header>
             <div class="logo">
+                <i class="fas fa-book logo-icon"></i>
                 <h1>Электронные учебные материалы</h1>
             </div>
             <p class="subtitle">Доступ к электронным учебным ресурсам (их называют нам преподаватели)</p>
@@ -337,7 +439,7 @@
         <div class="info-box">
             <p><i class="fas fa-info-circle"></i> <strong>Важная информация:</strong></p>
             <br>
-            <p>• Некоторые ссылки ведут на <a href="https://e.lanbook.com" style="color: #a5c9ff;">ЭБС Лань</a> - для доступа требуется регистрация как обучающегося РУТ (МИИТ)</p>
+            <p>• Некоторые ссылки ведут на <a href="https://e.lanbook.com">ЭБС Лань</a> - для доступа требуется регистрация как обучающегося РУТ (МИИТ)</p>
             <br>
             <p>• Ссылки на PDF-документы могут загружаться до 10-15 секунд.</p>
         </div>
