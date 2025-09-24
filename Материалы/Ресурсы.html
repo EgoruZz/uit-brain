@@ -3,16 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>УИТ-111</title>
+    <title>Учебные ресурсы по программированию - УИТ-111</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Для Telegram -->
-    <meta property="og:image" content="https://egoruzz.github.io/uit-brain/brain.png">
-    <meta property="og:title" content="УИТ-111">
-    <meta property="og:description" content="Информационный портал для студентов группы УИТ-111">
-    <!-- Для iOS (добавить на главный экран) -->
-    <link rel="apple-touch-icon" href="brain.png">
-    <!-- Для Android (добавить на главный экран) -->
-    <link rel="icon" href="brain.png">
     <style>
         * {
             margin: 0;
@@ -22,7 +14,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background: #1a1a2e;
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -34,8 +26,7 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
@@ -47,7 +38,7 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
         
         .logo {
@@ -60,13 +51,12 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #fdbb2d;
+            color: #4dccbd;
         }
         
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .subtitle {
@@ -92,7 +82,7 @@
         }
         
         .section-title i {
-            color: #fdbb2d;
+            color: #4dccbd;
         }
         
         .buttons-grid {
@@ -107,7 +97,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.08);
             border: none;
             border-radius: 15px;
             padding: 25px 20px;
@@ -123,14 +113,14 @@
         
         .btn:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .btn i {
             font-size: 2.2rem;
             margin-bottom: 15px;
-            color: #fdbb2d;
+            color: #4dccbd;
         }
         
         .btn span {
@@ -144,7 +134,7 @@
             text-align: center;
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid rgba(255, 255, 255, 0.1);
             width: 100%;
             font-size: 0.9rem;
             opacity: 0.8;
@@ -200,65 +190,99 @@
     <div class="container">
         <header>
             <div class="logo">
-                <h1>Добро пожаловать</h1>
+                <h1>Учебные ресурсы по программированию</h1>
             </div>
-            <p class="subtitle">Информационный портал для студентов группы УИТ-111</p>
+            <p class="subtitle">Интерактиваное обучение, мониторинг прогресса</p>
         </header>
         
         <div class="section">
-            <h2 class="section-title"><i class="fas fa-users"></i> Наши группы</h2>
+            <h2 class="section-title">Python</h2>
             <div class="buttons-grid">
-                <a href="Таблицы/Группы-ОРГ.html" class="btn">
-                    <i class="fas fa-landmark"></i>
-                    Основы Российской Государственности
-                    <span>Распределение по группам</span>
+                <a href="https://ru.pythontutor.ru/" class="btn" target="_blank">
+                    <i class="fas fa-graduation-cap"></i>
+                    Питон Тьютор
+                    <span>Практика и теория</span>
                 </a>
                 
-                <a href="Таблицы/Группы-Проектов.html" class="btn">
-                    <i class="fas fa-project-diagram"></i>
-                    Проектная деятельность
-                    <span>Распределение по группам</span>
+                <a href="https://education.yandex.ru/handbook/python" class="btn" target="_blank">
+                    <i class="fas fa-book"></i>
+                    Питон Хендбук
+                    <span>Практика и теория</span>
                 </a>
                 
-                <a href="Таблицы/Бригады-Физика.html" class="btn">
-                    <i class="fas fa-atom"></i>
-                    Бригады по Физике
-                    <span>Распределение по группам</span>
-                </a>
-                
-                <a href="Таблицы/Группы-Жизненного-цикла.html" class="btn">
-                    <i class="fas fa-code-branch"></i>
-                    Жизненный цикл ИТ-проекта
-                    <span>Распределние по группам</span>
+                <a href="https://roadmap.sh/python" class="btn" target="_blank">
+                    <i class="fas fa-map-signs"></i>
+                    Питон Roadmap
+                    <span>Иерархия Python</span>
                 </a>
             </div>
         </div>
         
         <div class="section">
-            <h2 class="section-title"><i class="fas fa-star"></i> Полезные данные</h2>
+            <h2 class="section-title">C++</h2>
             <div class="buttons-grid">
-                <a href="Таблицы/Учебники.html" class="btn">
+                <a href="https://stepik.org/course/193691/promo?search=7880161786" class="btn" target="_blank">
+                    <i class="fas fa-graduation-cap"></i>
+                    C++ Степик
+                    <span>Практика и теория</span>
+                </a>
+                
+                <a href="https://education.yandex.ru/handbook/cpp" class="btn" target="_blank">
                     <i class="fas fa-book"></i>
-                    Учебники
-                    <span>Электронные издания</span>
-                </a>
-
-                <a href="Ресурсы.html" class="btn">
-                    <i class="fas fa-rocket"></i>
-                    Качалка
-                    <span>Задачи и обучение</span>
+                    C++ Хендбук
+                    <span>Практика и теория</span>
                 </a>
                 
-                <a href="https://cloud.mail.ru/public/rMuy/3KX89Fkbv" class="btn">
-                    <i class="fas fa-flask"></i>
-                    Cloud.Mail Физика
-                    <span>Лабораторные и обработка измерений</span>
+                <a href="https://roadmap.sh/cpp" class="btn" target="_blank">
+                    <i class="fas fa-map-signs"></i>
+                    C++ Roadmap
+                    <span>Иерархия C++</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Java</h2>
+            <div class="buttons-grid">
+                <a href="https://hyperskill.org/courses/39-java-full-stack-developer" class="btn" target="_blank">
+                    <i class="fas fa-graduation-cap"></i>
+                    Java Hyperskill
+                    <span>Практика и теория</span>
                 </a>
                 
-                <a href="https://www.dropbox.com/scl/fo/w6g4z0qdcymg5v67ou1ej/AGjQER9EQ9d3awkQsc1eYMc?rlkey=ne210ijmotnpa85164a8rxl1j&e=1&dl=0" class="btn">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                    Dropbox Java
-                    <span>Лабораторные по Java</span>
+                <a href="https://javarush.com/courses/java" class="btn" target="_blank">
+                    <i class="fas fa-book"></i>
+                    Java Rush
+                    <span>Практика и теория</span>
+                </a>
+                
+                <a href="https://roadmap.sh/java" class="btn" target="_blank">
+                    <i class="fas fa-map-signs"></i>
+                    Java Roadmap
+                    <span>Иерархия Java</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Тренажеры</h2>
+            <div class="buttons-grid">
+                <a href="https://leetcode.com/" class="btn" target="_blank">
+                    <i class="fas fa-code"></i>
+                    LeetCode
+                    <span>Тщательная отработка</span>
+                </a>
+                
+                <a href="https://acmp.ru/" class="btn" target="_blank">
+                    <i class="fas fa-trophy"></i>
+                    ACMP
+                    <span>Интересные формулировки</span>
+                </a>
+                
+                <a href="https://www.codewars.com/dashboard" class="btn" target="_blank">
+                    <i class="fas fa-medal"></i>
+                    Codewars
+                    <span>Полностью на английском языке</span>
                 </a>
             </div>
         </div>
@@ -270,9 +294,8 @@
     </footer>
 
     <script>
-        // Убираем старый обработчик, так как ссылки теперь рабочие
+        // Анимация кнопок при наведении
         document.querySelectorAll('.btn').forEach(btn => {
-            // Оставляем только анимацию при наведении, без alert
             btn.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-5px)';
             });
@@ -282,7 +305,5 @@
             });
         });
     </script>
-</body>
-</html>
 </body>
 </html>
