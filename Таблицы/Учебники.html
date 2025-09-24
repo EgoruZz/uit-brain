@@ -539,5 +539,16 @@
             <p>Сайт для студентов и преподавателей</p>
         </footer>
     </div>
+
+    <script>
+        // Автоматическое применение темы без переключателя
+        const body = document.body;
+        
+        // Проверяем сохраненную тему в localStorage и применяем
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+        }
+        // Если тема dark или не установлена - ничего не делаем, остается темная по умолчанию
+    </script>
 </body>
 </html>

@@ -11,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         
         body {
@@ -21,6 +22,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+        
+        /* Светлая тема */
+        body.light-theme {
+            background: #f5f7fa;
+            color: #2c3e50;
         }
         
         .container {
@@ -35,11 +42,21 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        .light-theme .container {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
         header {
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
             border-bottom: 2px solid rgba(230, 126, 34, 0.5);
+        }
+        
+        .light-theme header {
+            border-bottom: 2px solid rgba(231, 76, 60, 0.3);
         }
         
         .logo {
@@ -55,10 +72,18 @@
             color: #ffcc5f;
         }
         
+        .light-theme .logo-icon {
+            color: #e74c3c;
+        }
+        
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
             color: #ffcc5f;
+        }
+        
+        .light-theme h1 {
+            color: #e74c3c;
         }
         
         .subtitle {
@@ -68,6 +93,10 @@
             margin: 0 auto;
             line-height: 1.6;
             color: #ffffff;
+        }
+        
+        .light-theme .subtitle {
+            color: #2c3e50;
         }
         
         .groups-container {
@@ -85,10 +114,21 @@
             border: 2px solid #e74c3c;
         }
         
+        .light-theme .group-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
         .group-card:hover {
             transform: translateY(-5px);
             background: rgba(52, 73, 94, 0.9);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .light-theme .group-card:hover {
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
         .group-header {
@@ -100,10 +140,18 @@
             border-bottom: 1px solid rgba(230, 126, 34, 0.3);
         }
         
+        .light-theme .group-header {
+            border-bottom: 1px solid rgba(52, 152, 219, 0.3);
+        }
+        
         .group-title {
             font-size: 1.2rem;
             font-weight: 600;
             color: #ffcc5f;
+        }
+        
+        .light-theme .group-title {
+            color: #2c3e50;
         }
         
         .group-size {
@@ -112,6 +160,11 @@
             border-radius: 20px;
             font-size: 0.9rem;
             background: rgba(231, 76, 60, 0.2);
+        }
+        
+        .light-theme .group-size {
+            color: #2c3e50;
+            background: rgba(52, 152, 219, 0.2);
         }
         
         .member-list {
@@ -124,6 +177,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+        }
+        
+        .light-theme .member {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .member:last-child {
@@ -140,7 +197,15 @@
             color: #ffcc5f;
         }
         
+        .light-theme .member-icon {
+            color: #3498db;
+        }
+        
         .absent {
+            color: #e74c3c;
+        }
+        
+        .light-theme .absent {
             color: #e74c3c;
         }
         
@@ -149,13 +214,26 @@
             margin-left: 8px;
         }
         
+        .light-theme .absent-mark {
+            color: #e74c3c;
+        }
+        
         .special-group {
             border: 2px solid #ffcc5f;
             background: rgba(255, 204, 95, 0.1);
         }
         
+        .light-theme .special-group {
+            border: 2px solid #3498db;
+            background: rgba(52, 152, 219, 0.1);
+        }
+        
         .special-group .group-title {
             color: #ffcc5f;
+        }
+        
+        .light-theme .special-group .group-title {
+            color: #3498db;
         }
         
         footer {
@@ -166,6 +244,11 @@
             width: 100%;
             font-size: 0.9rem;
             color: #bdc3c7;
+        }
+        
+        .light-theme footer {
+            border-top: 2px solid rgba(52, 152, 219, 0.3);
+            color: #7f8c8d;
         }
         
         /* Адаптивность для мобильных устройств */
@@ -210,6 +293,7 @@
     <div class="container">
         <header>
             <div class="logo">
+                <i class="fas fa-project-diagram logo-icon"></i>
                 <h1>Проектная деятельность</h1>
             </div>
             <p class="subtitle">Распределение студентов по группам для проектной деятельности</p>
@@ -405,7 +489,7 @@
                     </li>
                     <li class="member">
                         <div class="member-info">
-                            <i class="fas fa-user member-icon"></i> Шmeльков Владимир Артемович
+                            <i class="fas fa-user member-icon"></i> Шмельков Владимир Артемович
                         </div>
                     </li>
                 </ul>
@@ -497,5 +581,16 @@
         <p>УИТ-111 © 2025</p>
         <p>Сайт для студентов и преподавателей</p>
     </footer>
+
+    <script>
+        // Автоматическое применение темы без переключателя
+        const body = document.body;
+        
+        // Проверяем сохраненную тему в localStorage и применяем
+        if (localStorage.getItem('theme') === 'light') {
+            body.classList.add('light-theme');
+        }
+        // Если тема dark или не установлена - ничего не делаем, остается темная по умолчанию
+    </script>
 </body>
 </html>
