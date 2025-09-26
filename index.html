@@ -457,6 +457,21 @@
             });
         });
         
+        // Функция сравнения версий
+        function compareVersions(version1, version2) {
+            const v1 = version1.split('.').map(Number);
+            const v2 = version2.split('.').map(Number);
+            
+            for (let i = 0; i < Math.max(v1.length, v2.length); i++) {
+                const num1 = v1[i] || 0;
+                const num2 = v2[i] || 0;
+                
+                if (num1 > num2) return 1;
+                if (num1 < num2) return -1;
+            }
+            return 0;
+        }
+        
         // Функция проверки обновлений
         async function checkForUpdates() {
             try {
@@ -469,9 +484,18 @@
                     console.log('Текущая версия:', CURRENT_VERSION);
                     console.log('Последняя версия:', latestVersion);
                     
-                    if (latestVersion !== CURRENT_VERSION) {
-                        showUpdateNotification();
+                    // Сравниваем версии
+                    const comparison = compareVersions(CURRENT_VERSION, latestVersion);
+                    
+                    // Если текущая версия меньше последней - есть обновление
+                    if (comparison === -1) {
+                        console.log('Обнаружено обновление!');
+                        showUpdateNotification(latestVersion);
                         return true; // Обновление доступно
+                    } else if (comparison === 0) {
+                        console.log('Версия актуальна');
+                    } else {
+                        console.log('Локальная версия новее (возможно тестирование)');
                     }
                 }
             } catch (error) {
@@ -481,11 +505,26 @@
         }
         
         // Функция показа уведомления об обновлении
-        function showUpdateNotification() {
+        function showUpdateNotification(latestVersion) {
+            // Проверяем, не было ли уже показано уведомление для этой версии
+            const lastNotifiedVersion = localStorage.getItem('lastNotifiedVersion');
+            
+            if (lastNotifiedVersion === latestVersion) {
+                console.log('Уведомление для версии', latestVersion, 'уже было показано');
+                return;
+            }
+            
+            // Сохраняем информацию о том, что уведомили о этой версии
+            localStorage.setItem('lastNotifiedVersion', latestVersion);
+            
+            updateNotification.innerHTML = `<i class="fas fa-sync-alt"></i> Обновление до v${latestVersion}! Перезагрузка через 5 сек.`;
             updateNotification.style.display = 'block';
             
             // Перезагрузка через 5 секунд
             setTimeout(() => {
+                // Очищаем информацию о последнем уведомлении перед перезагрузкой
+                localStorage.removeItem('lastNotifiedVersion');
+                
                 // Принудительная перезагрузка без кэша
                 window.location.reload(true);
             }, 5000);
@@ -512,6 +551,24 @@
         window.addEventListener('focus', () => {
             setTimeout(checkForUpdates, 2000);
         });
+        
+        // Дополнительная защита от множественных уведомлений
+        let updateCheckInProgress = false;
+        
+        async function safeCheckForUpdates() {
+            if (updateCheckInProgress) return false;
+            
+            updateCheckInProgress = true;
+            try {
+                return await checkForUpdates();
+            } finally {
+                updateCheckInProgress = false;
+            }
+        }
+        
+        // Переопределяем вызовы проверки обновлений на безопасную версию
+        const originalCheckForUpdates = checkForUpdates;
+        checkForUpdates = safeCheckForUpdates;
     </script>
 </body>
 </html>
