@@ -235,6 +235,36 @@
             color: #000000;
         }
         
+        /* Стили для уведомления об обновлении */
+        .update-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4dccbd;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none;
+            animation: slideIn 0.5s ease;
+            max-width: 300px;
+        }
+        
+        .light-theme .update-notification {
+            background: #3498db;
+            color: white;
+        }
+        
+        .update-notification i {
+            margin-right: 10px;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
         /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
             h1 {
@@ -266,6 +296,13 @@
                 height: 45px;
                 font-size: 1.3rem;
             }
+            
+            .update-notification {
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
         }
         
         @media (max-width: 480px) {
@@ -294,6 +331,10 @@
     </style>
 </head>
 <body>
+    <div class="update-notification" id="updateNotification">
+        <i class="fas fa-sync-alt"></i> Доступно обновление! Страница будет перезагружена через 5 секунд.
+    </div>
+    
     <div class="container">
         <header>
             <div class="logo">
@@ -368,12 +409,23 @@
     <footer>
         <p>УИТ-111 © 2025</p>
         <p>Сайт для студентов и преподавателей</p>
+        <p>Версия: <span id="currentVersion">1.0.0</span></p>
     </footer>
 
     <script>
-        // Переключение темы (только на главной странице)
+        // Конфигурация системы обновлений
+        const CURRENT_VERSION = '1.0.0'; // Текущая версия сайта
+        const VERSION_FILE_URL = 'https://egoruzz.github.io/uit-brain/version.txt'; // URL файла с версией
+        const CHECK_INTERVAL = 300000; // Проверка каждые 5 минут (300000 мс)
+        
+        // Элементы DOM
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
+        const updateNotification = document.getElementById('updateNotification');
+        const currentVersionSpan = document.getElementById('currentVersion');
+        
+        // Устанавливаем текущую версию в футере
+        currentVersionSpan.textContent = CURRENT_VERSION;
         
         // Проверяем сохраненную тему в localStorage
         if (localStorage.getItem('theme') === 'light') {
@@ -381,6 +433,7 @@
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
         
+        // Переключение темы
         themeToggle.addEventListener('click', function() {
             body.classList.toggle('light-theme');
             
@@ -402,6 +455,62 @@
             btn.addEventListener('mouseleave', function() {
                 this.style.transform = '';
             });
+        });
+        
+        // Функция проверки обновлений
+        async function checkForUpdates() {
+            try {
+                // Добавляем timestamp к URL чтобы избежать кэширования
+                const response = await fetch(VERSION_FILE_URL + '?t=' + Date.now());
+                
+                if (response.ok) {
+                    const latestVersion = (await response.text()).trim();
+                    
+                    console.log('Текущая версия:', CURRENT_VERSION);
+                    console.log('Последняя версия:', latestVersion);
+                    
+                    if (latestVersion !== CURRENT_VERSION) {
+                        showUpdateNotification();
+                        return true; // Обновление доступно
+                    }
+                }
+            } catch (error) {
+                console.error('Ошибка при проверке обновлений:', error);
+            }
+            return false; // Обновление не доступно
+        }
+        
+        // Функция показа уведомления об обновлении
+        function showUpdateNotification() {
+            updateNotification.style.display = 'block';
+            
+            // Перезагрузка через 5 секунд
+            setTimeout(() => {
+                // Принудительная перезагрузка без кэша
+                window.location.reload(true);
+            }, 5000);
+        }
+        
+        // Запускаем проверку обновлений при загрузке страницы
+        window.addEventListener('load', () => {
+            // Первая проверка через 3 секунды после загрузки
+            setTimeout(checkForUpdates, 3000);
+            
+            // Затем проверяем каждые 5 минут
+            setInterval(checkForUpdates, CHECK_INTERVAL);
+        });
+        
+        // Также проверяем при возвращении на страницу (если пользователь переключил вкладку)
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                // Небольшая задержка перед проверкой
+                setTimeout(checkForUpdates, 1000);
+            }
+        });
+        
+        // Проверяем обновления при фокусе окна
+        window.addEventListener('focus', () => {
+            setTimeout(checkForUpdates, 2000);
         });
     </script>
 </body>
