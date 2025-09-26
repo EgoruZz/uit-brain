@@ -224,7 +224,7 @@
         }
         
         .light-theme .btn span {
-            color: #34495e;
+            color: #000000; /* Изменено на черный цвет */
         }
         
         footer {
@@ -382,13 +382,23 @@
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         
+        // Удаляем transition для body при переключении темы
+        const disableTransition = () => {
+            body.style.transition = 'none';
+            setTimeout(() => {
+                body.style.transition = '';
+            }, 10);
+        };
+        
         // Проверяем сохраненную тему в localStorage
         if (localStorage.getItem('theme') === 'light') {
+            disableTransition();
             body.classList.add('light-theme');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
         
         themeToggle.addEventListener('click', function() {
+            disableTransition();
             body.classList.toggle('light-theme');
             
             if (body.classList.contains('light-theme')) {
