@@ -19,7 +19,6 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
         
         body {
@@ -60,26 +59,20 @@
             margin: 20px auto 40px auto;
             background: rgba(255, 255, 255, 0.1);
             border: 2px solid rgba(237, 61, 61, 0.808);
-            border-radius: 10px; /* Изменил с 50% на 10px */
-            width: 120px; /* Увеличил ширину */
-            height: 50px; /* Оставил высоту */
+            border-radius: 10px;
+            width: 120px;
+            height: 50px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.6rem;
             color: #f36262;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Добавил тень */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
         .theme-toggle:hover {
-            transform: scale(1.05); /* Уменьшил масштаб при наведении */
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .theme-toggle:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
             background: rgba(255, 255, 255, 0.2);
         }
         
@@ -183,9 +176,9 @@
             font-weight: 600;
             text-decoration: none;
             text-align: center;
-            transition: all 0.3s ease;
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
         }
         
         .light-theme .btn {
@@ -224,7 +217,7 @@
         }
         
         .light-theme .btn span {
-            color: #000000; /* Изменено на черный цвет */
+            color: #000000;
         }
         
         footer {
@@ -382,23 +375,13 @@
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
         
-        // Удаляем transition для body при переключении темы
-        const disableTransition = () => {
-            body.style.transition = 'none';
-            setTimeout(() => {
-                body.style.transition = '';
-            }, 10);
-        };
-        
         // Проверяем сохраненную тему в localStorage
         if (localStorage.getItem('theme') === 'light') {
-            disableTransition();
             body.classList.add('light-theme');
             themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
         }
         
         themeToggle.addEventListener('click', function() {
-            disableTransition();
             body.classList.toggle('light-theme');
             
             if (body.classList.contains('light-theme')) {
