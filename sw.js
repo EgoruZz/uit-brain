@@ -1,5 +1,5 @@
 // Версия кэша - меняйте это значение при каждом обновлении кода
-const CACHE_NAME = 'uit-brain-v1.0.0';
+const CACHE_NAME = 'uit-brain-v1.0.1';
 
 // Файлы, которые нужно кэшировать сразу при установке
 const STATIC_CACHE = [
