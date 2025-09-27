@@ -9,10 +9,6 @@
     <meta property="og:image" content="https://egoruzz.github.io/uit-brain/brain.png">
     <meta property="og:title" content="УИТ-111">
     <meta property="og:description" content="Информационный портал для студентов группы УИТ-111">
-    <!-- Для Автообновлений -->
-    <meta name="theme-color" content="#1a1a2e">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Для iOS (добавить на главный экран) -->
     <link rel="apple-touch-icon" href="brain.png">
     <!-- Для Android (добавить на главный экран) -->
@@ -194,7 +190,7 @@
         
         .btn:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 100, 0.15);
+            background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
@@ -375,59 +371,6 @@
     </footer>
 
     <script>
-        // Регистрация Service Worker
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                        console.log('ServiceWorker зарегистрирован: ', registration.scope);
-                        
-                        // Проверяем обновления каждые 10 минут
-                        setInterval(() => {
-                            registration.update();
-                        }, 10 * 60 * 1000);
-                        
-                        // Проверяем, есть ли новая версия Service Worker
-                        registration.addEventListener('updatefound', () => {
-                            const newWorker = registration.installing;
-                            
-                            newWorker.addEventListener('statechange', () => {
-                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    // Новая версия доступна! Предлагаем обновить
-                                    console.log('Доступна новая версия сайта!');
-                                    
-                                    // Автоматически активируем нового Service Worker
-                                    newWorker.postMessage({type: 'SKIP_WAITING'});
-                                    
-                                    // Перезагружаем страницу для применения обновлений
-                                    window.location.reload();
-                                }
-                            });
-                        });
-                    })
-                    .catch(function(error) {
-                        console.log('Ошибка регистрации ServiceWorker: ', error);
-                    });
-            });
-            
-            // Слушаем сообщения от Service Worker о готовности обновления
-            navigator.serviceWorker.addEventListener('controllerchange', () => {
-                window.location.reload();
-            });
-        }
-        
-        // Функция для принудительной проверки обновлений
-        function checkForUpdates() {
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.ready.then(registration => {
-                    registration.update();
-                });
-            }
-        }
-        
-        // Проверяем обновления при фокусе на странице
-        window.addEventListener('focus', checkForUpdates);
-
         // Переключение темы
         const themeToggle = document.getElementById('themeToggle');
         const body = document.body;
@@ -460,34 +403,6 @@
                 this.style.transform = '';
             });
         });
-
-        function addUpdateButton() {
-            if (document.getElementById('update-btn')) return;
-            
-            const updateBtn = document.createElement('button');
-            updateBtn.id = 'update-btn';
-            updateBtn.innerHTML = '<i class="fas fa-sync-alt"></i> Проверить обновления';
-            updateBtn.style.cssText = `
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                background: #4dccbd;
-                color: white;
-                border: none;
-                border-radius: 50px;
-                padding: 10px 20px;
-                cursor: pointer;
-                z-index: 1000;
-                font-size: 14px;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            `;
-            updateBtn.onclick = checkForUpdates;
-            document.body.appendChild(updateBtn);
-        }
-
-        // Добавьте после загрузки DOM
-        document.addEventListener('DOMContentLoaded', addUpdateButton);
-
     </script>
 </body>
 </html>
