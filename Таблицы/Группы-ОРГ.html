@@ -16,16 +16,15 @@
         }
         
         body {
-            background: #2c3e50;
-            color: #ecf0f1;
+            background: #1a1a2e;
+            color: #fff;
             min-height: 100vh;
-            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 20px;
         }
         
-        /* Светлая тема для этой страницы */
         body.light-theme {
             background: #f5f7fa;
             color: #2c3e50;
@@ -34,13 +33,12 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(44, 62, 80, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .light-theme .container {
@@ -53,7 +51,7 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgb(230, 34, 34);
+            border-bottom: 2px solid rgba(71, 211, 216, 0.82);
         }
         
         .light-theme header {
@@ -70,17 +68,17 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #ffcc5f;
+            color: #4dccbd;
         }
         
         .light-theme .logo-icon {
-            color: #e74c3c;
+            color: #3498db;
         }
         
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            color: #ffcc5f;
+            color: #4dccbd;
         }
         
         .light-theme h1 {
@@ -93,42 +91,41 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
-            color: #ffffff;
         }
         
         .light-theme .subtitle {
-            color: #2c3e50;
+            color: #34495e;
         }
         
         .groups-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
         }
         
         .group-card {
-            background: rgba(52, 73, 94, 0.8);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 15px;
             padding: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 2px solid #e74c3c;
+            border: 2px solid #4dccbd;
         }
         
         .light-theme .group-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.7);
             border: 2px solid #3498db;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .group-card:hover {
             transform: translateY(-5px);
-            background: rgba(52, 73, 94, 0.9);
+            background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .light-theme .group-card:hover {
-            background: rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
@@ -138,7 +135,7 @@
             align-items: center;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 2px solid rgb(230, 34, 34);
+            border-bottom: 2px solid rgba(77, 204, 189, 1);
         }
         
         .light-theme .group-header {
@@ -148,19 +145,19 @@
         .group-title {
             font-size: 1.2rem;
             font-weight: 600;
-            color: #ffcc5f;
+            color: #4dccbd;
         }
         
         .light-theme .group-title {
-            color: #2c3e50;
+            color: #3498db;
         }
         
         .group-size {
-            color: #ecf0f1;
+            color: #fff;
             padding: 5px 10px;
             border-radius: 20px;
             font-size: 0.9rem;
-            background: rgba(231, 76, 60, 0.2);
+            background: rgba(77, 204, 189, 0.2);
         }
         
         .light-theme .group-size {
@@ -174,14 +171,14 @@
         
         .member {
             padding: 10px 0;
-            border-bottom: 1px solid rgb(230, 34, 34);
+            border-bottom: 0.5px solid rgba(77, 204, 189, 1);
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
         
         .light-theme .member {
-            border-bottom: 1px solid rgba(0, 154, 255, 0.8);
+           border-bottom: 1px solid rgba(0, 154, 255, 1);
         }
         
         .member:last-child {
@@ -195,7 +192,7 @@
         
         .member-icon {
             margin-right: 10px;
-            color: #ffcc5f;
+            color: #4dccbd;
         }
         
         .light-theme .member-icon {
@@ -205,10 +202,6 @@
         .absent-mark {
             color: #e74c3c;
             margin-left: 8px;
-        }
-        
-        .light-theme .absent-mark {
-            color: #e74c3c;
         }
         
         footer {
@@ -554,7 +547,6 @@
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-theme');
         }
-        // Если тема dark или не установлена - ничего не делаем, остается темная по умолчанию
     </script>
 </body>
 </html>

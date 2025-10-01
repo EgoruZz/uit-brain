@@ -16,13 +16,13 @@
         }
         
         body {
-            background: #2c3e50;
-            color: #ecf0f1;
+            background: #1a1a2e;
+            color: #fff;
             min-height: 100vh;
-            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 20px;
         }
         
         body.light-theme {
@@ -33,13 +33,12 @@
         .container {
             width: 100%;
             max-width: 1200px;
-            background: rgba(44, 62, 80, 0.95);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .light-theme .container {
@@ -52,7 +51,7 @@
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid rgb(230, 34, 34);
+            border-bottom: 2px solid rgba(71, 211, 216, 0.82);
         }
         
         .light-theme header {
@@ -69,17 +68,17 @@
         
         .logo-icon {
             font-size: 2.5rem;
-            color: #ffcc5f;
+            color: #4dccbd;
         }
         
         .light-theme .logo-icon {
-            color: #e74c3c;
+            color: #3498db;
         }
         
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            color: #ffcc5f;
+            color: #4dccbd;
         }
         
         .light-theme h1 {
@@ -92,11 +91,10 @@
             max-width: 600px;
             margin: 0 auto;
             line-height: 1.6;
-            color: #ffffff;
         }
         
         .light-theme .subtitle {
-            color: #2c3e50;
+            color: #34495e;
         }
         
         .groups-container {
@@ -106,28 +104,28 @@
         }
         
         .group-card {
-            background: rgba(52, 73, 94, 0.8);
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 15px;
             padding: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 2px solid #ffcc5f;
+            border: 2px solid #4dccbd;
         }
         
         .light-theme .group-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.7);
             border: 2px solid #3498db;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .group-card:hover {
             transform: translateY(-5px);
-            background: rgba(52, 73, 94, 0.9);
+            background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
         
         .light-theme .group-card:hover {
-            background: rgba(255, 255, 255, 1);
+            background: rgba(255, 255, 255, 0.9);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
@@ -137,7 +135,7 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #e74c3c;
+            border-bottom: 1px solid rgba(77, 204, 189, 0.3);
         }
         
         .light-theme .group-header {
@@ -147,24 +145,24 @@
         .group-title {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #ffcc5f;
+            color: #4dccbd;
         }
         
         .light-theme .group-title {
-            color: #2c3e50;
+            color: #3498db;
         }
         
         .group-size {
-            color: #ffffff;
+            color: #fff;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.9rem;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(77, 204, 189, 0.4);
         }
         
         .light-theme .group-size {
-            color: #000000;
-            background: rgba(70, 201, 245, 0.2);
+            color: #2c3e50;
+            background: rgba(52, 152, 219, 0.2);
         }
         
         .team-list {
@@ -177,9 +175,9 @@
             gap: 10px;
             padding: 15px;
             margin-bottom: 15px;
-            border: 2px solid #e74c3c;
+            border: 2px solid #4dccbd;
             border-radius: 10px;
-            background: rgba(44, 62, 80, 0.6);
+            background: rgba(255, 255, 255, 0.05);
             align-items: center;
             position: relative;
         }
@@ -197,7 +195,7 @@
             position: absolute;
             top: -12px;
             left: 15px;
-            background: #e74c3c;
+            background: #4dccbd;
             color: white;
             padding: 3px 10px;
             border-radius: 15px;
@@ -216,14 +214,14 @@
             align-items: center;
             color: #ffffff;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(77, 204, 189, 0.2);
             border-radius: 8px;
             min-height: 44px;
         }
         
         .light-theme .team-member {
-            color: #000000;
-            background: rgba(70, 201, 245, 0.2);
+            color: #2c3e50;
+            background: rgba(52, 152, 219, 0.1);
         }
         
         .team-member.absent {
@@ -232,7 +230,7 @@
         
         .member-icon {
             margin-right: 10px;
-            color: #ffcc5f;
+            color: #4dccbd;
             min-width: 20px;
         }
         
