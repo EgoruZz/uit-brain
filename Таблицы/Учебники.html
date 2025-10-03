@@ -108,9 +108,8 @@
         }
         
         .light-theme .info-box {
-            background: rgba(0, 0, 0, 0.05);
-            border-left: 3px solid #db3434;
-            border-right: 3px solid #db3434;
+            background: none;
+            border: 2px solid #db3434;
             color: #000000;
         }
         
@@ -651,6 +650,7 @@
         if (localStorage.getItem('theme') === 'light') {
             body.classList.add('light-theme');
         }
+      body.classList.add('light-theme');
     </script>
 </body>
 </html>
