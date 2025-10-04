@@ -159,15 +159,15 @@
         }
         
         .btn:hover {
-            transform: translateY(-7px);
-            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             border-color: #4dccbd;
         }
         
         .light-theme .btn:hover {
             background: rgba(255, 255, 255, 1.0);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             border-color: #3498db;
         }
         
@@ -372,7 +372,7 @@
         // Анимация кнопок при наведении
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-7px)';
+                this.style.transform = 'translateY(-5px)';
             });
             
             btn.addEventListener('mouseleave', function() {
