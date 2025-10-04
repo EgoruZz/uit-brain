@@ -3,75 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Конспект: Свойства определителей</title>
+    <title>Свойства определителей</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 100%;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
             background-color: #f5f5f5;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
         }
+        
         .container {
             background: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 100%;
+            overflow: hidden;
         }
+        
         h1 {
             color: #2c3e50;
             text-align: center;
             border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            word-wrap: break-word;
         }
+        
         ol {
             counter-reset: item;
             padding-left: 0;
+            list-style-position: inside;
         }
+        
         li {
             margin-bottom: 20px;
             padding: 15px;
             background: #f8f9fa;
             border-left: 4px solid #3498db;
-            border-radius: 4px;
+            border-radius: 8px;
+            break-inside: avoid;
+            page-break-inside: avoid;
         }
+        
         .note {
             background: #fff3cd;
             border-left: 4px solid #ffc107;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 6px;
             font-size: 0.9em;
         }
+        
         .math {
-            font-size: 1.1em;
+            font-size: 1em;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 5px 0;
+            -webkit-overflow-scrolling: touch;
         }
+        
         .property {
-            margin: 5px 0;
-            padding-left: 10px;
+            margin: 8px 0;
+            padding-left: 15px;
+            word-wrap: break-word;
         }
+        
         .example {
             background: #e8f4fd;
             border-left: 4px solid #3498db;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 6px;
             font-size: 0.9em;
+            overflow-wrap: break-word;
         }
+        
         .matrix-type {
             margin: 15px 0;
-            padding: 10px;
+            padding: 15px;
             background: #f0f8ff;
-            border-radius: 5px;
+            border-radius: 8px;
+            border: 1px solid #d1ecf1;
+        }
+        
+        /* Адаптивные формулы */
+        .mjx-chtml {
+            font-size: 110% !important;
+            max-width: 100% !important;
+            overflow-x: auto !important;
+        }
+        
+        mjx-container {
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        mjx-container[jax="CHTML"] {
+            overflow: auto;
+        }
+        
+        /* Адаптивные матрицы */
+        .matrix-container {
+            overflow-x: auto;
+            margin: 10px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Медиа-запросы для разных экранов */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+                font-size: 14px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.3em;
+                padding-bottom: 10px;
+            }
+            
+            li {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+            
+            .matrix-type {
+                padding: 12px;
+                margin: 12px 0;
+            }
+            
+            .note, .example {
+                padding: 10px;
+                margin: 10px 0;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            body {
+                padding: 8px;
+                font-size: 13px;
+            }
+            
+            .container {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 1.2em;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                padding: 20px;
+                max-width: 800px;
+            }
+            
+            .container {
+                padding: 30px;
+            }
+        }
+        
+        /* Улучшение скролла для матриц */
+        .matrix-scroll {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+            margin: 10px 0;
+            padding: 5px 0;
+        }
+        
+        /* Улучшение читаемости на маленьких экранах */
+        strong {
+            color: #2c3e50;
+        }
+        
+        /* Предотвращение переноса важных математических выражений */
+        .no-wrap {
+            white-space: nowrap;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Конспект: Свойства определителей</h1>
+        <h1>Свойства определителей</h1>
         
         <ol>
             <li>
@@ -80,7 +214,7 @@
 
             <li>
                 Если в матрице $A$ есть две пропорциональные строки (или столбца), то её определитель равен нулю:
-                \[ |A| = 0 \]
+                <div class="math">\[ |A| = 0 \]</div>
                 <div class="note">
                     <strong>Примечание:</strong> Две равные строки/столбца — это частный случай пропорциональных (коэффициент пропорциональности $k = 1$).
                 </div>
@@ -88,22 +222,23 @@
 
             <li>
                 Определитель матрицы $A$ равен определителю её транспонированной матрицы:
-                \[ |A| = |A^T| \]
+                <div class="math">\[ |A| = |A^T| \]</div>
             </li>
 
             <li>
                 При перестановке двух строк (или столбцов) определитель меняет знак:
-                \[ |A| = -|A'| \]
-                где $A'$ — матрица, полученная из $A$ перестановкой строк (или стобцов).
+                <div class="math">\[ |A| = -|A'| \]</div>
+                где $A'$ — матрица, полученная из $A$ перестановкой строк (или столбцов).
             </li>
 
             <li>
                 Если все элементы матрицы умножить на число $\lambda$, то определитель умножится на $\lambda^n$, где $n$ — порядок матрицы:
-                \[ |\lambda \cdot A| = \lambda^n \cdot |A| \]
+                <div class="math">\[ |\lambda \cdot A| = \lambda^n \cdot |A| \]</div>
             </li>
 
             <li>
                 Определитель не меняется, если к элементам одной строки прибавить соответствующие элементы другой строки, умноженные на число $\beta$. Для столбцов аналогично.
+                <div class="math">
                 \begin{align*}
                 \begin{vmatrix}
                 a_{11} & a_{12} & a_{13} \\
@@ -123,10 +258,12 @@
                 a_{31} & a_{32} + \beta a_{33} & a_{33}
                 \end{vmatrix}
                 \end{align*}
+                </div>
             </li>
 
             <li>
                 Определитель суммы можно представить как сумму определителей.
+                <div class="math">
                 \[
                 \begin{vmatrix}
                 a_{11} & a_{12} + a & a_{13} \\
@@ -146,20 +283,23 @@
                 a_{31} & c & a_{33}
                 \end{vmatrix}
                 \]
+                </div>
             </li>
 
             <li>
                 Определитель треугольной матрицы (верхней или нижней) равен произведению элементов главной диагонали:
-                \[ |A| = a_{11} \cdot a_{22} \cdot \ldots \cdot a_{nn} \]
+                <div class="math">\[ |A| = a_{11} \cdot a_{22} \cdot \ldots \cdot a_{nn} \]</div>
             </li>
 
             <li>
                 Определитель произведения матриц равен произведению их определителей:
-                \[ |A \cdot B| = |A| \cdot |B| \]
+                <div class="math">\[ |A \cdot B| = |A| \cdot |B| \]</div>
                 
                 Следствие для обратной матрицы:
+                <div class="math">
                 \[ |A \cdot A^{-1}| = |E| \]
                 \[ |A| \cdot |A^{-1}| = |E| = 1 \Rightarrow |A| \neq 0 \iff \text{у матрицы } A \text{ существует } A^{-1} \]
+                </div>
                 
                 Дополнительные свойства обратных матриц:
                 <div class="property">$E = E^{-1}$</div>
@@ -170,8 +310,10 @@
 
             <li>
                 Строки/столбцы линейно независимы, если выполненены эти условия:
+                <div class="math">
                 \[ \beta_1 \cdot A_1 + \ldots + \beta_n \cdot A_n = \Theta \]
                 \[ \beta_1^2 + \ldots + \beta_n^2 \neq 0 \]
+                </div>
                 где $\Theta$ — нулевой вектор.
             </li>
 
@@ -186,15 +328,15 @@
                     <strong>Тип I: Перестановка строк/столбцов</strong><br>
                     Берем единичную матрицу E, меняем в ней любые i и j строки (или столбцы), получаем $P_{ij}$<br>
                     Пример для 3×3 (перестановка строк 1 и 2):
-                    \[ P_{12} = \begin{pmatrix}
+                    <div class="math">\[ P_{12} = \begin{pmatrix}
                     0 & 1 & 0 \\
                     1 & 0 & 0 \\
                     0 & 0 & 1
-                    \end{pmatrix} \]
+                    \end{pmatrix} \]</div>
                     <div class="example">
                         <strong>Действие при умножении:</strong><br>
                         $P_{12} \cdot A$ — переставляет 1-ю и 2-ю строки матрицы $A$<br>
-                        $A \cdot E_1$ — переставляет 1-й и 2-й столбцы матрицы $A$<br>
+                        $A \cdot P_{12}$ — переставляет 1-й и 2-й столбцы матрицы $A$<br>
                         Определитель: $|P_{ij}| = -1$
                     </div>
                 </div>
@@ -203,11 +345,11 @@
                     <strong>Тип II: Умножение строки/столбца на число</strong><br>
                     Берем единичную матрицу Е, заменяем в ней любой диагональный элемент на число $k \neq 0$, получаем матрицу D_i<br>
                     Пример для 3×3 (умножение 2-й строки на $k$):
-                    \[ D_2 = \begin{pmatrix}
+                    <div class="math">\[ D_2 = \begin{pmatrix}
                     1 & 0 & 0 \\
                     0 & k & 0 \\
                     0 & 0 & 1
-                    \end{pmatrix} \]
+                    \end{pmatrix} \]</div>
                     <div class="example">
                         <strong>Действие при умножении:</strong><br>
                         $D_2 \cdot A$ — умножает 2-ю строку матрицы $A$ на $k$<br>
@@ -220,11 +362,11 @@
                     <strong>Тип III: Прибавление строки к строке</strong><br>
                     Берем единичную матрицу Е, добавляем любое число $b \neq 0$ вне диагонали, получаем матрицу L_{ij}<br>
                     Пример для 3×3 (прибавление 1-й строки ко 2-й строке):
-                    \[ L_{12} = \begin{pmatrix}
+                    <div class="math">\[ L_{12} = \begin{pmatrix}
                     1 & 0 & 0 \\
                     \beta & 1 & 0 \\
                     0 & 0 & 1
-                    \end{pmatrix} \]
+                    \end{pmatrix} \]</div>
                     <div class="example">
                         <strong>Действие при умножении:</strong><br>
                         $L_{12} \cdot A$ — прибавляет 1-ю строку матрицы $A$ ко 2-й строке, умноженную на $\beta$<br>
@@ -245,7 +387,16 @@
                 processEnvironments: true
             },
             options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                enableMenu: false
+            },
+            chtml: {
+                scale: 0.9,
+                displayAlign: 'center'
+            },
+            svg: {
+                scale: 0.9,
+                displayAlign: 'center'
             }
         };
     </script>
