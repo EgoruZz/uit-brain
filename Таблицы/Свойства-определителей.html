@@ -15,20 +15,20 @@
         
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             max-width: 100%;
             margin: 0 auto;
-            padding: 15px;
+            padding: 20px;
             background-color: #f5f5f5;
-            font-size: 16px;
+            font-size: 18px;
             -webkit-text-size-adjust: 100%;
         }
         
         .container {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             max-width: 100%;
             overflow: hidden;
         }
@@ -36,73 +36,87 @@
         h1 {
             color: #2c3e50;
             text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-            font-size: 1.5em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            font-size: 2em;
             word-wrap: break-word;
+            font-weight: bold;
         }
         
         ol {
             counter-reset: item;
             padding-left: 0;
             list-style-position: inside;
+            font-size: 1em;
         }
         
         li {
-            margin-bottom: 20px;
-            padding: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
             background: #f8f9fa;
-            border-left: 4px solid #3498db;
-            border-radius: 8px;
+            border-left: 5px solid #3498db;
+            border-radius: 10px;
             break-inside: avoid;
             page-break-inside: avoid;
+            font-size: 1em;
         }
         
         .note {
             background: #fff3cd;
             border-left: 4px solid #ffc107;
-            padding: 12px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-size: 0.9em;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            line-height: 1.6;
         }
         
         .math {
-            font-size: 1em;
+            font-size: 1.1em;
             overflow-x: auto;
             overflow-y: hidden;
-            padding: 5px 0;
+            padding: 8px 0;
             -webkit-overflow-scrolling: touch;
+            margin: 10px 0;
         }
         
         .property {
-            margin: 8px 0;
-            padding-left: 15px;
+            margin: 10px 0;
+            padding-left: 20px;
             word-wrap: break-word;
+            font-size: 1em;
+            line-height: 1.6;
         }
         
         .example {
             background: #e8f4fd;
             border-left: 4px solid #3498db;
-            padding: 12px;
-            margin: 12px 0;
-            border-radius: 6px;
-            font-size: 0.9em;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
             overflow-wrap: break-word;
+            line-height: 1.6;
         }
         
         .matrix-type {
-            margin: 15px 0;
-            padding: 15px;
+            margin: 20px 0;
+            padding: 20px;
             background: #f0f8ff;
-            border-radius: 8px;
-            border: 1px solid #d1ecf1;
+            border-radius: 10px;
+            border: 2px solid #d1ecf1;
+            font-size: 1em;
+        }
+        
+        .matrix-type strong {
+            font-size: 1.1em;
+            color: #2c3e50;
         }
         
         /* Адаптивные формулы */
         .mjx-chtml {
-            font-size: 110% !important;
+            font-size: 120% !important;
             max-width: 100% !important;
             overflow-x: auto !important;
         }
@@ -121,65 +135,86 @@
         /* Адаптивные матрицы */
         .matrix-container {
             overflow-x: auto;
-            margin: 10px 0;
+            margin: 15px 0;
             -webkit-overflow-scrolling: touch;
         }
         
         /* Медиа-запросы для разных экранов */
         @media (max-width: 480px) {
             body {
-                padding: 10px;
-                font-size: 14px;
+                padding: 15px;
+                font-size: 16px;
             }
             
             .container {
-                padding: 15px;
+                padding: 20px;
             }
             
             h1 {
-                font-size: 1.3em;
-                padding-bottom: 10px;
+                font-size: 1.6em;
+                padding-bottom: 15px;
             }
             
             li {
-                padding: 12px;
-                margin-bottom: 15px;
+                padding: 18px;
+                margin-bottom: 20px;
+                font-size: 1em;
             }
             
             .matrix-type {
-                padding: 12px;
-                margin: 12px 0;
+                padding: 18px;
+                margin: 18px 0;
             }
             
             .note, .example {
-                padding: 10px;
-                margin: 10px 0;
+                padding: 15px;
+                margin: 15px 0;
+                font-size: 0.95em;
             }
         }
         
         @media (max-width: 360px) {
             body {
-                padding: 8px;
-                font-size: 13px;
+                padding: 12px;
+                font-size: 15px;
             }
             
             .container {
-                padding: 12px;
+                padding: 18px;
             }
             
             h1 {
-                font-size: 1.2em;
+                font-size: 1.4em;
+            }
+            
+            li {
+                padding: 15px;
             }
         }
         
         @media (min-width: 768px) {
             body {
-                padding: 20px;
+                padding: 25px;
                 max-width: 800px;
+                font-size: 18px;
             }
             
             .container {
-                padding: 30px;
+                padding: 35px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            body {
+                font-size: 19px;
+            }
+            
+            .container {
+                padding: 40px;
             }
         }
         
@@ -188,18 +223,29 @@
             display: block;
             overflow-x: auto;
             white-space: nowrap;
-            margin: 10px 0;
-            padding: 5px 0;
+            margin: 15px 0;
+            padding: 8px 0;
         }
         
         /* Улучшение читаемости на маленьких экранах */
         strong {
             color: #2c3e50;
+            font-weight: bold;
         }
         
         /* Предотвращение переноса важных математических выражений */
         .no-wrap {
             white-space: nowrap;
+        }
+        
+        /* Увеличение межбуквенного интервала для лучшей читаемости */
+        body {
+            letter-spacing: 0.02em;
+        }
+        
+        /* Увеличение отступов для лучшего визуального разделения */
+        br {
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -343,7 +389,7 @@
 
                 <div class="matrix-type">
                     <strong>Тип II: Умножение строки/столбца на число</strong><br>
-                    Берем единичную матрицу Е, заменяем в ней любой диагональный элемент на число $k \neq 0$, получаем матрицу D_i<br>
+                    Берем единичную матрицу Е, заменяем в ней любой диагональный элемент на число $k \neq 0$, получаем матрицу $D_{i}$<br>
                     Пример для 3×3 (умножение 2-й строки на $k$):
                     <div class="math">\[ D_2 = \begin{pmatrix}
                     1 & 0 & 0 \\
@@ -360,7 +406,7 @@
 
                 <div class="matrix-type">
                     <strong>Тип III: Прибавление строки к строке</strong><br>
-                    Берем единичную матрицу Е, добавляем любое число $b \neq 0$ вне диагонали, получаем матрицу L_{ij}<br>
+                    Берем единичную матрицу Е, добавляем любое число $b \neq 0$ вне диагонали, получаем матрицу $L_{ij}$<br>
                     Пример для 3×3 (прибавление 1-й строки ко 2-й строке):
                     <div class="math">\[ L_{12} = \begin{pmatrix}
                     1 & 0 & 0 \\
@@ -391,11 +437,11 @@
                 enableMenu: false
             },
             chtml: {
-                scale: 0.9,
+                scale: 1.0,
                 displayAlign: 'center'
             },
             svg: {
-                scale: 0.9,
+                scale: 1.0,
                 displayAlign: 'center'
             }
         };
