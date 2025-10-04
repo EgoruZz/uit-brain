@@ -75,10 +75,11 @@
         .math {
             font-size: 1.1em;
             overflow-x: auto;
-            overflow-y: hidden;
+            overflow-y: hidden; /* Убираем вертикальный скролл */
             padding: 8px 0;
             -webkit-overflow-scrolling: touch;
             margin: 10px 0;
+            max-height: none; /* Убираем ограничение высоты */
         }
         
         .property {
@@ -119,17 +120,27 @@
             font-size: 120% !important;
             max-width: 100% !important;
             overflow-x: auto !important;
+            overflow-y: hidden !important; /* Убираем вертикальный скролл у формул */
         }
         
         mjx-container {
             overflow-x: auto;
-            overflow-y: hidden;
+            overflow-y: hidden; /* Убираем вертикальный скролл */
             max-width: 100%;
             -webkit-overflow-scrolling: touch;
         }
         
         mjx-container[jax="CHTML"] {
-            overflow: auto;
+            overflow-x: auto;
+            overflow-y: hidden; /* Убираем вертикальный скролл */
+        }
+        
+        /* Специальный класс для длинных формул с горизонтальным скроллом */
+        .long-math {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding: 10px 0;
         }
         
         /* Адаптивные матрицы */
@@ -137,6 +148,7 @@
             overflow-x: auto;
             margin: 15px 0;
             -webkit-overflow-scrolling: touch;
+            overflow-y: hidden; /* Убираем вертикальный скролл для матриц */
         }
         
         /* Медиа-запросы для разных экранов */
@@ -170,6 +182,11 @@
                 padding: 15px;
                 margin: 15px 0;
                 font-size: 0.95em;
+            }
+            
+            .math {
+                overflow-x: auto;
+                overflow-y: hidden;
             }
         }
         
@@ -225,6 +242,7 @@
             white-space: nowrap;
             margin: 15px 0;
             padding: 8px 0;
+            overflow-y: hidden; /* Убираем вертикальный скролл */
         }
         
         /* Улучшение читаемости на маленьких экранах */
@@ -246,6 +264,12 @@
         /* Увеличение отступов для лучшего визуального разделения */
         br {
             margin-bottom: 8px;
+        }
+        
+        /* Убираем лишние скроллы для всех математических элементов */
+        .MathJax, .MJX-TEX {
+            overflow-x: auto !important;
+            overflow-y: hidden !important;
         }
     </style>
 </head>
@@ -284,7 +308,7 @@
 
             <li>
                 Определитель не меняется, если к элементам одной строки прибавить соответствующие элементы другой строки, умноженные на число $\beta$. Для столбцов аналогично.
-                <div class="math">
+                <div class="math long-math">
                 \begin{align*}
                 \begin{vmatrix}
                 a_{11} & a_{12} & a_{13} \\
@@ -309,7 +333,7 @@
 
             <li>
                 Определитель суммы можно представить как сумму определителей.
-                <div class="math">
+                <div class="math long-math">
                 \[
                 \begin{vmatrix}
                 a_{11} & a_{12} + a & a_{13} \\
@@ -374,7 +398,7 @@
                     <strong>Тип I: Перестановка строк/столбцов</strong><br>
                     Берем единичную матрицу E, меняем в ней любые i и j строки (или столбцы), получаем $P_{ij}$<br>
                     Пример для 3×3 (перестановка строк 1 и 2):
-                    <div class="math">\[ P_{12} = \begin{pmatrix}
+                    <div class="math long-math">\[ P_{12} = \begin{pmatrix}
                     0 & 1 & 0 \\
                     1 & 0 & 0 \\
                     0 & 0 & 1
@@ -391,7 +415,7 @@
                     <strong>Тип II: Умножение строки/столбца на число</strong><br>
                     Берем единичную матрицу Е, заменяем в ней любой диагональный элемент на число $k \neq 0$, получаем матрицу $D_{i}$<br>
                     Пример для 3×3 (умножение 2-й строки на $k$):
-                    <div class="math">\[ D_2 = \begin{pmatrix}
+                    <div class="math long-math">\[ D_2 = \begin{pmatrix}
                     1 & 0 & 0 \\
                     0 & k & 0 \\
                     0 & 0 & 1
@@ -408,7 +432,7 @@
                     <strong>Тип III: Прибавление строки к строке</strong><br>
                     Берем единичную матрицу Е, добавляем любое число $b \neq 0$ вне диагонали, получаем матрицу $L_{ij}$<br>
                     Пример для 3×3 (прибавление 1-й строки ко 2-й строке):
-                    <div class="math">\[ L_{12} = \begin{pmatrix}
+                    <div class="math long-math">\[ L_{12} = \begin{pmatrix}
                     1 & 0 & 0 \\
                     \beta & 1 & 0 \\
                     0 & 0 & 1
