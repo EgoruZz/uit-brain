@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конспект: Свойства определителей</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        ol {
+            counter-reset: item;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .math {
+            font-size: 1.1em;
+        }
+        .property {
+            margin: 5px 0;
+            padding-left: 10px;
+        }
+        .example {
+            background: #e8f4fd;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .matrix-type {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f0f8ff;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Конспект: Свойства определителей</h1>
+        
+        <ol>
+            <li>
+                Если в $|A|$ есть $\Theta$ (нулевая строка/столбец), то $|A| = 0$.
+            </li>
+
+            <li>
+                Если в матрице $A$ есть две пропорциональные строки (или столбца), то её определитель равен нулю:
+                \[ |A| = 0 \]
+                <div class="note">
+                    <strong>Примечание:</strong> Две равные строки/столбца — это частный случай пропорциональных (коэффициент пропорциональности $k = 1$).
+                </div>
+            </li>
+
+            <li>
+                Определитель матрицы $A$ равен определителю её транспонированной матрицы:
+                \[ |A| = |A^T| \]
+            </li>
+
+            <li>
+                При перестановке двух строк (или столбцов) определитель меняет знак:
+                \[ |A| = -|A'| \]
+                где $A'$ — матрица, полученная из $A$ перестановкой строк (или стобцов).
+            </li>
+
+            <li>
+                Если все элементы матрицы умножить на число $\lambda$, то определитель умножится на $\lambda^n$, где $n$ — порядок матрицы:
+                \[ |\lambda \cdot A| = \lambda^n \cdot |A| \]
+            </li>
+
+            <li>
+                Определитель не меняется, если к элементам одной строки прибавить соответствующие элементы другой строки, умноженные на число $\beta$. Для столбцов аналогично.
+                \begin{align*}
+                \begin{vmatrix}
+                a_{11} & a_{12} & a_{13} \\
+                a_{21} & a_{22} & a_{23} \\
+                a_{31} & a_{32} & a_{33}
+                \end{vmatrix}
+                &=
+                \begin{vmatrix}
+                a_{11} + \beta a_{31} & a_{12} + \beta a_{32} & a_{13} + \beta a_{33} \\
+                a_{21} & a_{22} & a_{23} \\
+                a_{31} & a_{32} & a_{33}
+                \end{vmatrix} \\
+                &=
+                \begin{vmatrix}
+                a_{11} & a_{12} + \beta a_{13} & a_{13} \\
+                a_{21} & a_{22} + \beta a_{23} & a_{23} \\
+                a_{31} & a_{32} + \beta a_{33} & a_{33}
+                \end{vmatrix}
+                \end{align*}
+            </li>
+
+            <li>
+                Определитель суммы можно представить как сумму определителей.
+                \[
+                \begin{vmatrix}
+                a_{11} & a_{12} + a & a_{13} \\
+                a_{21} & a_{22} + b & a_{23} \\
+                a_{31} & a_{32} + c & a_{33}
+                \end{vmatrix}
+                =
+                \begin{vmatrix}
+                a_{11} & a_{12} & a_{13} \\
+                a_{21} & a_{22} & a_{23} \\
+                a_{31} & a_{32} & a_{33}
+                \end{vmatrix}
+                +
+                \begin{vmatrix}
+                a_{11} & a & a_{13} \\
+                a_{21} & b & a_{23} \\
+                a_{31} & c & a_{33}
+                \end{vmatrix}
+                \]
+            </li>
+
+            <li>
+                Определитель треугольной матрицы (верхней или нижней) равен произведению элементов главной диагонали:
+                \[ |A| = a_{11} \cdot a_{22} \cdot \ldots \cdot a_{nn} \]
+            </li>
+
+            <li>
+                Определитель произведения матриц равен произведению их определителей:
+                \[ |A \cdot B| = |A| \cdot |B| \]
+                
+                Следствие для обратной матрицы:
+                \[ |A \cdot A^{-1}| = |E| \]
+                \[ |A| \cdot |A^{-1}| = |E| = 1 \Rightarrow |A| \neq 0 \iff \text{у матрицы } A \text{ существует } A^{-1} \]
+                
+                Дополнительные свойства обратных матриц:
+                <div class="property">$E = E^{-1}$</div>
+                <div class="property">$(A^{-1})^{-1} = A$</div>
+                <div class="property">$(A^T)^{-1} = (A^{-1})^T$</div>
+                <div class="property">$(A \cdot B)^{-1} = B^{-1} \cdot A^{-1}$</div>
+            </li>
+
+            <li>
+                Строки/столбцы линейно независимы, если выполненены эти условия:
+                \[ \beta_1 \cdot A_1 + \ldots + \beta_n \cdot A_n = \Theta \]
+                \[ \beta_1^2 + \ldots + \beta_n^2 \neq 0 \]
+                где $\Theta$ — нулевой вектор.
+            </li>
+
+            <li>
+                <strong>Матрицы элементарных преобразований</strong>
+                
+                <div class="note">
+                    <strong>Важно:</strong> Любое элементарное преобразование можно выполнить умножением на соответствующую элементарную матрицу слева (для преобразования строк) или справа (для преобразования столбцов).
+                </div>
+
+                <div class="matrix-type">
+                    <strong>Тип I: Перестановка строк/столбцов</strong><br>
+                    Берем единичную матрицу E, меняем в ней любые i и j строки (или столбцы), получаем $P_{ij}$<br>
+                    Пример для 3×3 (перестановка строк 1 и 2):
+                    \[ P_{12} = \begin{pmatrix}
+                    0 & 1 & 0 \\
+                    1 & 0 & 0 \\
+                    0 & 0 & 1
+                    \end{pmatrix} \]
+                    <div class="example">
+                        <strong>Действие при умножении:</strong><br>
+                        $P_{12} \cdot A$ — переставляет 1-ю и 2-ю строки матрицы $A$<br>
+                        $A \cdot E_1$ — переставляет 1-й и 2-й столбцы матрицы $A$<br>
+                        Определитель: $|P_{ij}| = -1$
+                    </div>
+                </div>
+
+                <div class="matrix-type">
+                    <strong>Тип II: Умножение строки/столбца на число</strong><br>
+                    Берем единичную матрицу Е, заменяем в ней любой диагональный элемент на число $k \neq 0$, получаем матрицу D_i<br>
+                    Пример для 3×3 (умножение 2-й строки на $k$):
+                    \[ D_2 = \begin{pmatrix}
+                    1 & 0 & 0 \\
+                    0 & k & 0 \\
+                    0 & 0 & 1
+                    \end{pmatrix} \]
+                    <div class="example">
+                        <strong>Действие при умножении:</strong><br>
+                        $D_2 \cdot A$ — умножает 2-ю строку матрицы $A$ на $k$<br>
+                        $A \cdot D_2$ — умножает 2-й столбец матрицы $A$ на $k$<br>
+                        Определитель: $|D_i| = k$
+                    </div>
+                </div>
+
+                <div class="matrix-type">
+                    <strong>Тип III: Прибавление строки к строке</strong><br>
+                    Берем единичную матрицу Е, добавляем любое число $b \neq 0$ вне диагонали, получаем матрицу L_{ij}<br>
+                    Пример для 3×3 (прибавление 1-й строки ко 2-й строке):
+                    \[ L_{12} = \begin{pmatrix}
+                    1 & 0 & 0 \\
+                    \beta & 1 & 0 \\
+                    0 & 0 & 1
+                    \end{pmatrix} \]
+                    <div class="example">
+                        <strong>Действие при умножении:</strong><br>
+                        $L_{12} \cdot A$ — прибавляет 1-ю строку матрицы $A$ ко 2-й строке, умноженную на $\beta$<br>
+                        $A \cdot L_{12}$ — прибавляет 2-й столбец матрицы $A$ к 1-му столбцу, умноженному на $\beta$<br>
+                        Определитель: $|L_{ij}| = 1$
+                    </div>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+</body>
+</html>
