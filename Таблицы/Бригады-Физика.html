@@ -171,16 +171,16 @@
         }
         
         .team {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px 15px 15px 15px;
             margin-bottom: 15px;
             border: 2px solid #4dccbd;
             border-radius: 10px;
             background: none;
             align-items: center;
             position: relative;
+            gap: 8px;
         }
         
         .light-theme .team {
@@ -195,15 +195,17 @@
         .team-number {
             position: absolute;
             top: -12px;
-            left: 15px;
+            left: 50%;
+            transform: translateX(-50%);
             background: rgb(112, 255, 105);
             color: black;
-            padding: 3px 10px;
+            padding: 3px 15px;
             border-radius: 15px;
             font-weight: bold;
             font-size: 0.9rem;
             min-width: 60px;
             text-align: center;
+            z-index: 1;
         }
         
         .light-theme .team-number {
@@ -211,14 +213,26 @@
             color: white;
         }
         
+        .team-members {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+        
         .team-member {
             display: flex;
             align-items: center;
+            justify-content: center;
             color: #ffffff;
-            padding: 10px;
+            padding: 8px 12px;
             background: none;
             border-radius: 8px;
             min-height: 44px;
+            text-align: center;
+            flex: 1;
+            max-width: 45%;
         }
         
         .light-theme .team-member {
@@ -227,8 +241,9 @@
         }
 
         .member-icon {
-            margin-right: 10px;
+            margin-right: 8px;
             color: #4dccbd;
+            flex-shrink: 0;
         }
 
         .light-theme .member-icon {
@@ -239,19 +254,10 @@
             color: #e74c3c;
         }
         
-        .member-icon {
-            margin-right: 10px;
-            color: #4dccbd;
-            min-width: 20px;
-        }
-        
-        .light-theme .member-icon {
-            color: rgba(52, 152, 219, 1);
-        }
-        
         .absent-mark {
-            margin-left: 8px;
+            margin-left: 6px;
             color: #e74c3c;
+            flex-shrink: 0;
         }
         
         footer {
@@ -287,15 +293,19 @@
                 padding: 20px;
             }
             
-            .team {
-                grid-template-columns: 1fr;
-                gap: 8px;
+            .team-members {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .team-member {
+                max-width: 100%;
+                width: 100%;
             }
             
             .team-number {
-                left: 10px;
                 font-size: 0.8rem;
-                padding: 2px 8px;
+                padding: 2px 10px;
             }
         }
         
@@ -321,12 +331,17 @@
             }
             
             .team {
-                padding: 12px 10px 10px 10px;
+                padding: 18px 10px 12px 10px;
+                gap: 5px;
             }
             
-            .team-number {
-                top: -5px;
-                left: 8px;
+            .team-member {
+                padding: 6px 8px;
+                font-size: 0.9rem;
+            }
+            
+            .member-icon {
+                margin-right: 6px;
             }
         }
     </style>
@@ -350,84 +365,102 @@
                 <ul class="team-list">
                     <li class="team">
                         <div class="team-number">1</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Кутейникова Надежда Михайловна
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Тихонова Анна Максимовна
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Кутейникова Надежда Михайловна
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Тихонова Анна Максимовна
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">2</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Суховерков Максим Вячеславович
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Дулькин Максим Иванович
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Суховерков Максим Вячеславович
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Дулькин Максим Иванович
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">3</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Смирнов Илья Дмитриевич
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Клюев Александр Сергеевич
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Смирнов Илья Дмитриевич
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Клюев Александр Сергеевич
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">4</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Малиновкин Егор Алексеевич
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Салехи Магди Хушанович
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Малиновкин Егор Алексеевич
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Салехи Магди Хушанович
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">5</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Берсенев Дмитрий Алексеевич
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Ленкова Таисия Михайловна
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Берсенев Дмитрий Алексеевич
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Ленкова Таисия Михайловна
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">6</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Мвэва Букатами
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Диах Алли Салехе
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Мвэва Букатами
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Диах Алли Салехе
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">7</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Круз Эштевао Мавинга Лоуренсу
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Сергеев Егор Сергеевич
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Круз Эштевао Мавинга Лоуренсу
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Сергеев Егор Сергеевич
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">8</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Исаков Эмир Бесланович
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Меркулов Александр Павлович
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Исаков Эмир Бесланович
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Меркулов Александр Павлович
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">9</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Макаров Михаил Алексеевич
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Корсакова Анастасия Кирилловна
-                            <span class="absent-mark">❌</span>
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Макаров Михаил Алексеевич
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Корсакова Анастасия Кирилловна
+                                <span class="absent-mark">❌</span>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -442,96 +475,116 @@
                 <ul class="team-list">
                     <li class="team">
                         <div class="team-number">1</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Половинкин Данила Владимирович
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Гаврилин Александр Сергеевич
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Половинкин Данила Владимирович
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Гаврилин Александр Сергеевич
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">2</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Титова Анастасия Олеговна
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Хакимова Анна Юрьевна
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Титова Анастасия Олеговна
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Хакимова Анна Юрьевна
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">3</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Притыченко Артём Михайлович
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Шарипов Владислав Рустамович
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Притыченко Артём Михайлович
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Шарипов Владислав Рустамович
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">4</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Быков Артём Aлексеевич
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Кузнецов Егор Сергеевич
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Быков Артём Aлексеевич
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Кузнецов Егор Сергеевич
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">5</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Головин Егор Денисович
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Павлов Иван Александрович
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Головин Егор Денисович
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Павлов Иван Александрович
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">6</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Реберг Герман Сергеевич
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Григорьев Владислав Евгеньевич
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Реберг Герман Сергеевич
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Григорьев Владислав Евгеньевич
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">7</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Шмельков Владимир Артемович
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Блинов Данила Эдуардович
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Шмельков Владимир Артемович
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Блинов Данила Эдуардович
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">8</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Караман Антон Вадимович
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Чистов Евгений Евгеньевич
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Караман Антон Вадимович
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Чистов Евгений Евгеньевич
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">9</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Ерохин Роман Олегович
-                            <span class="absent-mark">❌</span>
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Симонов Владислав Кириллович
-                            <span class="absent-mark">❌</span>
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Ерохин Роман Олегович
+                                <span class="absent-mark">❌</span>
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Симонов Владислав Кириллович
+                                <span class="absent-mark">❌</span>
+                            </div>
                         </div>
                     </li>
                     <li class="team">
                         <div class="team-number">10</div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Капитоненко Иван Игоревич
-                            <span class="absent-mark">❌</span>
-                        </div>
-                        <div class="team-member">
-                            <i class="fas fa-user member-icon"></i>Маоми Се Паярь
-                            <span class="absent-mark">❌</span>
+                        <div class="team-members">
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Капитоненко Иван Игоревич
+                                <span class="absent-mark">❌</span>
+                            </div>
+                            <div class="team-member">
+                                <i class="fas fa-user member-icon"></i>Маоми Се Паярь
+                                <span class="absent-mark">❌</span>
+                            </div>
                         </div>
                     </li>
                 </ul>
