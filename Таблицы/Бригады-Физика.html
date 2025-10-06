@@ -281,7 +281,7 @@
             }
             
             .subtitle {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
             
             .groups-container {
@@ -295,8 +295,21 @@
             .group-card {
                 padding: 15px;
             }
+            
+            /* Добавляем уменьшение шрифта для горизонтальной ориентации */
+            .team-member {
+                font-size: 0.9rem;
+            }
+            
+            .member-icon {
+                font-size: 0.9rem;
+            }
+            
+            .team-number {
+                font-size: 0.9rem;
+            }
         }
-        
+
         @media (max-width: 480px) {
             h1 {
                 font-size: 1.8rem;
@@ -335,23 +348,64 @@
             }
         }
 
-        /* Для горизонтальной ориентации на мобильных */
-        @media (max-width: 768px) and (orientation: landscape) {
+        /* Специальный медиа-запрос для горизонтальной ориентации на мобильных */
+        @media (max-height: 500px) and (max-width: 900px) {
             .team-member {
-                font-size: 0.85rem;
+                font-size: 0.85rem !important;
             }
             
             .member-icon {
-                font-size: 0.9rem;
+                font-size: 0.85rem !important;
             }
             
             .team {
-                padding: 8px 0;
+                padding: 6px 0 !important;
             }
             
             .team-number {
-                font-size: 0.9rem;
-                padding: 1px 6px;
+                font-size: 0.8rem !important;
+                padding: 1px 6px !important;
+            }
+            
+            .team-members {
+                gap: 4px !important;
+            }
+            
+            .group-card {
+                padding: 10px !important;
+            }
+            
+            .group-title {
+                font-size: 1.1rem !important;
+            }
+            
+            .group-size {
+                font-size: 0.9rem !important;
+                padding: 3px 8px !important;
+            }
+        }
+
+        /* Альтернативный вариант - по ориентации */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .team-member {
+                font-size: 0.85rem !important;
+            }
+            
+            .member-icon {
+                font-size: 0.85rem !important;
+            }
+            
+            .team {
+                padding: 6px 0 !important;
+            }
+            
+            .team-number {
+                font-size: 0.8rem !important;
+                padding: 1px 6px !important;
+            }
+            
+            .team-members {
+                gap: 4px !important;
             }
         }
     </style>
