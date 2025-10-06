@@ -329,7 +329,28 @@
                 margin-bottom: 10px;
             }
         }
-        
+
+        /* Добавляем медиа-запрос для горизонтальной ориентации телефона */
+        @media (max-width: 768px) and (max-height: 500px) {
+            .team-member {
+                font-size: 0.85rem;
+            }
+            
+            .member-icon {
+                font-size: 0.9rem;
+            }
+            
+            .team {
+                padding: 12px 6px 8px 6px;
+                margin-bottom: 8px;
+            }
+            
+            .team-number {
+                font-size: 0.75rem;
+                padding: 2px 8px;
+            }
+        }
+
         @media (max-width: 550px) {
             h1 {
                 font-size: 1.8rem;
@@ -363,6 +384,36 @@
             
             .member-content {
                 gap: 4px;
+            }
+        }
+
+        /* Добавляем медиа-запрос для горизонтальной ориентации маленьких телефонов */
+        @media (max-width: 550px) and (max-height: 400px) {
+            .team-member {
+                font-size: 0.8rem;
+            }
+            
+            .member-icon {
+                font-size: 0.85rem;
+            }
+            
+            .team {
+                padding: 10px 4px 6px 4px;
+                margin-bottom: 6px;
+            }
+            
+            .team-number {
+                font-size: 0.7rem;
+                padding: 1px 6px;
+            }
+            
+            .group-title {
+                font-size: 1rem;
+            }
+            
+            .group-size {
+                font-size: 0.8rem;
+                padding: 3px 8px;
             }
         }
     </style>
