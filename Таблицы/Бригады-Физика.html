@@ -97,10 +97,26 @@
             color: #000000;
         }
         
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #4dccbd;
+        }
+        
+        .light-theme .section-title {
+            color: #3498db;
+        }
+        
         .groups-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 20px;
+            margin-bottom: 40px;
         }
         
         .group-card {
@@ -108,7 +124,7 @@
             border-radius: 15px;
             padding: 20px;
             transition: all 0.3s ease;
-            box-shadow: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             border: 2px solid #4dccbd;
         }
         
@@ -284,6 +300,10 @@
                 font-size: 1.1rem;
             }
             
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
             .groups-container {
                 grid-template-columns: 1fr;
             }
@@ -304,6 +324,10 @@
             
             .logo-icon {
                 font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
             }
             
             .container {
@@ -365,16 +389,18 @@
             <p class="subtitle">Распределение студентов на бригады для лабораторных занятий по физике</p>
         </header>
         
+        <h2 class="section-title">
+            <i class="fas fa-users"></i>ПОДГРУППА 1
+        </h2>
         <div class="groups-container">
-            <!-- Подгруппа 1 -->
+            <!-- Бригада 1 -->
             <div class="group-card">
                 <div class="group-header">
-                    <div class="group-title">ПОДГРУППА 1</div>
-                    <div class="group-size">9 бригад</div>
+                    <div class="group-title">Бригада 1</div>
+                    <div class="group-size">2 человека</div>
                 </div>
                 <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">1</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -390,8 +416,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 2 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 2</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">2</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -407,8 +442,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 3 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 3</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">3</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -424,8 +468,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 4 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 4</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">4</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -441,8 +494,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 5 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 5</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">5</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -458,8 +520,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 6 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 6</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">6</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -475,8 +546,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 7 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 7</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">7</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -492,8 +572,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 8 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 8</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">8</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -509,8 +598,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 9 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 9</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">9</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -529,16 +627,20 @@
                     </li>
                 </ul>
             </div>
-            
-            <!-- Подгруппа 2 -->
+        </div>
+        
+        <h2 class="section-title">
+            <i class="fas fa-users"></i>ПОДГРУППА 2
+        </h2>
+        <div class="groups-container">
+            <!-- Бригада 1 -->
             <div class="group-card">
                 <div class="group-header">
-                    <div class="group-title">ПОДГРУППА 2</div>
-                    <div class="group-size">10 бригад</div>
+                    <div class="group-title">Бригада 1</div>
+                    <div class="group-size">2 человека</div>
                 </div>
                 <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">1</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -554,8 +656,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 2 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 2</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">2</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -571,8 +682,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 3 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 3</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">3</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -588,8 +708,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 4 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 4</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">4</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -605,8 +734,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 5 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 5</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">5</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -622,8 +760,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 6 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 6</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">6</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -639,8 +786,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 7 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 7</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">7</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -656,8 +812,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 8 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 8</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">8</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -673,8 +838,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 9 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 9</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">9</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
@@ -692,8 +866,17 @@
                             </div>
                         </div>
                     </li>
+                </ul>
+            </div>
+            
+            <!-- Бригада 10 -->
+            <div class="group-card">
+                <div class="group-header">
+                    <div class="group-title">Бригада 10</div>
+                    <div class="group-size">2 человека</div>
+                </div>
+                <ul class="team-list">
                     <li class="team">
-                        <div class="team-number">10</div>
                         <div class="team-members">
                             <div class="team-member">
                                 <div class="member-content">
