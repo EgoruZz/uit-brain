@@ -39,6 +39,7 @@
             overflow: hidden;
             margin: 20px 0;
             padding: 30px;
+            flex: 1;
         }
         
         .light-theme .container {
@@ -99,7 +100,7 @@
 
         .section-title {
             font-size: 1.8rem;
-            margin-bottom: 25px;
+            margin: 40px 0 25px 0;
             text-align: center;
             display: flex;
             align-items: center;
@@ -140,7 +141,7 @@
         }
         
         .light-theme .group-card:hover {
-            background: #e0e0e0e0;
+            background: rgba(224, 224, 224, 0.8);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
         
@@ -203,6 +204,7 @@
         .member-info {
             display: flex;
             align-items: center;
+            flex: 1;
         }
         
         .member-icon {
@@ -225,6 +227,7 @@
             padding-top: 20px;
             border-top: 2px solid rgba(255, 255, 255, 1.0);
             width: 100%;
+            max-width: 600px;
             font-size: 0.9rem;
             color: #ffffff;
         }
@@ -251,6 +254,16 @@
             .container {
                 padding: 20px;
             }
+            
+            .section-title {
+                margin: 30px 0 20px 0;
+            }
+            
+            footer {
+                max-width: 100%;
+                font-size: 0.85rem;
+                margin-top: 30px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -268,6 +281,51 @@
             
             .group-card {
                 padding: 15px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                margin: 25px 0 15px 0;
+            }
+            
+            footer {
+                font-size: 0.8rem;
+                margin-top: 20px;
+            }
+        }
+        
+        /* Специальные стили для горизонтальной ориентации телефона */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .container {
+                padding: 15px;
+                margin: 10px 0;
+            }
+            
+            header {
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 5px;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                max-width: 500px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+                margin: 25px 0 15px 0;
+            }
+            
+            footer {
+                max-width: 500px;
+                font-size: 0.8rem;
+                padding: 15px 0;
+                margin-top: 20px;
             }
         }
     </style>
@@ -466,7 +524,7 @@
         </div>
 
         <h2 class="section-title">ПОДГРУППА 2</h2>
-        <div class="groups-container"></div>
+        <div class="groups-container">
             <!-- Бригада 1 -->
             <div class="group-card">
                 <div class="group-header">
@@ -596,12 +654,12 @@
                 <ul class="member-list">
                     <li class="member">
                         <div class="member-info">
-                            Шмельков Владимир Артемович
+                            <i class="fas fa-user member-icon"></i> Шмельков Владимир Артемович
                         </div>
                     </li>
                     <li class="member">
                         <div class="member-info">
-                            Блинов Данила Эдуардович
+                            <i class="fas fa-user member-icon"></i> Блинов Данила Эдуардович
                         </div>
                     </li>
                 </ul>
