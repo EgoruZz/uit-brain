@@ -96,7 +96,7 @@
         .light-theme .subtitle {
             color: #000000;
         }
-        
+
         .section-title {
             font-size: 1.8rem;
             margin-bottom: 25px;
@@ -114,9 +114,8 @@
         
         .groups-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
-            margin-bottom: 40px;
         }
         
         .group-card {
@@ -172,102 +171,47 @@
             color: #fff;
             padding: 5px 10px;
             border-radius: 20px;
-            font-size: 1rem;
-            background: rgba(77, 204, 189, 0.5);
+            font-size: 0.9rem;
+            background: rgba(77, 204, 189, 0.2);
         }
         
         .light-theme .group-size {
             color: #2c3e50;
-            background: rgba(52, 152, 219, 0.35);
+            background: rgba(52, 152, 219, 0.3);
         }
         
-        .team-list {
+        .member-list {
             list-style: none;
         }
         
-        .team {
-            padding: 12px 0;
+        .member {
+            padding: 10px 0;
             border-bottom: none;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            position: relative;
         }
         
-        .light-theme .team {
+        .light-theme .member {
            border-bottom: none;
         }
         
-        .team:last-child {
+        .member:last-child {
             border-bottom: none;
         }
         
-        .team-number {
-            position: absolute;
-            top: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgb(112, 255, 105);
-            color: black;
-            padding: 2px 12px;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 1.0rem;
-            min-width: 50px;
-            text-align: center;
-            z-index: 1;
-        }
-        
-        .light-theme .team-number {
-            background: #3498db;
-            color: white;
-        }
-        
-        .team-members {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            gap: 8px;
-        }
-        
-        .team-member {
+        .member-info {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            color: #ffffff;
-            padding: 10px 0;
-            background: none;
-            border-radius: 6px;
         }
         
-        .light-theme .team-member {
-            color: #2c3e50;
-            background: none;
-        }
-
-        .member-content {
-            display: flex;
-            align-items: center;
-            flex: 1;
-        }
-
         .member-icon {
             margin-right: 10px;
             color: #4dccbd;
         }
-
+        
         .light-theme .member-icon {
             color: #3498db;
-        }
-        
-        .member-name {
-            flex: 1;
-            word-wrap: break-word;
-            line-height: 1.4;
-        }
-        
-        .team-member.absent {
-            color: #e74c3c;
         }
         
         .absent-mark {
@@ -300,20 +244,12 @@
                 font-size: 1.1rem;
             }
             
-            .section-title {
-                font-size: 1.5rem;
-            }
-            
             .groups-container {
                 grid-template-columns: 1fr;
             }
             
             .container {
                 padding: 20px;
-            }
-            
-            .group-card {
-                padding: 15px;
             }
         }
         
@@ -326,56 +262,12 @@
                 font-size: 2rem;
             }
             
-            .section-title {
-                font-size: 1.3rem;
-            }
-            
             .container {
                 padding: 15px;
             }
             
             .group-card {
-                padding: 12px;
-            }
-            
-            .team {
-                padding: 10px 0;
-            }
-            
-            .team-member {
-                padding: 6px 0;
-                font-size: 0.9rem;
-            }
-            
-            .member-icon {
-                margin-right: 8px;
-                font-size: 0.9rem;
-            }
-            
-            .team-number {
-                font-size: 0.95rem;
-                padding: 2px 8px;
-                min-width: 45px;
-            }
-        }
-
-        /* Для горизонтальной ориентации на мобильных */
-        @media (max-width: 768px) and (orientation: landscape) {
-            .team-member {
-                font-size: 0.85rem;
-            }
-            
-            .member-icon {
-                font-size: 0.9rem;
-            }
-            
-            .team {
-                padding: 8px 0;
-            }
-            
-            .team-number {
-                font-size: 0.9rem;
-                padding: 1px 6px;
+                padding: 15px;
             }
         }
     </style>
@@ -389,9 +281,7 @@
             <p class="subtitle">Распределение студентов на бригады для лабораторных занятий по физике</p>
         </header>
         
-        <h2 class="section-title">
-            <i class="fas fa-users"></i>ПОДГРУППА 1
-        </h2>
+        <h2 class="section-title">ПОДГРУППА 1</h2>
         <div class="groups-container">
             <!-- Бригада 1 -->
             <div class="group-card">
@@ -399,21 +289,15 @@
                     <div class="group-title">Бригада 1</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Кутейникова Надежда Михайловна</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Тихонова Анна Максимовна</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Кутейникова Надежда Михайловна
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Тихонова Анна Максимовна
                         </div>
                     </li>
                 </ul>
@@ -425,21 +309,15 @@
                     <div class="group-title">Бригада 2</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Суховерков Максим Вячеславович</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Дулькин Максим Иванович</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Суховерков Максим Вячеславович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Дулькин Максим Иванович
                         </div>
                     </li>
                 </ul>
@@ -451,21 +329,15 @@
                     <div class="group-title">Бригада 3</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Смирнов Илья Дмитриевич</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Клюев Александр Сергеевич</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Смирнов Илья Дмитриевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Клюев Александр Сергеевич
                         </div>
                     </li>
                 </ul>
@@ -477,21 +349,15 @@
                     <div class="group-title">Бригада 4</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Малиновкин Егор Алексеевич</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Салехи Магди Хушанович</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Малиновкин Егор Алексеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Салехи Магди Хушанович
                         </div>
                     </li>
                 </ul>
@@ -503,21 +369,15 @@
                     <div class="group-title">Бригада 5</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Берсенев Дмитрий Алексеевич</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Ленкова Таисия Михайловна</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Берсенев Дмитрий Алексеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Ленкова Таисия Михайловна
                         </div>
                     </li>
                 </ul>
@@ -529,21 +389,15 @@
                     <div class="group-title">Бригада 6</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Мвэва Букатами</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Диах Алли Салехе</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Мвэва Букатами
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Диах Алли Салехе
                         </div>
                     </li>
                 </ul>
@@ -555,21 +409,15 @@
                     <div class="group-title">Бригада 7</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Круз Эштевао Мавинга Лоуренсу</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Сергеев Егор Сергеевич</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Круз Эштевао Мавинга Лоуренсу
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Сергеев Егор Сергеевич
                         </div>
                     </li>
                 </ul>
@@ -581,21 +429,15 @@
                     <div class="group-title">Бригада 8</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Исаков Эмир Бесланович</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Меркулов Александр Павлович</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Исаков Эмир Бесланович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Меркулов Александр Павлович
                         </div>
                     </li>
                 </ul>
@@ -605,55 +447,40 @@
             <div class="group-card">
                 <div class="group-header">
                     <div class="group-title">Бригада 9</div>
-                    <div class="group-size">2 человека</div>
+                    <div class="group-size">1 человек</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Макаров Михаил Алексеевич</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Корсакова Анастасия Кирилловна</span>
-                                    <span class="absent-mark">❌</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Макаров Михаил Алексеевич
                         </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Корсакова Анастасия Кирилловна
+                        </div>
+                        <span class="absent-mark">❌</span>
                     </li>
                 </ul>
             </div>
-        </div>
-        
-        <h2 class="section-title">
-            <i class="fas fa-users"></i>ПОДГРУППА 2
-        </h2>
-        <div class="groups-container">
+
+            <h2 class="section-title">ПОДГРУППА 2</h2>
+            
             <!-- Бригада 1 -->
             <div class="group-card">
                 <div class="group-header">
                     <div class="group-title">Бригада 1</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Половинкин Данила Владимирович</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Гаврилин Александр Сергеевич</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Половинкин Данила Владимирович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Гаврилин Александр Сергеевич
                         </div>
                     </li>
                 </ul>
@@ -665,21 +492,15 @@
                     <div class="group-title">Бригада 2</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Титова Анастасия Олеговна</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Хакимова Анна Юрьевна</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Титова Анастасия Олеговна
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Хакимова Анна Юрьевна
                         </div>
                     </li>
                 </ul>
@@ -691,21 +512,15 @@
                     <div class="group-title">Бригада 3</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Притыченко Артём Михайлович</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Шарипов Владислав Рустамович</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Притыченко Артём Михайлович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Шарипов Владислав Рустамович
                         </div>
                     </li>
                 </ul>
@@ -717,21 +532,15 @@
                     <div class="group-title">Бригада 4</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Быков Артём Aлексеевич</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Кузнецов Егор Сергеевич</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Быков Артём Aлексеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Кузнецов Егор Сергеевич
                         </div>
                     </li>
                 </ul>
@@ -743,21 +552,15 @@
                     <div class="group-title">Бригада 5</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Головин Егор Денисович</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Павлов Иван Александрович</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Головин Егор Денисович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Павлов Иван Александрович
                         </div>
                     </li>
                 </ul>
@@ -769,21 +572,15 @@
                     <div class="group-title">Бригада 6</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Реберг Герман Сергеевич</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Григорьев Владислав Евгеньевич</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Реберг Герман Сергеевич
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Григорьев Владислав Евгеньевич
                         </div>
                     </li>
                 </ul>
@@ -795,21 +592,15 @@
                     <div class="group-title">Бригада 7</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Шмельков Владимир Артемович</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Блинов Данила Эдуардович</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            Шмельков Владимир Артемович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            Блинов Данила Эдуардович
                         </div>
                     </li>
                 </ul>
@@ -821,78 +612,60 @@
                     <div class="group-title">Бригада 8</div>
                     <div class="group-size">2 человека</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Караман Антон Вадимович</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Чистов Евгений Евгеньевич</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Караман Антон Вадимович
+                        </div>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Чистов Евгений Евгеньевич
                         </div>
                     </li>
                 </ul>
             </div>
-            
+
             <!-- Бригада 9 -->
             <div class="group-card">
                 <div class="group-header">
                     <div class="group-title">Бригада 9</div>
-                    <div class="group-size">2 человека</div>
+                    <div class="group-size">0 человек</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Ерохин Роман Олегович</span>
-                                    <span class="absent-mark">❌</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Симонов Владислав Кириллович</span>
-                                    <span class="absent-mark">❌</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Караман Антон Вадимович
                         </div>
+                        <span class="absent-mark">❌</span>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Чистов Евгений Евгеньевич
+                        </div>
+                        <span class="absent-mark">❌</span>
                     </li>
                 </ul>
             </div>
-            
+
             <!-- Бригада 10 -->
             <div class="group-card">
                 <div class="group-header">
                     <div class="group-title">Бригада 10</div>
-                    <div class="group-size">2 человека</div>
+                    <div class="group-size">0 человек</div>
                 </div>
-                <ul class="team-list">
-                    <li class="team">
-                        <div class="team-members">
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Капитоненко Иван Игоревич</span>
-                                    <span class="absent-mark">❌</span>
-                                </div>
-                            </div>
-                            <div class="team-member">
-                                <div class="member-content">
-                                    <i class="fas fa-user member-icon"></i>
-                                    <span class="member-name">Маоми Се Паярь</span>
-                                    <span class="absent-mark">❌</span>
-                                </div>
-                            </div>
+                <ul class="member-list">
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Капитоненко Иван Игоревич
                         </div>
+                        <span class="absent-mark">❌</span>
+                    </li>
+                    <li class="member">
+                        <div class="member-info">
+                            <i class="fas fa-user member-icon"></i> Маоми Се Паярь
+                        </div>
+                        <span class="absent-mark">❌</span>
                     </li>
                 </ul>
             </div>
