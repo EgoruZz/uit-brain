@@ -257,122 +257,29 @@
         }
         
         /* Адаптивность для горизонтального расположения устройств */
-        @media (max-height: 600px) and (orientation: landscape) {
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                padding: 15px;
-                margin: 10px 0;
-            }
-            
-            header {
-                margin-bottom: 20px;
-                padding-bottom: 10px;
-            }
-            
+        @media (orientation: landscape) {
             h1 {
-                font-size: 2.2rem;
-                margin-bottom: 5px;
+                font-size: 2.8rem;
             }
             
             .subtitle {
-                font-size: 1.2rem;
-                max-width: 500px;
-            }
-            
-            .groups-container {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 15px;
-            }
-            
-            .group-card {
-                padding: 15px;
-            }
-            
-            .group-header {
-                margin-bottom: 10px;
-                padding-bottom: 5px;
-            }
-            
-            .group-title {
-                font-size: 1.3rem;
-            }
-            
-            .group-size {
-                font-size: 1rem;
-            }
-            
-            .member {
-                padding: 8px 0;
-            }
-            
-            .member-info {
-                font-size: 1rem;
-            }
-            
-            footer {
-                margin-top: 20px;
-                padding-top: 10px;
-                font-size: 0.8rem;
-            }
-        }
-        
-        @media (max-height: 450px) and (orientation: landscape) {
-            .groups-container {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 10px;
-            }
-            
-            .group-card {
-                padding: 10px;
-            }
-            
-            .member {
-                padding: 5px 0;
-            }
-            
-            .member-info {
-                font-size: 0.9rem;
-            }
-            
-            footer {
-                font-size: 0.7rem;
-            }
-        }
-        
-        /* Адаптивность для планшетов в горизонтальной ориентации */
-        @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-            .groups-container {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            }
-            
-            .group-title {
-                font-size: 1.3rem;
-            }
-            
-            .member-info {
-                font-size: 1.05rem;
-            }
-        }
-        
-        /* Адаптивность для больших экранов в горизонтальной ориентации */
-        @media (min-width: 1200px) and (orientation: landscape) {
-            .container {
-                max-width: 1400px;
-            }
-            
-            .groups-container {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+                font-size: 1.5rem;
             }
             
             .group-title {
                 font-size: 1.4rem;
             }
             
+            .group-size {
+                font-size: 1.1rem;
+            }
+            
             .member-info {
                 font-size: 1.1rem;
+            }
+            
+            footer {
+                font-size: 1rem;
             }
         }
     </style>
